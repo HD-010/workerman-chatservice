@@ -3,3 +3,4 @@
 vendor
 vendor/*
 start.php
+start_for_win.bat
