@@ -1,0 +1,13 @@
+阿里云详细安装教程之debian/ubuntu系统
+1、终端运行apt-get update
+2、终端运行apt-get install php5-cli
+3、终端运行apt-get install git
+4、下载 workerman-todpole 并解压到任意目录（下载地址在本页面上方）
+5、终端运行cd workerman-todpole && php start.php start -d如图
+6、大功告成！浏览器访问 http://ip:8383 如图:（如果无法访问请检查服务器防火墙）
+
+阿里云详细安装教程之centos系统
+1、yum install php-cli php-process git
+2、下载 workerman-todpole 并解压到任意目录（下载地址在本页面上方）
+3、cd workerman-todpole && php start.php start -d
+4、大功告成！浏览器访问 http://ip:8383 （如果无法访问请检查服务器防火墙）
