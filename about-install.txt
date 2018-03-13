@@ -11,3 +11,65 @@
 2、下载 workerman-todpole 并解压到任意目录（下载地址在本页面上方）
 3、cd workerman-todpole && php start.php start -d
 4、大功告成！浏览器访问 http://ip:8383 （如果无法访问请检查服务器防火墙）
+
+Linux系统环境检测
+Linux系统可以使用以下脚本测试本机PHP环境是否满足WorkerMan运行要求：
+curl -Ss http://www.workerman.net/check.php | php
+
+上面脚本如果全部显示ok，则代表满足WorkerMan要求，直接到官网下载例子即可运行。
+
+如果不是全部ok，则参考下面文档安装缺失的扩展即可。
+
+（注意：检测脚本中没有检测event扩展或者libevent扩展，如果业务并发连接数大于1024建议安装event扩展或者libevent扩展，安装方法参照下面说明）
+
+已有PHP环境安装缺失扩展
+安装pcntl和posix扩展：
+
+centos系统
+
+如果php是通过yum安装的，则命令行运行 yum install php-process即可安装pcntl和posix扩展。
+
+如果安装失败或者php本身不是用yum安装的请参考手册附录-安装扩展一节中方法三源码编译安装。
+
+debian/ubuntu/mac os系统
+
+参考手册附录-安装扩展一节中方法三源码编译安装。
+
+安装event或者libevent扩展：
+
+为了能支持更大的并发连接数，建议安装event扩展或者libevent扩展(二者作用相同，二选一即可)。以Event为例，安装方法如下:
+
+centos系统
+
+1、安装event扩展依赖的libevent-devel包，命令行运行
+
+yum install libevent-devel -y
+2、安装event扩展，命令行运行
+
+(event扩展要求PHP>=5.4，PHP5.3用户请安装libevent扩展(libevent扩展同时支持php5.4-5.6)，见本页面底部)
+
+pecl install event
+注意提示：Include libevent OpenSSL support [yes] : 时输入no回车，其它直接敲回车就行
+
+如果安装失败请跳过以下步骤，尝试安装libevent扩展，见本页面底部。
+
+3、命令行运行（如果ini文件位置不对，可以通过运行php --ini找到实际加载的ini文件路径）
+
+echo extension=event.so > /etc/php.d/30-event.ini
+debian/ubuntu系统安装
+
+1、安装event扩展依赖的libevent-dev包，命令行运行
+
+apt-get install libevent-dev -y
+2、安装event扩展，命令行运行
+
+(注意：event扩展要求PHP>=5.4，PHP5.3用户请安装libevent扩展(libevent扩展同时支持php5.4-5.6)，见本页面底部)
+
+pecl install event
+注意提示：Include libevent OpenSSL support [yes] : 时输入no回车，其它直接敲回车就行
+
+如果安装失败请跳过以下步骤，尝试安装libevent扩展，见本页面底部。
+
+3、命令行运行(需要切换到root用户。如果ini文件位置不对，可以通过运行php --ini找到实际加载的ini文件路径)
+
+echo extension=event.so > /etc/php5/cli/conf.d/30-event.ini
