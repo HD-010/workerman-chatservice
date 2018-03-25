@@ -1,7 +1,6 @@
 <?php
 
 require(App::params('@root').'/api/models/Data.php');
-
 class Login extends Control
 {
     function reg(){

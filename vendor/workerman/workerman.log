@@ -2,3 +2,287 @@
 2018-03-23 17:07:49 pid:1256 Workerman[start.php] start in DEBUG mode
 2018-03-23 17:09:01 pid:1256 Workerman[start.php] stopping ...
 2018-03-23 17:09:01 pid:1256 Workerman[start.php] has been stopped
+2018-03-23 18:09:45 pid:1283 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:10:04 pid:1283 Workerman[start.php] stopping ...
+2018-03-23 18:10:04 pid:1283 Workerman[start.php] has been stopped
+2018-03-23 18:12:31 pid:1343 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:12:33 pid:1343 Workerman[start.php] stopping ...
+2018-03-23 18:12:33 pid:1343 Workerman[start.php] has been stopped
+2018-03-23 18:19:31 pid:1475 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:20:30 pid:1475 Workerman[start.php] stopping ...
+2018-03-23 18:20:30 pid:1475 Workerman[start.php] has been stopped
+2018-03-23 18:28:46 pid:1650 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:28:53 pid:1660 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 18:28:53 pid:1660 Worker process terminated
+2018-03-23 18:28:53 pid:1650 worker[WebServer:1660] exit with status 64000
+2018-03-23 18:28:57 pid:1661 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 18:28:57 pid:1661 Worker process terminated
+2018-03-23 18:28:57 pid:1650 worker[WebServer:1661] exit with status 64000
+2018-03-23 18:28:57 pid:1662 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #42)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#14 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#15 {main}
+2018-03-23 18:28:57 pid:1662 Worker process terminated
+2018-03-23 18:28:57 pid:1650 worker[WebServer:1662] exit with status 64000
+2018-03-23 18:29:04 pid:1663 Error: Call to a member function index() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #43)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#14 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#15 {main}
+2018-03-23 18:29:04 pid:1663 Worker process terminated
+2018-03-23 18:29:04 pid:1650 worker[WebServer:1663] exit with status 64000
+2018-03-23 18:29:09 pid:1664 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #47)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#14 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#15 {main}
+2018-03-23 18:29:09 pid:1664 Worker process terminated
+2018-03-23 18:29:09 pid:1650 worker[WebServer:1664] exit with status 64000
+2018-03-23 18:29:09 pid:1665 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #45)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#14 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#15 {main}
+2018-03-23 18:29:09 pid:1665 Worker process terminated
+2018-03-23 18:29:09 pid:1650 worker[WebServer:1665] exit with status 64000
+2018-03-23 18:32:11 pid:1650 Workerman[start.php] stopping ...
+2018-03-23 18:32:11 pid:1650 Workerman[start.php] has been stopped
+2018-03-23 18:39:14 pid:1769 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:39:34 pid:1769 Workerman[start.php] stopping ...
+2018-03-23 18:39:34 pid:1769 Workerman[start.php] has been stopped
+2018-03-23 18:41:15 pid:1803 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:41:18 pid:1813 Error: Call to undefined method T::prtin_pre() in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:138
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 18:41:18 pid:1813 Worker process terminated
+2018-03-23 18:41:18 pid:1803 worker[WebServer:1813] exit with status 64000
+2018-03-23 18:41:32 pid:1803 Workerman[start.php] stopping ...
+2018-03-23 18:41:32 pid:1803 Workerman[start.php] has been stopped
+2018-03-23 18:41:57 pid:1825 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:42:01 pid:1836 Error: Call to undefined function get_require_file() in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:138
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #44)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 18:42:01 pid:1836 Worker process terminated
+2018-03-23 18:42:01 pid:1825 worker[WebServer:1836] exit with status 64000
+2018-03-23 18:42:47 pid:1825 Workerman[start.php] stopping ...
+2018-03-23 18:42:47 pid:1825 Workerman[start.php] has been stopped
+2018-03-23 18:43:09 pid:1847 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:43:12 pid:1857 Error: Call to undefined function get_require_files() in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:138
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 18:43:12 pid:1857 Worker process terminated
+2018-03-23 18:43:12 pid:1847 worker[WebServer:1857] exit with status 64000
+2018-03-23 18:44:18 pid:1847 Workerman[start.php] stopping ...
+2018-03-23 18:44:18 pid:1847 Workerman[start.php] has been stopped
+2018-03-23 18:44:53 pid:1877 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:45:44 pid:1877 Workerman[start.php] stopping ...
+2018-03-23 18:45:44 pid:1877 Workerman[start.php] has been stopped
+2018-03-23 18:46:43 pid:1906 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:46:46 pid:1917 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 18:46:46 pid:1917 Worker process terminated
+2018-03-23 18:46:46 pid:1906 worker[WebServer:1917] exit with status 64000
+2018-03-23 18:47:10 pid:1906 Workerman[start.php] stopping ...
+2018-03-23 18:47:10 pid:1906 Workerman[start.php] has been stopped
+2018-03-23 18:57:11 pid:2038 Workerman[start.php] start in DEBUG mode
+2018-03-23 18:57:15 pid:2048 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 18:57:15 pid:2048 Worker process terminated
+2018-03-23 18:57:15 pid:2038 worker[WebServer:2048] exit with status 64000
+2018-03-23 18:57:50 pid:2038 Workerman[start.php] stopping ...
+2018-03-23 18:57:50 pid:2038 Workerman[start.php] has been stopped
+2018-03-23 19:02:38 pid:2123 Workerman[start.php] start in DEBUG mode
+2018-03-23 19:02:42 pid:2134 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 19:02:42 pid:2134 Worker process terminated
+2018-03-23 19:02:42 pid:2123 worker[WebServer:2134] exit with status 64000
+2018-03-23 19:06:02 pid:2123 Workerman[start.php] stopping ...
+2018-03-23 19:06:02 pid:2123 Workerman[start.php] has been stopped
+2018-03-23 19:09:24 pid:2197 Workerman[start.php] start in DEBUG mode
+2018-03-23 19:09:28 pid:2208 Error: Call to a member function reg() on null in /var/www/html/workerman-chatservice/vendor/EFrame/App.php:139
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#1 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#12 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#13 {main}
+2018-03-23 19:09:28 pid:2208 Worker process terminated
+2018-03-23 19:09:28 pid:2197 worker[WebServer:2208] exit with status 64000
+2018-03-23 19:10:07 pid:2197 Workerman[start.php] stopping ...
+2018-03-23 19:10:07 pid:2197 Workerman[start.php] has been stopped
+2018-03-23 19:11:20 pid:2224 Workerman[start.php] start in DEBUG mode
+2018-03-23 19:12:16 pid:2224 Workerman[start.php] stopping ...
+2018-03-23 19:12:16 pid:2224 Workerman[start.php] has been stopped
