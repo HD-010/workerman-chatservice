@@ -64,7 +64,6 @@ class base{
         $conName = App::control();
         //获取控制器路径
         $controlPath = App::params('@root').'/'.App::module().'/controls/'.App::control().'.php';
- echo "控制器路径是：".$controlPath;       
         
         if(is_file($controlPath)){
             require_once($controlPath);

@@ -136,7 +136,7 @@ class App{
         
         self::$control = Base::control();
         
-	self::$control->{self::action()}();
+	    self::$control->{self::action()}();
         
         self::$block = Base::block();
         
