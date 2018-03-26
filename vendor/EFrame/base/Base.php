@@ -63,7 +63,7 @@ class base{
         
         $conName = App::control();
         //获取控制器路径
-        $controlPath = App::params('@root').'/'.App::module().'/controls/'.App::control().'.php';
+        $controlPath = App::params('@root').'/'.App::module().'/controls/'.$conName.'.php';
         
         if(is_file($controlPath)){
             require_once($controlPath);

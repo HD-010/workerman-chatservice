@@ -69,12 +69,12 @@ class App{
     }
     
     /**
-     * 返回当前请求的控制器名称
+     * 返回当前请求的控制器名称,如果control为空
      * @return string
      */
     public static function control(){
         //控制器名大写
-        return ucfirst(self::$route['control']);
+        return T::arrayValue('control', self::$route,'Index');
     }
     
     /**
@@ -82,7 +82,7 @@ class App{
      * @return string
      */
     public static function action(){
-        return self::$route['action'];
+        return T::arrayValue('action', self::$route,'Index');
     }
     
     
@@ -138,7 +138,7 @@ class App{
         
         self::$view = Base::view();
         
-	    self::$control->{'action'.ucfirst(self::action())}();
+	    self::$control->{'action'.self::action()}();
         
         self::$block = Base::block();
         

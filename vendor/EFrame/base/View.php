@@ -32,7 +32,7 @@ class View{
     public function render($fileName,$data=null){
         $viewPath = App::params('@root').'/'.App::module().'/views/'.App::control().'/'.$fileName.'.php';
         $this->viewPath = $viewPath;
-        
+
         $layoutPath = App::params('@root').'/'.App::module().'/views/layout/main.php';
         $this->layoutPath = $layoutPath;
         
