@@ -74,7 +74,7 @@ class App{
      */
     public static function control(){
         //控制器名大写
-        return T::arrayValue('control', self::$route,'Index');
+        return ucfirst(T::arrayValue('control', self::$route,'Index'));
     }
     
     /**
@@ -82,7 +82,7 @@ class App{
      * @return string
      */
     public static function action(){
-        return T::arrayValue('action', self::$route,'Index');
+        return ucfirst(T::arrayValue('action', self::$route,'index'));
     }
     
     
