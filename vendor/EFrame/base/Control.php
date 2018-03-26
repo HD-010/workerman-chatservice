@@ -1,11 +1,8 @@
 <?php
 // namespace EFrame\Base;
+require_once 'View.php';
 
-class Control{
-    public function render($data,$view=null){
-        echo "<pre>".print_r($data)."</pre>";
-    }
-    
+class Control extends View{
     
     /**
      * 将对象以json格式输出

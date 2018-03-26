@@ -136,11 +136,12 @@ class App{
         
         self::$control = Base::control();
         
-	    self::$control->{self::action()}();
+        self::$view = Base::view();
+        
+	    self::$control->{'action'.ucfirst(self::action())}();
         
         self::$block = Base::block();
         
-        //self::$view = Base::view();
     }
     
 }

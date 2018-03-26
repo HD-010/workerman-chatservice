@@ -3,11 +3,17 @@
 require(App::params('@root').'/api/models/Data.php');
 class Login extends Control
 {
-    function reg(){
+    
+    /**
+     * 操作名称以action开头 
+     */
+    function actionReg(){
+        
         //$m = App::model('Data')->rightData();
         //$this->renderJson($m);
         
         //$res = App::model('Data')->updateData();
-        $res = App::model('Data')->insertData();
+        //$res = App::model('Data')->insertData();
+        $this->render('eChat');
     }
 }
