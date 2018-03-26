@@ -13,10 +13,12 @@
 		<link rel="image_src" href="/images/fb-image.jpg" / >
 	</head>
 	<body>
+		<script type="text/javascript" data-main="/js/main" src="http://cdn.sqc666.com/common/require/require.js"></script>
 	
         <?php
             $this->contents();
         ?>
 
 	</body>
+	
 </html>

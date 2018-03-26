@@ -705,3 +705,51 @@ Stack trace:
 #11 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
 #12 {main}
 2018-03-26 13:18:48 pid:1 Worker process terminated
+2018-03-26 17:07:51 pid:1 Error: Call to a member function actionindex() on null in E:\WWW\workerman-chatservice\vendor\EFrame\App.php:141
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#1 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #1381)
+#5 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#11 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-03-26 17:07:51 pid:1 Worker process terminated
+2018-03-26 17:08:04 pid:1 Error: Call to a member function actionindex() on null in E:\WWW\workerman-chatservice\vendor\EFrame\App.php:141
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#1 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#5 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#11 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-03-26 17:08:04 pid:1 Worker process terminated
+2018-03-26 17:08:11 pid:1 Error: Call to a member function actionindex() on null in E:\WWW\workerman-chatservice\vendor\EFrame\App.php:141
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#1 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#2 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#3 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #25)
+#5 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#11 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-03-26 17:08:11 pid:1 Worker process terminated
