@@ -1,4 +1,4 @@
-define(['webSocketService'],function(webSocketService){
+define(['WebSocketService'],function(WebSocketService){
 	var App = function(){
 		var app = this;
 		app.webSocket;
