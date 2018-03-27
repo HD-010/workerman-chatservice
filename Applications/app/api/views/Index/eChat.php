@@ -43,7 +43,7 @@
 	
 	<!-- 这里是文本内容输入区 -->
 	<div id='chatText' style='border:0;border-top:1px solid #D5D5D5;width:100%;height:21.5%;'>
-		<textarea id='input' placeholder='我想提问……。' style='width:100%;height:100%;border:0;outline:none;padding:0.2em;font-size:160%;'></textarea>
+		<textarea placeholder='我想提问……。' style='width:100%;height:100%;border:0;outline:none;padding:0.2em;font-size:160%;'></textarea>
 	</div>
 	
 	<!-- 这里是聊天页面底部 -->

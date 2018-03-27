@@ -73,7 +73,8 @@ class Events
                 $new_message = array(
                     'type'=>'message', 
                     'id'  =>$_SESSION['id'],
-                    'message'=>$message_data['message'],
+                    'message'=>"回复消息：".$message_data['message'],
+                    'date' => date('m/d H:m:s')
                 );
                 return Gateway::sendToAll(json_encode($new_message));
             //群聊

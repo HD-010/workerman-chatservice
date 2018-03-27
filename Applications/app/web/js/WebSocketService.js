@@ -10,9 +10,10 @@ define(function(){
 		
 		
 		
-		this.messageHandler = function(data) {
+		this.messageHandler = function(data,aModel) {
 			//接接收到信息显示到页面
-			aModel.messageSend(data);
+			console.log(data)
+			aModel.messageReceive(data);
 		}
 		
 		this.closedHandler = function(data) {
@@ -23,9 +24,8 @@ define(function(){
 			
 		}
 		
-		this.messageSend = function(data){
-			//接接发送的信息显示到页面
-			aModel.messageSend(data);
+		this.sendMessage = function(sendObj) {
+			webSocket.send(JSON.stringify(sendObj));
 		}
 		
 		this.processMessage = function(data,webSocketService,aModel) {

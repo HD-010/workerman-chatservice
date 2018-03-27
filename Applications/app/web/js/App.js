@@ -1,4 +1,4 @@
-define(['WebSocketService'],function(WebSocketService){
+define(function(){
 	var App = function(){
 		var app = this;
 		app.webSocket;
@@ -26,11 +26,28 @@ define(['WebSocketService'],function(WebSocketService){
 			} catch(e) {console.log("出错")}
 		}
 		
-		app.sendMessage = function(msg){
-			console.log("发送信息成功");
+		app.sendMessage = function(){
+			var date = new Date();
+			var message = app.model.getInputContents();
+			
+			if(message){
+				var sendObj = {
+					type: 'message',
+					message: message,
+					date : date.getMonth() + 1 + '/' +date.getDate() + ' ' + date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds(),
+				};
+				
+				app.webSocketService.sendMessage(sendObj);
+				//将发送的信息显示到页面
+				app.model.messageSend(sendObj);
+				//将发文本域中的消息显清空
+				app.model.clearInputContents();
+			}
 		}
 		
 	};
-		
+	
+	
+	
 	return App;
 });

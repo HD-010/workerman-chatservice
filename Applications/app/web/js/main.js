@@ -12,31 +12,7 @@ require.config({
 
 
 require(["jquery","common","App","Settings","WebSocketService","Model"],function($,common,App,Settings,WebSocketService,Model){
-	
-	
-	(function(){
-		var settings = new Settings();
-		//创建WebSocket对象
-		var webSocket = new WebSocket(settings.socketServer());
-
-		//创建一个WebSocketService对象
-		var webSocketService = new WebSocketService(webSocket);
-		
-		//创建一个模块对象
-		var model = new Model();
-		
-		var app = new App();
-		app.init(webSocket,webSocketService,model);
-		
-		
-		app.webSocket.onopen = app.onSocketOpen;
-		
-		app.webSocket.onmessage = app.onSocketMessage;
-		
-		app.webSocket.onclose = app.onSocketClose;
-		
-	})();
-	
+	var app;
 	
 	$(document).ready(function(){
 		
@@ -67,10 +43,35 @@ require(["jquery","common","App","Settings","WebSocketService","Model"],function
 		
 		//发送消息
 		messageSend.click(function(){
-			alert("ok");
+			app.sendMessage();
 		});
 		
 		
 	});
+	
+	(function(){
+		var settings = new Settings();
+		//创建WebSocket对象
+		var webSocket = new WebSocket(settings.socketServer());
+
+		//创建一个WebSocketService对象
+		var webSocketService = new WebSocketService(webSocket);
+		
+		//创建一个模块对象
+		var model = new Model();
+		
+		app = new App();
+		app.init(webSocket,webSocketService,model);
+		
+		
+		app.webSocket.onopen = app.onSocketOpen;
+		
+		app.webSocket.onmessage = app.onSocketMessage;
+		
+		app.webSocket.onclose = app.onSocketClose;
+		
+	})();
+	
+
 	
 });
