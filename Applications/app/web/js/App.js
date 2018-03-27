@@ -1,4 +1,4 @@
-define(function(){
+define(['common'],function(common){
 	var App = function(){
 		var app = this;
 		app.webSocket;
@@ -32,7 +32,12 @@ define(function(){
 			
 			if(message){
 				var sendObj = {
-					type: 'message',
+					userId : '10000',
+					userClientId : common.getCookies('userClientId'),
+					guestId : '1002',
+					guestClientId : '7f0000010a8c00000002',
+					
+					type: 'messagePrivate',
 					message: message,
 					date : date.getMonth() + 1 + '/' +date.getDate() + ' ' + date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds(),
 				};
