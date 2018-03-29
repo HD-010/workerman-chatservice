@@ -1,5 +1,5 @@
 <?php
-require(App::params('@root').'/api/models/Data.php');
+require_once(App::params('@root').'/api/models/Data.php');
 class Index extends Control
 {
 

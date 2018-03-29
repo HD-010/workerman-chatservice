@@ -899,3 +899,329 @@ Stack trace:
 2018-03-27 22:51:36 pid:1 Worker process terminated
 2018-03-29 08:43:40 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class Data, because the name is already in use in E:\WWW\workerman-chatservice\Applications\app\api\models\Data.php on line 3"
 2018-03-29 13:54:39 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class Data, because the name is already in use in E:\WWW\workerman-chatservice\Applications\app\api\models\Data.php on line 3"
+2018-03-29 15:30:07 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class Data, because the name is already in use in E:\WWW\workerman-chatservice\Applications\app\api\models\Data.php on line 3"
+2018-03-29 15:36:34 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class Data, because the name is already in use in E:\WWW\workerman-chatservice\Applications\app\api\models\Data.php on line 3"
+2018-03-29 15:40:07 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Cannot declare class Data, because the name is already in use in E:\WWW\workerman-chatservice\Applications\app\api\models\Data.php on line 3"
+2018-03-29 22:31:57 pid:1 Error: Call to undefined method User::isguest() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:31:57 pid:1 Worker process terminated
+2018-03-29 22:31:58 pid:1 Error: Call to undefined method User::isguest() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:31:58 pid:1 Worker process terminated
+2018-03-29 22:32:03 pid:1 Error: Call to undefined method User::isguest() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:32:03 pid:1 Worker process terminated
+2018-03-29 22:32:34 pid:1 Error: Call to undefined method User::isguest() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:32:34 pid:1 Worker process terminated
+2018-03-29 22:33:35 pid:1 Error: Call to undefined method User::isguest() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:33:35 pid:1 Worker process terminated
+2018-03-29 22:33:36 pid:1 Error: Call to undefined method User::isguest() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:33:36 pid:1 Worker process terminated
+2018-03-29 22:35:04 pid:1 Error: Call to undefined method User::isguest() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:35:04 pid:1 Worker process terminated
+2018-03-29 22:35:05 pid:1 Error: Call to undefined method User::isguest() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:35:05 pid:1 Worker process terminated
+2018-03-29 22:42:01 pid:1 Error: Call to undefined method User::userInfo() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:42:01 pid:1 Worker process terminated
+2018-03-29 22:42:03 pid:1 Error: Call to undefined method User::userInfo() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:42:03 pid:1 Worker process terminated
+2018-03-29 22:42:05 pid:1 Error: Call to undefined method User::userInfo() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:42:05 pid:1 Worker process terminated
+2018-03-29 22:42:36 pid:1 Error: Call to undefined method User::userInfo() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:42:36 pid:1 Worker process terminated
+2018-03-29 22:43:36 pid:1 Error: Call to undefined method User::userInfo() in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:10
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #22)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:43:36 pid:1 Worker process terminated
+2018-03-29 22:54:57 pid:1 Error: Call to a member function isguest() on null in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:11
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #52)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:54:57 pid:1 Worker process terminated
+2018-03-29 22:55:02 pid:1 Error: Call to a member function isguest() on null in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:11
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #54)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:55:02 pid:1 Worker process terminated
+2018-03-29 22:55:05 pid:1 Error: Call to a member function isguest() on null in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:11
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #54)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:55:05 pid:1 Worker process terminated
+2018-03-29 22:57:29 pid:1 Error: Call to a member function isguest() on null in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:11
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #55)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:57:29 pid:1 Worker process terminated
+2018-03-29 22:58:33 pid:1 Error: Call to a member function isguest() on null in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:11
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #52)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:58:33 pid:1 Worker process terminated
+2018-03-29 22:58:38 pid:1 Error: Call to a member function isguest() on null in E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Index.php:11
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(146): Index->actionIndex()
+#1 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#2 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#3 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #55)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-03-29 22:58:38 pid:1 Worker process terminated

@@ -5,6 +5,7 @@ define(['common'],function(common){
 		app.webSocketService;
 		app.model;
 		app.user;
+		app.effect;
 		
 		
 		/**
@@ -36,6 +37,16 @@ define(['common'],function(common){
 		 * 用户第一次打开在线服务界面时进行访客和服务id注册
 		 */
 		app.loginMessage = function(){
+			var guestId = app.user.guestId();
+			var serviceId = app.user.serviceId();
+			
+			console.log(guestId);
+			console.log(serviceId);
+			
+			if(!guestId || !serviceId){
+				return;
+			}
+			
 			var sendObj = {
 				guestId : app.user.guestId(),
 				serviceId : app.user.serviceId(),

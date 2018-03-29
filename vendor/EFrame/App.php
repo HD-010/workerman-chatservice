@@ -130,7 +130,6 @@ class App{
         return self::$db->$configName;
     }
     
-    
     public function run(){
         self::$model = Base::model();
         
@@ -138,9 +137,11 @@ class App{
         
         self::$view = Base::view();
         
+        self::$block = Base::block();
+        
+        
 	    self::$control->{'action'.self::action()}();
         
-        self::$block = Base::block();
         
     }
     

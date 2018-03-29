@@ -1,5 +1,5 @@
 <?php
-require(App::params('@root').'/api/models/Data.php');
+require_once(App::params('@root').'/api/models/Data.php');
 /**
  * 操作名称以action开头
  */
@@ -44,6 +44,15 @@ class Service extends Control
             var echat_client = $clientId;
             var echat_service = $serviceId;
             
+            if(!echat_client){
+                console.log('访客id不存在');
+                return null;
+            }
+            if(!echat_service){
+                console.log('服务id不存在');
+                return null;
+            }
+                
             //将客户id(访客) 和 服务id(商家)储存在本地，当webSocket服务连接成功时
             //向服务器发送 客户id(访客) 和 服务id(商家) 用于关联访客和商家的会话
             sessionStorage.setItem('echat_client',echat_client);

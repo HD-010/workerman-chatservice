@@ -6,7 +6,8 @@ define(function(){
 		 * 返回访客id
 		 */
 		user.guestId = function(){
-			return sessionStorage.getItem('echat_client');
+			var echat_client = sessionStorage.getItem('echat_client');
+			return echat_client;
 		}
 		
 		/**
@@ -14,6 +15,20 @@ define(function(){
 		 */
 		user.serviceId = function(){
 			return sessionStorage.getItem('echat_service');
+		}
+		
+		/**
+		 * 设置访客id
+		 */
+		user.setGuestId = function(uid){
+			sessionStorage.setItem('echat_client',uid);
+		}
+		
+		/**
+		 * 设置服务id
+		 */
+		user.setServiceId = function(uid){
+			sessionStorage.setItem('echat_service',uid);
 		}
 		
 	}
