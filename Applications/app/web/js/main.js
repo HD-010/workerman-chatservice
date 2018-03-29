@@ -1,17 +1,18 @@
 require.config({
 	
     paths:{
-        "jquery" : "http://cdn.sqc666.com/common/lib/jquery",
-        "common" : "http://cdn.sqc666.com/common/f/common",
-        "App" : "/js/App",
-        "Settings" : "/js/Settings",
-    	"WebSocketService" : "/js/WebSocketService",
-    	"Model" : "/js/Model",
+        "jquery" : "http://cdn.e01.ren/common/lib/jquery",
+        "common" : "http://cdn.e01.ren/common/f/common",
+        "App" : "http://127.0.0.1:8383/js/App",
+        "Settings" : "http://127.0.0.1:8383/js/Settings",
+    	"WebSocketService" : "http://127.0.0.1:8383/js/WebSocketService",
+    	"Model" : "http://127.0.0.1:8383/js/Model",
+    	"User"  : "http://127.0.0.1:8383/js/User",
     }
 });
 
 
-require(["jquery","common","App","Settings","WebSocketService","Model"],function($,common,App,Settings,WebSocketService,Model){
+require(["jquery","common","App","Settings","WebSocketService","Model","User"],function($,common,App,Settings,WebSocketService,Model,User){
 	var app;
 	
 	$(document).ready(function(){
@@ -50,18 +51,27 @@ require(["jquery","common","App","Settings","WebSocketService","Model"],function
 	});
 	
 	(function(){
-		var settings = new Settings();
-		//创建WebSocket对象
-		var webSocket = new WebSocket(settings.socketServer());
-
-		//创建一个WebSocketService对象
-		var webSocketService = new WebSocketService(webSocket);
+		//如果不支持Storage 则不
+		if(typeof(Storage)==="undefined") {
+			alert("你的浏览器不支持，请下载最新版本")
+			return ;
+		}
 		
-		//创建一个模块对象
-		var model = new Model();
+		var settings = new Settings();
 		
 		app = new App();
-		app.init(webSocket,webSocketService,model);
+		
+		//创建WebSocket对象
+		app.webSocket = new WebSocket(settings.socketServer());
+		
+		//创建一个WebSocketService对象
+		app.webSocketService = new WebSocketService(app.webSocket);
+		
+		//创建一个模块对象
+		app.model = new Model();
+		
+		//创建用户对象
+		app.user = new User();
 		
 		
 		app.webSocket.onopen = app.onSocketOpen;

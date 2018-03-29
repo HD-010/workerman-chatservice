@@ -20,6 +20,12 @@
 use \GatewayWorker\Lib\Gateway;
 
 
+/**
+ * @author yx010
+ *  会话时分主次
+ *  发起聊天为次guest
+ *  接收信息为主service
+ */
 class Events
 {
     /**
@@ -55,8 +61,15 @@ class Events
         switch($message_data['type'])
         {
             case 'login':
+                print_r($message_data);
+                
+                //访客id用于绑定访客客户端id,当服务客户端发送信息给访客时，以访客id为准
+                $guestId = $message_data['guestId'];
+                
+                $serviceId = $message_data['serviceId'];
+                
                 //$message = '{"type":"login","uid":"xxxxx"}'
-                Gateway::bindUid($client_id, $message_data['uid']);
+                Gateway::bindUid($client_id, $guestId);
                 break;
             
             // 更新用户
@@ -100,14 +113,14 @@ class Events
             //私聊  
             case 'messagePrivate':
                 //向指定uid说
-                $guset_dlient_id = $message_data['guestClientId'];
-                echo $guset_dlient_id;
+                //$guestId = $message_data['guestId'];
+                $serviceId = $message_data['serviceId'];
                 $new_message = array(
                     'type'=>'messageTo', 
                     'id'  =>$_SESSION['id'],
                     'message'=>$message_data['message'],
                 );
-                return Gateway::sendToClient($guset_dlient_id, json_encode($new_message));
+                return Gateway::sendToUid($serviceId, json_encode($new_message));
         }
    }
    

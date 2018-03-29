@@ -4,15 +4,21 @@ define(['common'],function(common){
 		app.webSocket;
 		app.webSocketService;
 		app.model;
+		app.user;
 		
-		app.init = function(aWebsocket,aWebSocketService,aModel){
-			app.webSocket = aWebsocket;
-			app.webSocketService = aWebSocketService;
-			app.model = aModel;
-		}
 		
+		/**
+		 * 当与服务器连接成功时，向服务器注册访客和服务商家的id，用于关联访客和商家的会话
+		 */
 		app.onSocketOpen = function(e){
 			console.log("连接成功...");
+			console.log(e);
+			//注册聊天用户信息,在会话开始时注册
+			app.loginMessage();
+			
+			if(!app.webSocketService.serviceIsReg()){
+				app.loginMessage();
+			}
 		}
 		
 		app.onSocketClose = function(e){
@@ -26,16 +32,35 @@ define(['common'],function(common){
 			} catch(e) {console.log("出错")}
 		}
 		
+		/**
+		 * 用户第一次打开在线服务界面时进行访客和服务id注册
+		 */
+		app.loginMessage = function(){
+			var sendObj = {
+				guestId : app.user.guestId(),
+				serviceId : app.user.serviceId(),
+				
+				type: 'login',
+				message: '',
+			};
+			
+			app.webSocketService.sendMessage(sendObj);
+			
+			//注册服务
+			app.webSocketService.serviceReg();
+		}
+		
+		/**
+		 * 发送信息
+		 */
 		app.sendMessage = function(){
 			var date = new Date();
 			var message = app.model.getInputContents();
 			
 			if(message){
 				var sendObj = {
-					userId : '10000',
-					userClientId : common.getCookies('userClientId'),
-					guestId : '1002',
-					guestClientId : '7f0000010a8c00000002',
+					guestId : app.user.guestId(),									//访客id
+					serviceId : app.user.serviceId(),									//服务id
 					
 					type: 'messagePrivate',
 					message: message,

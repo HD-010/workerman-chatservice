@@ -59,6 +59,23 @@ define(['common'],function(common){
 				fn(data,aModel);
 			}
 		}
+		
+		/**
+		 * 判断服务是否注册
+		 * return boolen
+		 */
+		this.serviceIsReg = function(){
+			return sessionStorage.getItem('echat_service_reg') == 'yes' ? true : false;
+		}
+		
+		/**
+		 * 注册服务
+		 * return null
+		 */
+		this.serviceReg = function(){
+			console.log("注册服务");
+			sessionStorage.setItem('echat_service_reg','yes');
+		}
 	}
 	
 	return webSocketService;

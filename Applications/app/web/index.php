@@ -10,4 +10,5 @@ foreach(glob(__DIR__.'/../config/*.php') as $fileName){
 require_once(realpath(__DIR__.'/../../../vendor/EFrame/App.php'));
 $app = new App($config);
 $app->run();
+
 ?>
