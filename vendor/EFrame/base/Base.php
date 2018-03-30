@@ -23,7 +23,20 @@ class base{
             require_once('Route.php');
         }
         
-        return (new Route($defaultRout))->getRoute();
+        return (new Route($defaultRout))->parseRoute()->getRoute();
+    }
+    /**
+     * 实例化一个route对象
+     * @$uri string 请求资源的uri
+     * @return unknown
+     */
+    public static function redirectRoute($uri){
+        //$path
+        if(!class_exists('Route')){
+            require_once('Route.php');
+        }
+        
+        return (new Route($uri))->redirectRoute($uri)->getRoute();
     }
     
     /**

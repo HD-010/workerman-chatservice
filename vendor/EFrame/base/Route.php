@@ -7,11 +7,27 @@ require_once(dirname(__DIR__).'/Helper/T.php');
 
 class Route{
     public $defaultRout;        //默认路由
+    public $requestUri;
     public $uri;                //请求uri数组（不带参数部分）
     
     public function __construct($defaultRoute){
         $this->defaultRout = $defaultRoute;
-        $this->uri = $this->parse()->route();
+    }
+    
+    /**
+     * 解析路由为模块、控制器、操作的对应关系的数组
+     */
+    public function parseRoute(){
+        $this->uri = $this->setRequestUri()->parse()->route();
+        return $this;
+    }
+    
+    /**
+     * 路由重定向，解析路由为模块、控制器、操作的对应关系的数组
+     */
+    public function redirectRoute($uri){
+        $this->uri = $this->setRedirectUri($uri)->parse()->route();
+        return $this;
     }
     
     /**
@@ -23,19 +39,37 @@ class Route{
     }
     
     /**
+     * 设置uri
+     * @return Route
+     */
+    public function setRequestUri(){
+        $this->requestUri = $_SERVER['REQUEST_URI'];
+        return $this;
+    }
+    
+    /**
+     * 设置重定向uri
+     * @param unknown $uri
+     * @return Route
+     */
+    public function setRedirectUri($uri){
+        $this->requestUri = $uri;
+        return $this;
+    }
+    
+    /**
      * 解析uri字串为数组
      * 如果url如：http://127.0.0.1:8383/?a=b 请求，则使用默认路由
      * @return \EFrame\Base\Route
      */
     public function parse(){
-        $requestUri = $_SERVER['REQUEST_URI'];
-        if(strlen($requestUri)){
+        if(strlen($this->requestUri)){
             
             //标记问号出现的位置
-            $delimiterPoint = strpos($requestUri, '?');
+            $delimiterPoint = strpos($this->requestUri, '?');
             
             //根据url中带参数和不带参数两种情况获取REQUEST_URI
-            $route = strpos($requestUri, '?') === false ? $requestUri : substr($requestUri,0,strpos($requestUri, '?'));
+            $route = strpos($this->requestUri, '?') === false ? $this->requestUri : substr($this->requestUri,0,strpos($this->requestUri, '?'));
             
             //如果url如：http://127.0.0.1:8383/?a=b 请求，则使用默认路由
             if($route == '/'){

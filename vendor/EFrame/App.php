@@ -130,7 +130,10 @@ class App{
         return self::$db->$configName;
     }
     
-    public function run(){
+    /**
+     * 初始化基础模块
+     */
+    public static function baseInit(){
         self::$model = Base::model();
         
         self::$control = Base::control();
@@ -138,11 +141,22 @@ class App{
         self::$view = Base::view();
         
         self::$block = Base::block();
-        
-        
-	    self::$control->{'action'.self::action()}();
-        
-        
     }
+    
+    /**
+     * 路由重定向
+     * @param string $uri  格式：'/module/control/action'
+     */
+    public static function redirect($uri){
+        self::$route = Base::redirectRoute($uri);
+        self::baseInit();
+        self::$control->{'action'.self::action()}();
+    }
+    
+    public function run(){
+        self::baseInit();
+	    self::$control->{'action'.self::action()}();
+    }
+    
     
 }
