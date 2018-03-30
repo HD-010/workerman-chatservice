@@ -18,6 +18,7 @@ class App{
     public static $model;
     public static $block;
     public static $db;
+    public static $user;
     
     public function __construct($config){
         $params = $config['params'];
@@ -35,9 +36,14 @@ class App{
             $config
         );
         
-        self::$route = Base::route(self::$config['defaultRout']);
-
-        self::$request = Base::request();
+        //路由信息集合
+        self::$route = Base::route(self::$config['defaultRout']); 
+        
+        //请求对象
+        self::$request = Base::request();   
+        
+        //用户受权对象
+        self::$user = Base::authorize();    
     }
     
     /**

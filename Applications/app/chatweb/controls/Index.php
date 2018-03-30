@@ -7,13 +7,12 @@ class Index extends Control
      * 操作名称以action开头
      */
     function actionIndex(){
-        App::redirect('/chatweb/sing/in');
+        //用户受权验证
+        if(App::$user->isGuest()){
+            App::redirect('/chatweb/sing/in');
+        }
         
-        //$m = App::model('Data')->rightData();
-        //$this->renderJson($m);
-
-        //$res = App::model('Data')->updateData();
-        //$res = App::model('Data')->insertData();
+        
         $this->render('eChat');
         
     }

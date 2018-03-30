@@ -109,6 +109,13 @@ class base{
         return new Block();
     }
     
+    public static function authorize(){
+        if(!class_exists('Authorize')){
+            require_once 'Authorize.php';
+        }
+        return new Authorize();
+    }
+    
     /**
      * 返回数据库连接对象
      * @param $configName string 数据库连接配置名称，如“db|db2"等，由config中db配置 的键名决定
