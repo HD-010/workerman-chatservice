@@ -1,4 +1,4 @@
-define(['jquery'],function($){
+define(['jquery','common'],function($,common){
 	var Model = function(){
 		var model = this;
 		
@@ -13,6 +13,62 @@ define(['jquery'],function($){
 		 */
 		model.clearInputContents = function(){
 			$('#chatText textarea').val('');
+		}
+		
+		/**
+		 * 选中好友时加载好友对应的聊天记录
+		 * 说明：
+		 * 聊天记录存放在localStorage的'ecsh_'+userInfo.id 对象中
+		 * 聊天记录对象数据格式如：
+		 * 'ecsh_'+userInfo.id= [
+		 * 		{
+		 * 			type:'recive',
+		 * 			message:'content',
+		 * 			date:'4/1 :12:37'
+		 * 		},
+		 * 		{
+		 * 			type:'send',
+		 * 			message:'content',
+		 * 			date:'4/1 :12:37'
+		 * 		},
+		 * ]
+		 * 调用位置：main.js app.model.loadHostRecod(userInfo.id)
+		 */
+		model.loadHostRecod = function(serviceId){
+			var hostRecodId = 'ecsh_'+serviceId || 'ecsh_69826';
+			//聊天记录对象
+			var hostRecoder = localStorage.getItem(hostRecodId) || [{type:'welcom',message:'欢迎使用易service',date:'4/1 :12:37'}];
+			
+			for(var i = 0; i < hostRecoder.length; i++){
+				if(hostRecoder[i].type === 'recive'){
+					model.messageReceive(hostRecoder[i]);
+					continue;
+				}
+				if(hostRecoder[i].type === 'send'){
+					model.messageSend(hostRecoder[i]);
+					continue;
+				}
+				if(hostRecoder[i].type === 'welcom'){
+					model.messageWelcom(hostRecoder[i]);
+					continue;
+				}
+				
+			}
+		}
+		
+		/**
+		 * 展示欢迎词
+		 */
+		model.messageWelcom = function(data){
+			var chatList = $('#chatList').find('table');
+			//清空记录列表
+			chatList.html("");
+			
+			var recive = this.boxWelcom();
+			recive.find('[name=content]').eq(0).html(data.message);
+			recive.find('[name=date]').eq(0).html(data.date);
+			
+			chatList.eq(chatList.length - 1).append(recive);
 		}
 		
 		/**
@@ -55,6 +111,22 @@ define(['jquery'],function($){
 				"<td width='2em'></td>"+
 			"</tr>";
 
+			return $(recive);
+		}
+		/**
+		 * 展示欢迎词的布局
+		 */
+		model.boxWelcom = function(){
+			var recive = "<tr name='recive' style='margin-top:1em;'>"+
+			"<td width='2em'></td>"+
+			"<td style='text-align:center;'>"+
+				"<ul>"+
+					"<li name='content' style='border:0;line-height:1.8em;padding: 0.4em;display:inline-block;'>收到的信息</li>"+
+				"</ul>"+
+			"</td>"+
+			"<td width='2em'></td>"+
+			"</tr>";
+			
 			return $(recive);
 		}
 		

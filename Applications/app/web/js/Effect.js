@@ -41,11 +41,12 @@ define(['jquery'],function($){
 		effect.friendsList.selectFriend = function(o){
 			//恢复所有好友列表的默认背景色
 			$(effect.friendsList.list).children("dd").css('background-color','initial');
+			
 			//设置选中好友的背景色
 			o.css('background-color','aliceblue');
+			
 			//选中好友时，设置好友的在分组的背景色效果
 			effect.friendsList.selectInGroup(o);
-			
 		}
 		
 

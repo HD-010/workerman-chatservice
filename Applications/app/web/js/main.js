@@ -86,8 +86,15 @@ require([
 				id: $(this).attr('uid'),
 				nick: $(this).text()
 			}
+			//选中好友时，将选中的对象设为服务方
 			app.user.setServiceInfo(userInfo);
+			
+			//设置选中好友列表的背景色效果
 			app.effect.friendsList.selectFriend($(this));
+			
+			//选中好友时加载好友对应的聊天记录
+			app.model.loadHostRecod(userInfo.id);
+			
 		});
 		//设置选中分组的显示效果
 		var userGrout = $.find('#echat_list .list dt');
