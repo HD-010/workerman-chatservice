@@ -50,6 +50,7 @@ class Events
     */
    public static function onMessage($client_id, $message)
    {
+       print_r($message);
         // 获取客户端请求
         $message_data = json_decode($message, true);
         

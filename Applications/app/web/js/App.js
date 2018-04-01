@@ -6,6 +6,7 @@ define(['common'],function(common){
 		app.model;
 		app.user;
 		app.effect;
+		app.authorize;
 		
 		
 		/**
@@ -13,7 +14,7 @@ define(['common'],function(common){
 		 */
 		app.onSocketOpen = function(e){
 			console.log("连接成功...");
-			console.log(e);
+			
 			//注册聊天用户信息,在会话开始时注册
 			app.loginMessage();
 			
@@ -40,21 +41,15 @@ define(['common'],function(common){
 			var guestId = app.user.guestId();
 			var serviceId = app.user.serviceId();
 			
-			console.log(guestId);
-			console.log(serviceId);
-			
-			if(!guestId || !serviceId){
-				return;
-			}
-			
-			var sendObj = {
-				guestId : app.user.guestId(),
-				serviceId : app.user.serviceId(),
+			//如果访客id不存在，则无法将访客id与访客client_id绑定
+			if(!guestId) return;
 				
+			var sendObj = {
+				guestId : guestId,
+				serviceId : serviceId,
 				type: 'login',
 				message: '',
 			};
-			
 			app.webSocketService.sendMessage(sendObj);
 			
 			//注册服务

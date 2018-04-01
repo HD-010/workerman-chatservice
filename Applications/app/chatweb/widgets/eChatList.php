@@ -14,7 +14,6 @@
     	<dd class="discription" uid='5259656'>小星－大夫</dd>
     
     </dl>
-    <button id="login">登录账户</button>
 </div>
 
 

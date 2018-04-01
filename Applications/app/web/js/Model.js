@@ -21,7 +21,6 @@ define(['jquery'],function($){
 		model.messageReceive = function(data){
 			var recive = this.boxRecive();
 			recive.find('[name=content]').eq(0).html(data.message);
-			console.log(data)
 			recive.find('[name=date]').eq(0).html(data.date);
 			
 			var chatList = $('#chatList').find('table');

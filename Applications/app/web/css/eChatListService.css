@@ -21,17 +21,21 @@ build: 2676
 
 
 #eChat_list .list .option{
-	background-color: lightblue;
-    color: aliceblue;
     height: 2.5em;
     line-height: 2.5em;
+	border-bottom: 1px solid seashell;
     padding-left: 0.5em;
+	background-color: initial;	/*lightblue*/
+    color: brown;				/*aliceblue*/
+    font-weight: 700;
 }
 
 #eChat_list .list .discription{
-	height: 2em;
-    line-height: 2em;
+	height: 2.5em;
+    line-height: 2.5em;
+	border-bottom: 1px solid seashell;
     padding-left: 1.5em;
-    background-color: aliceblue;
+    background-color: initial;
 	margin-top:0.08em;
+    display: none;
 }

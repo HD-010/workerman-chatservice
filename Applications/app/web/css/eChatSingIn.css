@@ -1,0 +1,77 @@
+.logHead{
+	border: 0;
+    position: initial;
+    width: 100%;
+    height: 10%;
+	background-color: #52A4F1;
+}
+.logHead .log{
+	font-size: xx-large;
+    color: aliceblue;
+    margin-left: 1em;
+}
+
+.loginIn{
+    border: 1px solid;
+    position: initial;
+    width: 100%;
+    height: 90%;
+}
+.loginLeft,.loginRight{
+    display: inline-block;
+    border: 0;
+    width: 49%;
+    height: inherit;
+}
+.loginLeft .left,.loginRight .right{
+    border: 0;
+    margin-top: 25%;
+    height: 50%;
+	overflow: hidden;
+}
+.loginRight .right{
+	border-left:1px solid gainsboro;
+}
+
+.loginRight table{
+	width:70%;
+	max-width:25em;
+	margin-left:1em;
+	margin-top:1em;
+}
+.loginRight table th{
+	height:2.5em;
+	text-align:center;
+}
+.loginRight table td{
+	min-width:3em;
+	height:2.5em;
+}
+
+.loginRight table .opt{
+	width:5em;
+	text-align:center;
+}
+.loginRight table .bt{
+	text-align:center;
+}
+.loginRight table .bt input{
+    width: 40%;
+    color: aliceblue;
+    text-align: center;
+    height: 2.2em;
+    background-color: #52A4F1;
+    border-radius: 0.3em;
+}
+
+.loginRight table td .input{
+	width:60%;
+	text-align:center;
+}
+
+.loginRight table td input{
+	width:100%;
+	height:2.2em;
+	text-align:center;
+	font-size:70%;
+}

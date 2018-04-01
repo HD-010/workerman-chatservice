@@ -18,17 +18,25 @@ define(function(){
 		}
 		
 		/**
-		 * 设置访客id
+		 * 设置访客（用户）信息
+		 * 说明：访方法在用户登录成功后调用，将用户信息保存在本地session中
 		 */
-		user.setGuestId = function(uid){
-			sessionStorage.setItem('echat_client',uid);
+		user.setGuestInfo = function(userInfo){
+			//设置访客id
+			sessionStorage.setItem('echat_client',userInfo.id);
+			//设置访客信息，访客唯一标识为：'ecci_'+userInfo.id
+			sessionStorage.setItem('ecci_'+userInfo.id,userInfo);
 		}
 		
 		/**
-		 * 设置服务id
+		 * 设置服务信息
 		 */
-		user.setServiceId = function(uid){
-			sessionStorage.setItem('echat_service',uid);
+		user.setServiceInfo = function(userInfo){
+			//设置服务id
+			sessionStorage.setItem('echat_service',userInfo.id);
+			//设置服务信息，服务唯一标识为：'ecsi_'+userInfo.id
+			//这里需要长期保存服务方信息，以便查看服务名单历史记录
+			localStorage.setItem('ecsi_'+userInfo.id, userInfo);
 		}
 		
 	}
