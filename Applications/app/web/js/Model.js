@@ -16,45 +16,12 @@ define(['jquery','common'],function($,common){
 		}
 		
 		/**
-		 * 选中好友时加载好友对应的聊天记录
-		 * 说明：
-		 * 聊天记录存放在localStorage的'ecsh_'+userInfo.id 对象中
-		 * 聊天记录对象数据格式如：
-		 * 'ecsh_'+userInfo.id= [
-		 * 		{
-		 * 			type:'recive',
-		 * 			message:'content',
-		 * 			date:'4/1 :12:37'
-		 * 		},
-		 * 		{
-		 * 			type:'send',
-		 * 			message:'content',
-		 * 			date:'4/1 :12:37'
-		 * 		},
-		 * ]
-		 * 调用位置：main.js app.model.loadHostRecod(userInfo.id)
+		 * 清空记录列表
 		 */
-		model.loadHostRecod = function(serviceId){
-			var hostRecodId = 'ecsh_'+serviceId || 'ecsh_69826';
-			//聊天记录对象
-			var hostRecoder = localStorage.getItem(hostRecodId) || [{type:'welcom',message:'欢迎使用易service',date:'4/1 :12:37'}];
-			
-			for(var i = 0; i < hostRecoder.length; i++){
-				if(hostRecoder[i].type === 'recive'){
-					model.messageReceive(hostRecoder[i]);
-					continue;
-				}
-				if(hostRecoder[i].type === 'send'){
-					model.messageSend(hostRecoder[i]);
-					continue;
-				}
-				if(hostRecoder[i].type === 'welcom'){
-					model.messageWelcom(hostRecoder[i]);
-					continue;
-				}
-				
-			}
+		model.clearMessageList = function(){
+			$('#chatList').find('table').html('');
 		}
+		
 		
 		/**
 		 * 展示欢迎词
@@ -64,7 +31,7 @@ define(['jquery','common'],function($,common){
 			//清空记录列表
 			chatList.html("");
 			
-			var recive = this.boxWelcom();
+			var recive = model.boxWelcom();
 			recive.find('[name=content]').eq(0).html(data.message);
 			recive.find('[name=date]').eq(0).html(data.date);
 			
@@ -74,8 +41,9 @@ define(['jquery','common'],function($,common){
 		/**
 		 * 展示接收到的消息
 		 */
-		model.messageReceive = function(data){
-			var recive = this.boxRecive();
+		model.messageReceive = function(data,showHistory){
+			showHistory = showHistory || '';
+			var recive = model.boxRecive();
 			recive.find('[name=content]').eq(0).html(data.message);
 			recive.find('[name=date]').eq(0).html(data.date);
 			
@@ -87,13 +55,12 @@ define(['jquery','common'],function($,common){
 		 * 展示发送的消息
 		 */
 		model.messageSend = function(sendObj){
-			var send = this.boxSend();
+			var send = model.boxSend();
 			send.find('[name=content]').eq(0).html(sendObj.message);
 			send.find('[name=date]').eq(0).html(sendObj.date);
 			
 			var chatList = $('#chatList').find('table');
 			chatList.eq(chatList.length - 1).append(send);
-			
 		}
 		
 		/**
@@ -115,7 +82,7 @@ define(['jquery','common'],function($,common){
 		}
 		/**
 		 * 展示欢迎词的布局
-		 */
+		 */   
 		model.boxWelcom = function(){
 			var recive = "<tr name='recive' style='margin-top:1em;'>"+
 			"<td width='2em'></td>"+

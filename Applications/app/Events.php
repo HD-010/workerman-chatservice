@@ -105,7 +105,7 @@ class Events
             case 'messageGroup':
                 //向群成员说
                 $new_message = array(
-                    'type'=>'message',
+                    'type'=>'messageGroup',
                     'id'  =>$_SESSION['id'],
                     'message'=>$message_data['message'],
                 );
@@ -113,12 +113,14 @@ class Events
             
             //私聊  
             case 'messagePrivate':
-                //向指定uid说
-                //$guestId = $message_data['guestId'];
+                //向指定uid说,注：这里需要将guestId，serviceId的值互换
+                $guestId = $message_data['guestId'];
                 $serviceId = $message_data['serviceId'];
                 $new_message = array(
                     'type'=>'messageTo', 
                     'id'  =>$_SESSION['id'],
+                    'guestId' => $serviceId,
+                    'serviceId' => $guestId,
                     'message'=>$message_data['message'],
                 );
                 return Gateway::sendToUid($serviceId, json_encode($new_message));

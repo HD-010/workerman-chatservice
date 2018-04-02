@@ -1,4 +1,4 @@
-define(['common'],function(common){
+define(['common','History'],function(common,History){
 	var App = function(){
 		var app = this;
 		app.webSocket;
@@ -27,9 +27,13 @@ define(['common'],function(common){
 			app.webSocketService.connectionClosed();
 		}
 		
+		/**
+		 * 当收到消息时……。
+		 */
 		app.onSocketMessage = function(e){
 			try {
 				var data = JSON.parse(e.data);
+				//根据信息类型，处理后展示到页面
 				app.webSocketService.processMessage(data,app.webSocketService,app.model);
 			} catch(e) {console.log("出错")}
 		}
@@ -76,6 +80,8 @@ define(['common'],function(common){
 				app.webSocketService.sendMessage(sendObj);
 				//将发送的信息显示到页面
 				app.model.messageSend(sendObj);
+				//保存聊天记录到本地的历史记录对象
+				History.saveRecoder(sendObj);
 				//将发文本域中的消息显清空
 				app.model.clearInputContents();
 			}

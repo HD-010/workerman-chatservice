@@ -11,6 +11,7 @@ require.config({
     	"User"  : "http://127.0.0.1:8383/js/User",
     	"Effect"  : "http://127.0.0.1:8383/js/Effect",
     	"Sing" : "http://127.0.0.1:8383/js/Sing",
+    	"History" : "http://127.0.0.1:8383/js/History",
     }
 });
 
@@ -24,7 +25,8 @@ require([
          "Model",
          "User",
          "Effect",
-         "Sing"
+         "Sing",
+         "History"
          ],function(
         		 $,
         		 common,
@@ -34,7 +36,8 @@ require([
         		 Model,
         		 User,
         		 Effect,
-        		 Sing
+        		 Sing,
+        		 History
         		 ){
 	var app;
 	
@@ -93,7 +96,7 @@ require([
 			app.effect.friendsList.selectFriend($(this));
 			
 			//选中好友时加载好友对应的聊天记录
-			app.model.loadHostRecod(userInfo.id);
+			History.loadHistory(userInfo.id,app.model);
 			
 		});
 		//设置选中分组的显示效果

@@ -1,4 +1,4 @@
-define(['common'],function(common){
+define(['common','History'],function(common,History){
 	
 	var webSocketService = function(webSocket) {
 		
@@ -9,7 +9,7 @@ define(['common'],function(common){
 			//接接收到信息显示到页面
 			common.setCookie('userClientId',data.client_id,1/24);
 			
-			aModel.messageReceive(data);
+			aModel.messageWelcom(data);
 		}
 		/**
 		 * 公众演讲
@@ -57,6 +57,11 @@ define(['common'],function(common){
 			
 			if (fn) {
 				fn(data,aModel);
+				//保存聊天记录到本地的历史记录对象
+				console.log("收到的信息：")
+				console.log(data)
+				//保存聊天记录到本地的历史记录对象
+				History.saveRecoder(data,aModel);
 			}
 		}
 		
