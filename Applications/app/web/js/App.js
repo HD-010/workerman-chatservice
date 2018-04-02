@@ -1,4 +1,4 @@
-define(['common','History'],function(common,History){
+define(['common','History','Settings'],function(common,History,Settings){
 	var App = function(){
 		var app = this;
 		app.webSocket;
@@ -29,13 +29,26 @@ define(['common','History'],function(common,History){
 		
 		/**
 		 * 当收到消息时……。
+		 * 当收到信息时，需要对信息作以下几种情况分别处理 
+		 * 1，判断当前服务方窗口是否打开，如果窗口是打开的，直接信息显示到信息列表
+		 * 如果没有打，则在服务方列表处显示提示信息，
+		 * 并将当前信息返回给webSocket服务器，服务器保存信息为未读
+		 * 
 		 */
 		app.onSocketMessage = function(e){
 			try {
 				var data = JSON.parse(e.data);
-				//根据信息类型，处理后展示到页面
-				app.webSocketService.processMessage(data,app.webSocketService,app.model);
-			} catch(e) {console.log("出错")}
+				if(data.serviceId != app.user.serviceId()){
+					if(common.inArray(data.type,Settings.receivMessageType()) != '-1'){
+						app.renderMessage(data);
+						app.model.noticeUpdate(data);
+					}
+				}else{
+					//根据信息类型，处理后展示到页面
+					app.webSocketService.processMessage(data,app.webSocketService,app.model);
+				}
+				
+			} catch(e) {console.log(e)}
 		}
 		
 		/**
@@ -71,7 +84,6 @@ define(['common','History'],function(common,History){
 				var sendObj = {
 					guestId : app.user.guestId(),									//访客id
 					serviceId : app.user.serviceId(),									//服务id
-					
 					type: 'messagePrivate',
 					message: message,
 					date : date.getMonth() + 1 + '/' +date.getDate() + ' ' + date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds(),
@@ -85,6 +97,16 @@ define(['common','History'],function(common,History){
 				//将发文本域中的消息显清空
 				app.model.clearInputContents();
 			}
+		}
+		
+		/**
+		 * 服务窗口没有开启，将当前信息返回给webSocket服务器，要求存储到数据库
+		 */
+		app.renderMessage = function(render_data){
+			var render_data = render_data;
+			//修改服务器操作指令
+			render_data.type = 'SaveToDB';
+			app.webSocketService.sendMessage(render_data);
 		}
 		
 	};

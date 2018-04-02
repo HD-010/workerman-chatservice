@@ -32,7 +32,7 @@ define(function(){
 		 * 设置服务信息
 		 */
 		user.setServiceInfo = function(userInfo){
-			//设置服务id
+			//设置服务id,这是正在提供服务方id,该参数可用于后期信息接收时是提示不是直接显示的判断
 			sessionStorage.setItem('echat_service',userInfo.id);
 			//设置服务信息，服务唯一标识为：'ecsi_'+userInfo.id
 			//这里需要长期保存服务方信息，以便查看服务名单历史记录

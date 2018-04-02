@@ -39,3 +39,16 @@ build: 2676
 	margin-top:0.08em;
     display: none;
 }
+#eChat_list .list .discription .listTag,#eChat_list .list .discription .listNick{
+	display:inline-block;
+}
+#eChat_list .list .discription .listTag{
+	border: 1px solid red;
+    min-width: 1em;
+    height: 1em;
+    vertical-align: top;
+    border-radius: 0.5em;
+    line-height: 1em;
+    padding: 0.01em;
+    display: none;
+}

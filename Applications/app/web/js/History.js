@@ -1,4 +1,4 @@
-define(['common'],function(common){
+define(['common','Settings'],function(common,Settings){
 	var History = {
 		/**
 		 * 保存聊天记录到本地的历史记录对象中（留言在服务器，不在本地），
@@ -9,9 +9,8 @@ define(['common'],function(common){
 		 * app.js app.model.saveRecoder(sendObj);
 		 */
 		saveRecoder:function(data){
-			var messageType = ['message','messageGroup','messageTo'];
 			//添加历史记录中的消息类型
-			data.typeh = (common.inArray(data.type,messageType) != -1) ? 'receive' : 'send';
+			data.typeh = (common.inArray(data.type,Settings.receivMessageType()) != -1) ? 'receive' : 'send';
 			
 			//历史记录id，一个id对应一个好友的历史记录对象
 			var ecsh_id = 'ecshp_' + data.serviceId;
@@ -22,7 +21,6 @@ define(['common'],function(common){
 			}else{
 				//读取当前好友的历史记录对象
 				var hostRecod = JSON.parse(localStorage.getItem(ecsh_id));
-				console.log(hostRecod);
 				//将新记录追加到历史记录对象
 				hostRecod.push(data)
 				//将更新后的历史记录对象保存到本地

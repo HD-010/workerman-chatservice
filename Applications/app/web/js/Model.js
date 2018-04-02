@@ -52,6 +52,23 @@ define(['jquery','common'],function($,common){
 		}
 		
 		/**
+		 * 更新接收到尚未查看的消息条数
+		 * 'ecspn_':echat service  private notice
+		 */
+		model.noticeUpdate = function(data){
+			//pc端
+			var friendsList = $('#echat_list .list');
+			//被标识的好友列表
+			var serviceList = friendsList.children('[uid='+data.serviceId+']').children('.listTag');
+			var num = parseInt(serviceList.html()) + 1;
+			serviceList.html(num);
+			serviceList.show();
+			
+			//将未查看信息条数存储在本地，当打于服务窗口时，该数值是向服务器请求数据条数的依据
+			localStorage.setItem('ecspn_' + data.serviceId,num)
+		}
+		
+		/**
 		 * 展示发送的消息
 		 */
 		model.messageSend = function(sendObj){

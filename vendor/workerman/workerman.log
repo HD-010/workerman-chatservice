@@ -1483,3 +1483,67 @@ Stack trace:
 #11 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
 #12 {main}
 2018-04-01 22:35:50 pid:1 Worker process terminated
+2018-04-02 11:59:03 pid:1 Error: Call to undefined method Events::messageMessagePrivate() in E:\WWW\workerman-chatservice\Applications\app\Events.php:69
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010a8c000...', '{"guestId":"698...')
+#1 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"guestId":"698...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#7 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#11 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#12 {main}
+2018-04-02 11:59:03 pid:1 Worker process terminated
+2018-04-02 11:59:20 pid:1 Error: Call to undefined method Events::messageMessagePrivate() in E:\WWW\workerman-chatservice\Applications\app\Events.php:69
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010a8c000...', '{"guestId":"100...')
+#1 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"guestId":"100...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#7 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#11 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#12 {main}
+2018-04-02 11:59:20 pid:1 Worker process terminated
+2018-04-02 11:59:49 pid:1 Error: Call to undefined method Events::messageMessagePrivate() in E:\WWW\workerman-chatservice\Applications\app\Events.php:69
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010a8c000...', '{"guestId":"100...')
+#1 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"guestId":"100...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#7 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#11 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#12 {main}
+2018-04-02 11:59:49 pid:1 Worker process terminated
+2018-04-02 12:12:13 pid:1 Error: Call to undefined method Events::messageMessagePrivate() in E:\WWW\workerman-chatservice\Applications\app\Events.php:69
+Stack trace:
+#0 [internal function]: Events::onMessage('7f0000010a8c000...', '{"guestId":"698...')
+#1 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"guestId":"698...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#7 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#11 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#12 {main}
+2018-04-02 12:12:13 pid:1 Worker process terminated

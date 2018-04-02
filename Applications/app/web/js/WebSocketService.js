@@ -58,9 +58,6 @@ define(['common','History'],function(common,History){
 			if (fn) {
 				fn(data,aModel);
 				//保存聊天记录到本地的历史记录对象
-				console.log("收到的信息：")
-				console.log(data)
-				//保存聊天记录到本地的历史记录对象
 				History.saveRecoder(data,aModel);
 			}
 		}
