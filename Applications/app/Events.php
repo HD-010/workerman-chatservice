@@ -18,6 +18,7 @@
  */
 
 use \GatewayWorker\Lib\Gateway;
+require_once 'MySQL/MysqlDB.php';
 
 
 /**
@@ -67,75 +68,6 @@ class Events
         }
         
         self::{'message'.ucfirst($message_data['type'])}($client_id,$message_data);
-        
-        
-        
-        /* switch($message_data['type'])
-        {
-            case 'login':
-                print_r($message_data);
-                
-                //访客id用于绑定访客客户端id,当服务客户端发送信息给访客时，以访客id为准
-                $guestId = $message_data['guestId'];
-                
-                $serviceId = $message_data['serviceId'];
-                
-                //$message = '{"type":"login","uid":"xxxxx"}'
-                Gateway::bindUid($client_id, $guestId);
-                break;
-            
-            // 更新用户
-            case 'update':
-                // 转播给所有用户
-                Gateway::sendToAll(json_encode(
-                    array(
-                        'type'     => 'update',
-                        'id'       => $_SESSION['id'],
-                        'angle'    => $message_data["angle"]+0,
-                        'momentum' => $message_data["momentum"]+0,
-                        'x'        => $message_data["x"]+0,
-                        'y'        => $message_data["y"]+0,
-                        'life'     => 1,
-                        'name'     => isset($message_data['name']) ? $message_data['name'] : 'Guest.'.$_SESSION['id'],
-                        'authorized'  => false,
-                        )
-                    ));
-                return;
-            
-            // 公众演讲
-            case 'message':
-                // 向大家说
-                $new_message = array(
-                    'type'=>'message', 
-                    'id'  =>$_SESSION['id'],
-                    'message'=>"回复消息：".$message_data['message'],
-                    'date' => date('m/d H:m:s')
-                );
-                return Gateway::sendToAll(json_encode($new_message));
-            //群聊
-            case 'messageGroup':
-                //向群成员说
-                $new_message = array(
-                    'type'=>'messageGroup',
-                    'id'  =>$_SESSION['id'],
-                    'message'=>$message_data['message'],
-                );
-                return Gateway::sendToAll(json_encode($new_message));
-            
-            //私聊  
-            case 'messagePrivate':
-                //向指定uid说,注：这里需要将guestId，serviceId的值互换
-                $guestId = $message_data['guestId'];
-                $serviceId = $message_data['serviceId'];
-                $new_message = array(
-                    'type'=>'messageTo', 
-                    'id'  =>$_SESSION['id'],
-                    'guestId' => $serviceId,
-                    'serviceId' => $guestId,
-                    'message'=>$message_data['message'],
-                );
-                return Gateway::sendToUid($serviceId, json_encode($new_message));
-        } */
    }
    
    /**
@@ -247,6 +179,38 @@ class Events
    public static function messageSaveToDB($client_id,$message_data){
        echo "消息已经保存到数据库\r\n";
        print_r($message_data);
+       $o = [
+            "TABLE" => 'tableName',
+            "FIELDS"=>['name','lsld'],
+            'VALUES'=>[
+                ['uy','uy'],
+                [4,9],
+                ['werw','fg'],
+            ],
+        ];
+        
+        $res = MysqlDB::db()->insertCommond($o)->exec()-res;
+        print_r($res);
+   }
+   /**
+    * 向数据库查询留言
+    * @param string $client_id
+    * @param array $message_data
+    */
+   public static function messageReadToDB($client_id,$message_data){
+       echo "消息已经保存到数据库\r\n";
+       print_r($message_data);
+       $qObj = [
+           [
+               'e01ren_development_events' => [
+                   "*",
+               ],
+           ],
+       
+           'LIMIT' => '0,1'
+       ];
+       $res = MysqlDB::db()->selectCommond($qObj)->query()->fetchAll();
+       print_r($res);
    }
    
    

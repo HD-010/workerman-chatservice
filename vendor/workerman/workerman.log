@@ -1547,3 +1547,632 @@ Stack trace:
 #11 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
 #12 {main}
 2018-04-02 12:12:13 pid:1 Worker process terminated
+2018-04-02 21:29:48 pid:1 Error: Class 'Workerman\MySQL\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 21:29:48 pid:1 Worker process terminated
+2018-04-02 21:33:33 pid:1 Error: Class 'Workerman\MySQL\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 21:33:33 pid:1 Worker process terminated
+2018-04-02 21:35:09 pid:1 Error: Class 'Workerman\MySQL\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 21:35:09 pid:1 Worker process terminated
+2018-04-02 21:37:18 pid:1 Error: Class 'Workerman\MySQL\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 21:37:18 pid:1 Worker process terminated
+2018-04-02 21:40:36 pid:1 Error: Class 'Workerman\MySQL\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 21:40:36 pid:1 Worker process terminated
+2018-04-02 22:13:38 pid:1 Error: Class 'GatewayWorker\Lib\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 22:13:38 pid:1 Worker process terminated
+2018-04-02 22:14:54 pid:1 Error: Class 'GatewayWorker\Lib\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 22:14:54 pid:1 Worker process terminated
+2018-04-02 22:19:29 pid:1 Error: Class 'GatewayWorker\Lib\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 22:19:29 pid:1 Worker process terminated
+2018-04-02 22:19:42 pid:1 Error: Class 'GatewayWorker\Lib\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 22:19:42 pid:1 Worker process terminated
+2018-04-02 22:20:04 pid:1 Error: Class 'GatewayWorker\Lib\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 22:20:04 pid:1 Worker process terminated
+2018-04-02 22:21:09 pid:1 Error: Class 'GatewayWorker\Lib\MysqlDB' not found in E:\WWW\workerman-chatservice\Applications\app\Events.php:191
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-02 22:21:09 pid:1 Worker process terminated
+2018-04-02 22:27:05 pid:1 Error: Class 'GatewayWorker\Lib\PDO' not found in E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\Lib\MysqlDB.php:46
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\Lib\MysqlDB.php(19): GatewayWorker\Lib\MysqlDB->connect()
+#1 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\Lib\MysqlDB.php(34): GatewayWorker\Lib\MysqlDB->__construct(Array)
+#2 E:\WWW\workerman-chatservice\Applications\app\Events.php(191): GatewayWorker\Lib\MysqlDB::db()
+#3 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#4 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#5 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#6 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#8 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#12 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#13 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#14 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#15 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#16 {main}
+2018-04-02 22:27:05 pid:1 Worker process terminated
+2018-04-02 22:28:33 pid:1 Error: Class 'GatewayWorker\Lib\PDO' not found in E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\Lib\MysqlDB.php:46
+Stack trace:
+#0 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\Lib\MysqlDB.php(19): GatewayWorker\Lib\MysqlDB->connect()
+#1 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\Lib\MysqlDB.php(34): GatewayWorker\Lib\MysqlDB->__construct(Array)
+#2 E:\WWW\workerman-chatservice\Applications\app\Events.php(191): GatewayWorker\Lib\MysqlDB::db()
+#3 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#4 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#5 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#6 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#8 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#12 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#13 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#14 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#15 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#16 {main}
+2018-04-02 22:28:33 pid:1 Worker process terminated
+2018-04-02 22:31:48 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:50 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
+2018-04-02 22:31:50 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:50 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
+2018-04-02 22:31:51 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:51 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
+2018-04-02 22:31:51 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
+2018-04-02 22:31:51 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:52 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:53 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:54 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:54 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
+2018-04-02 22:31:54 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
+2018-04-02 22:31:55 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:56 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:57 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:57 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:58 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:58 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:59 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:31:59 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:31:59 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:00 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:00 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:01 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:01 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:01 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:01 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:02 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:02 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:02 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:03 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:03 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:03 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:04 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:04 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:04 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:05 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:05 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:05 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:06 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:06 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:06 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:07 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:07 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:08 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:08 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:08 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:08 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:09 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:09 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:09 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:09 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:10 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:10 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:10 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:11 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:11 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:11 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:11 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:12 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:12 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:12 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:12 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:13 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:13 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:13 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:14 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:14 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:14 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:14 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:15 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:15 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:15 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:15 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:16 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:16 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:16 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:16 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:17 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:17 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:18 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:18 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:19 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:19 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:19 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:19 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:20 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:20 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:20 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:21 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:21 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:21 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:22 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:22 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:23 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:23 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:24 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:24 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:24 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:25 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:25 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:25 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:25 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:26 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:26 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:26 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:26 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:27 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:27 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:27 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:27 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:28 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:28 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:29 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:29 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:29 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:29 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:30 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:30 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:30 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:31 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:31 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:31 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:32 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:32 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:33 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:33 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:34 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:34 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:34 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:35 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:35 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:35 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:35 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:36 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:36 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:36 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:36 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:37 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:37 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:37 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:37 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:38 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:38 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:38 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:38 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:39 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:39 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:32:39 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:40 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:40 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:40 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:40 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:41 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:41 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:41 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:41 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:42 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:42 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:42 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:42 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:43 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:43 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:43 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:44 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:45 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:45 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:45 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:45 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:46 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:46 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:46 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:47 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:47 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:47 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:48 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:48 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:48 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:49 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:49 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:50 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:50 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:50 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:51 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:51 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:51 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:52 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:52 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:52 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:52 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:53 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:53 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:53 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:53 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:54 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:55 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:55 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:55 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:56 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:56 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:57 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:57 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:57 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:58 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:32:58 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:58 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:59 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:59 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:32:59 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:00 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:00 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:00 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:01 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:01 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:01 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:02 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:02 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:02 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:02 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:03 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:03 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:03 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:03 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:04 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:04 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:04 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:05 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:05 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:05 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:05 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:06 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:06 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:07 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:07 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:07 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:08 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:33:08 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:08 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:09 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:09 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:09 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:10 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:10 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:10 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:11 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:11 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:11 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:11 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:12 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:12 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:13 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:13 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:13 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:14 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:14 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:14 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:15 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:15 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:15 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:15 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:16 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:16 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:16 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:17 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:22 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:23 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:23 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:24 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:24 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:25 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:26 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:27 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:28 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:29 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:30 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:31 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:31 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:32 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:32 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:32 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:33 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:33 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:33 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:33 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:34 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:34 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:34 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:34 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:35 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:35 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:35 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:37 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:37 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:37 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:38 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:38 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:39 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:39 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:40 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:40 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:41 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:41 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:41 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:41 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:42 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:42 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:42 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:43 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:43 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:43 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:43 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:44 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:44 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:44 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:44 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:45 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:45 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:45 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:45 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:46 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:46 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:47 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:47 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:47 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:48 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:48 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:48 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:49 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:49 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:49 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:50 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:50 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:51 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:51 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:51 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:51 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:51 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:52 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:52 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:53 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:53 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:53 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:54 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:54 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:54 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:55 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:55 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:55 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:55 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:56 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:56 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:56 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:57 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:57 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:57 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:57 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:58 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:58 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:58 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:58 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:59 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:33:59 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:33:59 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:00 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:00 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:01 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:01 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:03 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:03 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:04 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:05 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:05 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:06 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:07 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:07 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:08 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:08 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:09 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:34:27 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:34:28 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:34:28 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:34:29 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:34:29 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Query' not found in E:\WWW\workerman-chatservice\Applications\app\MySQL\MysqlDB.php on line 8"
+2018-04-02 22:36:38 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:40 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:40 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:41 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:42 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:42 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:42 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:43 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:44 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-02 22:36:50 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:36:50 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:36:51 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:36:52 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:36:52 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:36:52 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:36:53 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:36:54 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2018-04-02 22:36:59 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
