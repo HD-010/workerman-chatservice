@@ -8,6 +8,7 @@ require_once 'Query.php';
 class MysqlDB extends Query
 {
     protected $pdo;
+    protected $sql;
     protected $res;
     protected $config;
     

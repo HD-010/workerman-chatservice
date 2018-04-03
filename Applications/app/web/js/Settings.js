@@ -16,8 +16,15 @@ define(function(){
 			
 		},
 		
+		/**
+		 * 接收到的消息类型data.type与本地历史对象或数据库中历史（留言）对象前缀的对应关系
+		 */
 		receivMessageType: function(){
-			return messageType = ['message','messageGroup','messageTo'];
+			return messageType = {
+                  ecshc_ :'message',		//message类型表示发布公众信息
+                  ecshg_ :'messageGroup',	//messageGroup类型表示群聊信息
+                  ecshp_ :'messageTo'		//messageTo类型表示私聊信息
+			};
 		}
 		
 	}

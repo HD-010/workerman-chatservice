@@ -177,20 +177,46 @@ class Events
     * @param array $message_data
     */
    public static function messageSaveToDB($client_id,$message_data){
-       echo "消息已经保存到数据库\r\n";
-       print_r($message_data);
+       
+       /**
+        * 表创建语句：
+        * CREATE TABLE `ec_leavingmessage` (
+          `id` bigint(13) unsigned NOT NULL AUTO_INCREMENT,
+          `historyId` varchar(16) NOT NULL COMMENT '历史记录对象id',
+          `guestId` varchar(11) NOT NULL COMMENT '访客id',
+          `serviceId` varchar(11) NOT NULL COMMENT '服务方id',
+          `message` varchar(255) NOT NULL COMMENT '消息内容',
+          `sendTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIME
+        STAMP COMMENT '消息发送时间',
+          `typeh` enum('receive','send') NOT NULL COMMENT '消息类型是收到还是发送',
+          `isLooked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '消息是否查看',
+          `saveToHistory` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否需要转存为历史记录',
+          PRIMARY KEY (`id`),
+          KEY `historyId` (`historyId`)
+        ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='留言对象表，主要逻辑：留言被查看后按需要转存历史记录表'
+        * @var unknown
+        */
+       //print_r($message_data);
        $o = [
-            "TABLE" => 'tableName',
-            "FIELDS"=>['name','lsld'],
+            "TABLE" => 'ec_leavingmessage',
+            "FIELDS"=>['historyId','guestId','serviceId','message','typeh','saveToHistory'],
             'VALUES'=>[
-                ['uy','uy'],
-                [4,9],
-                ['werw','fg'],
+                [
+                    $message_data['historyId'],
+                    $message_data['guestId'],
+                    $message_data['serviceId'],
+                    $message_data['message'],
+                    $message_data['typeh'],
+                    $message_data['saveToHistory'],
+                ],
             ],
         ];
         
-        $res = MysqlDB::db()->insertCommond($o)->exec()-res;
-        print_r($res);
+        //print_r($o);
+        //$res = MysqlDB::db()->insertCommond($o)->showQuery();
+        $res = MysqlDB::db()->insertCommond($o)->exec();
+        
+        
    }
    /**
     * 向数据库查询留言
@@ -211,6 +237,7 @@ class Events
        ];
        $res = MysqlDB::db()->selectCommond($qObj)->query()->fetchAll();
        print_r($res);
+       
    }
    
    

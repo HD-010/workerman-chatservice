@@ -2176,3 +2176,54 @@ Stack trace:
 2018-04-02 22:36:53 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
 2018-04-02 22:36:54 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
 2018-04-02 22:36:59 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "require_once(): Failed opening required './MySQL/MysqlDB.php' (include_path='.;C:\php\pear') in E:\WWW\workerman-chatservice\Applications\app\Events.php on line 21"
+2018-04-03 11:31:16 pid:1 Error: Cannot access protected property MysqlDB::$res in E:\WWW\workerman-chatservice\Applications\app\Events.php:217
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #28)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-03 11:31:16 pid:1 Worker process terminated
+2018-04-03 11:44:47 pid:1 Error: Cannot access protected property MysqlDB::$res in E:\WWW\workerman-chatservice\Applications\app\Events.php:217
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #28)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-03 11:44:47 pid:1 Worker process terminated
+2018-04-03 11:45:22 pid:1 Error: Cannot access protected property MysqlDB::$res in E:\WWW\workerman-chatservice\Applications\app\Events.php:217
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\Events.php(70): Events::messageSaveToDB('7f0000010a8c000...', Array)
+#1 [internal function]: Events::onMessage('7f0000010a8c000...', '{"type":"SaveTo...')
+#2 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8c000...', '{"type":"SaveTo...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #28)
+#6 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#8 E:\WWW\workerman-chatservice\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): GatewayWorker\BusinessWorker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#12 E:\WWW\workerman-chatservice\Applications\app\start_businessworker.php(34): Workerman\Worker::runAll()
+#13 {main}
+2018-04-03 11:45:22 pid:1 Worker process terminated

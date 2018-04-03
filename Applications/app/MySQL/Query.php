@@ -71,6 +71,15 @@ class Query{
     protected $QObj;        //请求对象
     protected $mainTb;      //联合查询的主表
     
+    /**
+     * 输出查询语句
+     * 使用示例：
+     * App::db()->insertCommond($o)->showQuery();
+     */
+    public function showQuery(){
+        print_r($this->sql);
+    }
+    
     //========================select查询语句构造========================
     /**
      * 初始化select查询对象
@@ -292,14 +301,12 @@ class Query{
      */
     public function insertCommond($qObj){
         $this->queryCInit($qObj);
-        $sql = 'INSERT INTO ' .
-            $this->insertTable() .
-            $this->insertFields() .
-            $this->insertvalues();
-    
-            $this->sql = $this->mainTb ? $sql : '';
-        echo $sql;
-            return $this;
+        $this->sql = 'INSERT INTO ' .
+        $this->insertTable() .
+        $this->insertFields() .
+        $this->insertvalues();
+        
+        return $this;
     }
     
     

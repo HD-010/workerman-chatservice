@@ -8,6 +8,7 @@ require_once 'Query.php';
 class MysqlDB extends Query
 {
     protected $pdo;
+    protected $sql;
     protected $res;
     protected $config;
     
@@ -19,7 +20,7 @@ class MysqlDB extends Query
     public static function db(){
         $config=[
           'class'=>'yii\db\Connection',					//数据库连接类
-          'dsn'=>'mysql:host=127.0.0.1;dbname=dataanalysis',	    //数据库地址，名称
+          'dsn'=>'mysql:host=127.0.0.1;dbname=echat',	    //数据库地址，名称
           'username'=>'root',								//用户名
           'password'=>'root',								//密码
           'charset'=>'UTF8',								//使用字符集
@@ -29,10 +30,6 @@ class MysqlDB extends Query
           //'dbprefix'=>'',                                 //表前缀
         ];
         return new MysqlDB($config);
-    }
-    
-    public function a(){
-        echo "test";
     }
     
     /**
@@ -85,7 +82,7 @@ class MysqlDB extends Query
         $res = $this->pdo->exec($sql);
         if($res){
             $this->res = $res;
-        }
+        } 
         return $this;
     }
     

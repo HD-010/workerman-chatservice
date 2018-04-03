@@ -101,12 +101,23 @@ define(['common','History','Settings'],function(common,History,Settings){
 		
 		/**
 		 * 服务窗口没有开启，将当前信息返回给webSocket服务器，要求存储到数据库
+		 * 返回如下字段内容：
+		 * 'historyId','guestId','serviceId','message','typeh','saveToHistory'
 		 */
 		app.renderMessage = function(render_data){
+			var prefix; //历史记录对象前缀
 			var render_data = render_data;
-			//修改服务器操作指令
-			render_data.type = 'SaveToDB';
-			app.webSocketService.sendMessage(render_data);
+			if((prefix = common.inArray(render_data.type,Settings.receivMessageType())) != '-1'){
+				//修改服务器操作指令
+				render_data.type = 'SaveToDB';
+				//添加历史记录对象标识
+				render_data.historyId = prefix + render_data.serviceId;
+				//添加历史记录对渠道类型是接收到还是发送出去
+				render_data.typeh = 'receive';
+				//根据用户权限，添加留言查看后是被删除还是被转存到历史记录表中
+				render_data.saveToHistory = 0;
+				app.webSocketService.sendMessage(render_data);
+			}
 		}
 		
 	};
