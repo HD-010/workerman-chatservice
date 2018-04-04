@@ -36,8 +36,11 @@ define(['common','History','Settings'],function(common,History,Settings){
 		 * 
 		 */
 		app.onSocketMessage = function(e){
+			
 			try {
 				var data = JSON.parse(e.data);
+				console.log(data)
+				//判断当前服务方窗口是否打开
 				if(data.serviceId != app.user.serviceId()){
 					if(common.inArray(data.type,Settings.receivMessageType()) != '-1'){
 						app.renderMessage(data);
@@ -147,6 +150,37 @@ define(['common','History','Settings'],function(common,History,Settings){
 				message: '',
 				saveToHistory:'0'
 			};
+			app.webSocketService.sendMessage(sendObj);
+		}
+		
+		/**
+		 * 好友列表页面加载时:
+		 * 1、将下载到留言的条数与本地未查看记录相加app.js  WebSocketService.js
+		 * 2、加载本地尚未查看的消息条数	所在文件model.js
+		 * 3、当双击服务方列表时将服务器上的留言下载到本地与历史记录合并app.js
+		 * 
+		 * 当前为第3前半步
+		 */
+		app.downServerLeaving = function(){
+			//这是所有服务方的uid
+			var serviceId = app.user.serviceId();
+			if(!serviceId){
+				return false;
+			}
+			var guestId = app.user.guestId();
+			//获取私聊历史记录对象标识
+			var historyObjTag = History.getHistoryObjTag('ecshp_',serviceId).toString();
+				
+			var sendObj = {
+				guestId : guestId,
+				serviceId : serviceId,
+				type: 'downLeaving',
+				typeh: 'receive',
+				historyId : historyObjTag,
+				message: '',
+				saveToHistory:'0'
+			};
+			
 			app.webSocketService.sendMessage(sendObj);
 		}
 

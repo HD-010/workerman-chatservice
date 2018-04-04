@@ -9,8 +9,12 @@ define(['common','Settings'],function(common,Settings){
 		 * app.js app.model.saveRecoder(sendObj);
 		 */
 		saveRecoder:function(data){
+			//如果数据中不存在typeh属性，则添加
+			
 			//添加历史记录中的消息类型
-			data.typeh = (common.inArray(data.type,Settings.receivMessageType()) != -1) ? 'receive' : 'send';
+			if(!data.typeh){
+				data.typeh = (common.inArray(data.type,Settings.receivMessageType()) != -1) ? 'receive' : 'send';
+			}
 			
 			//历史记录id，一个id对应一个好友的历史记录对象
 			var ecsh_id = 'ecshp_' + data.serviceId;

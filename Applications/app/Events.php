@@ -266,10 +266,10 @@ class Events
                'sendTime asc',
            ],
        ];
-       //应该下载的总记录数，如果太大需要分批下载
+       //应该下载的总记录数
        $total = MysqlDB::db()->selectCommond($qObjC)->query()->fetchAll();
        
-       print_r($message_data);
+       //print_r($message_data);
        
        $new_message = array(
            'type'=>'leavingTotal',
@@ -277,6 +277,52 @@ class Events
            'message'=>$total
        );
        
+       return Gateway::sendToClient($client_id, json_encode($new_message));
+   }
+   
+   /**
+    * 获取服务器上留言记录
+    */
+   public static function messageDownLeaving($client_id,$message_data){
+       //该数据限制登录用户下载
+       if(!$message_data['guestId']) return;
+        
+       $message_data['historyId'] = str_replace(',',"','",$message_data['historyId']);
+       $qObjC = [
+           [
+               "ec_leavingmessage" => [
+                   'historyId',
+                   'guestId',
+                   'serviceId',
+                   'message',
+                   'typeh',
+                   'saveToHistory',
+                   'sendTime'
+               ],
+           ],
+           "WHERE" => [
+               "historyId='".$message_data['historyId']."'",
+               'isLooked=0',
+           ],
+           
+           "ORDER_BY" => [
+               'sendTime asc',
+           ],
+           "LIMIT" => '0,100'
+       ];
+       
+       
+       $data = MysqlDB::db()->selectCommond($qObjC)->query()->fetchAll();
+       
+       //应该下载的总记录数，如果太大需要分批下载
+       $new_message = array(
+           'serviceId'=>$message_data['serviceId'],
+           'historyId'=>$message_data['historyId'],
+           'type'=>'leavingDown',
+           'id'  =>$_SESSION['id'],
+           'message'=>$data
+       );
+       //print_r($new_message);
        return Gateway::sendToClient($client_id, json_encode($new_message));
    }
    

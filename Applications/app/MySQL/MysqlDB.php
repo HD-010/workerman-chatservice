@@ -66,6 +66,10 @@ class MysqlDB extends Query
      */
     public function query($sql=null){
         $sql = $sql ? $sql : $this->sql;
+        if(!$sql){
+            echo "sql语句不能为空";
+            return false;
+        }
         $res = $this->pdo->query($sql);
         if($res){
             $this->res = $res;
