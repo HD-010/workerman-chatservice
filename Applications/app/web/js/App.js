@@ -131,6 +131,9 @@ define(['common','History','Settings'],function(common,History,Settings){
 		app.downServerLeavingTotal = function(){
 			//这是所有服务方的uid
 			var serviceId = app.model.getServiceUids();
+			if(!serviceId){
+				return false;
+			}
 			var guestId = app.user.guestId();
 			//获取私聊历史记录对象标识
 			var historyObjTag = "('"+History.getHistoryObjTag('ecshp_',serviceId).toString()+"')";

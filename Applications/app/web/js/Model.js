@@ -27,21 +27,27 @@ define(['jquery','common'],function($,common){
 		 * 获取所有服务方列表对象
 		 */
 		model.getServiceList = function(){
-			return $('#echat_list .list');
+			ServiceList = $('#echat_list .list') || false;
+			ServiceList = (ServiceList.length === 0) ? false :ServiceList;
+			return ServiceList;
 		}
 		
 		/**
 		 * 获取所有服务方对象
 		 */
 		model.getServices = function(){
-			return model.getServiceList().children('dd');
+			var serviceList = model.getServiceList();
+			if(!serviceList){return false;}
+			var Services = serviceList.children('dd');
+			Services = (Services.length === 0) ? false :Services;
+			return Services;
 		}
 		
 		/**
 		 * 获取指定uid服务对象
 		 */
 		model.getService = function(uid){
-			return model.getServiceList().find('[uid='+uid+']');
+			return model.getServiceList().find('[uid='+uid+']') || false;
 		}
 		
 		/**
@@ -50,6 +56,9 @@ define(['jquery','common'],function($,common){
 		model.getServiceUids = function(){
 			var uid = [];
 			var services = model.getServices();
+			
+			if(!services){return false;}
+			
 			for(var i = 0; i < services.length; i++){
 				uid.push(services.eq(i).attr('uid'));
 			}
@@ -134,6 +143,8 @@ define(['jquery','common'],function($,common){
 			var num,notice;
 			//服务方对象
 			var services = model.getServices();
+			if(!services){return false;}
+			
 			for(var i=0; i < services.length; i++){
 				var uid = services.eq(i).attr('uid');
 				var ecspn_id = 'ecspn_' + uid;
