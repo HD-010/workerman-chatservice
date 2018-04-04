@@ -343,9 +343,9 @@ class Query{
             }
             
             if(is_array($fdArr) && !empty($fdArr)){
-                //拼接字段的分隔符
-                $delimit = ', ' . $tb . '.';
-                $fields = substr($delimit . implode($delimit,$fdArr),1);
+                $fields = $this->fieldImplode($tb, $fdArr);
+                //$fields = substr($delimit . implode($delimit,$fdArr),1);
+                
             }else{
                 $fields = ' '.trim($fdArr);
             }
@@ -407,7 +407,7 @@ class Query{
         ]
      */
     public function groupBy(){
-        $groupBy = ' GROUP_BY ';
+        $groupBy = ' GROUP BY ';
         $Q = $this->QObj["GROUP_BY"];
         if(!is_array($Q) || empty($Q)) return '';
         $groupBy .= implode(', ',$Q);
@@ -428,7 +428,7 @@ class Query{
         $orderBy = ' ';
         $Q = $this->QObj["ORDER_BY"];
         if(!is_array($Q) || empty($Q)) return '';
-        $orderBy .= ' ORDER_BY ' . implode(' AND ORDER_BY ',$Q);
+        $orderBy .= ' ORDER BY ' . implode(' AND ORDER BY ',$Q);
         return $orderBy;
     }
     /**
@@ -556,6 +556,37 @@ class Query{
         }
         
         return substr($str,$delimiterLenth);
+    }
+    
+    
+    /**
+     * 字段数组中字段加表名拼接字串的专用方法
+     * @param unknown $glue 表名
+     * @param unknown $pieces 字段集合
+     * @return string
+     */
+    public function fieldImplode($glue, $pieces){
+        $str = $action = $param = '';
+        for($i = 0; $i < count($pieces); $i++){
+            $ops = false;
+            $pos = strpos($pieces[$i],'(');
+            if($pos !== false){
+                //方法名称部分
+                $action = substr($pieces[$i],0 ,$pos + 1);
+                //参数部分
+                $param = substr($pieces[$i],$pos + 1);
+                //重组方法表，表名，字段名,如果是*，则不加表名
+                if(strpos($param,'*') !== false){
+                    $str .= ', '.$action.$param;
+                }else{
+                    $str .= ', '.$action.$glue.'.'.$param;
+                }
+    
+            }else{
+                $str .= ', '.$glue.'.'.$pieces[$i];
+            }
+        }
+        return substr($str,1);
     }
     
     

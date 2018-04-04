@@ -120,6 +120,34 @@ define(['common','History','Settings'],function(common,History,Settings){
 			}
 		}
 		
+		/**
+		 * 好友列表页面加载时:
+		 * 1、将下载到留言的条数与本地未查看记录相加app.js  WebSocketService.js
+		 * 2、加载本地尚未查看的消息条数	所在文件model.js
+		 * 3、当双击服务方列表时将服务器上的留言下载到本地与历史记录合并
+		 * 
+		 * 当前为第1前半步
+		 */
+		app.downServerLeavingTotal = function(){
+			//这是所有服务方的uid
+			var serviceId = app.model.getServiceUids();
+			var guestId = app.user.guestId();
+			//获取私聊历史记录对象标识
+			var historyObjTag = "('"+History.getHistoryObjTag('ecshp_',serviceId).toString()+"')";
+				
+			var sendObj = {
+				guestId : guestId,
+				serviceId : serviceId,
+				type: 'downLeavingTotal',
+				typeh: 'receive',
+				historyId : historyObjTag,
+				message: '',
+				saveToHistory:'0'
+			};
+			app.webSocketService.sendMessage(sendObj);
+		}
+
+		
 	};
 	
 	

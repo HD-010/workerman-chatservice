@@ -68,6 +68,23 @@ define(['common','Settings'],function(common,Settings){
 					fn(hostRecoder[i],'showHistory');
 				}
 			}
+		},
+		
+		/**
+		 * 返回历史记录对象标识
+		 * @param string prefix 史记录对象的前缀，可以是下面三种值
+		 * 'ecshp_' 是私聊历史记录对象的前缀 echat service history private
+		 * 'ecshc_' 是公众演讲历史记录对象的前缀 echat service history common
+		 * 'ecshg_' 是群聊历史记录对象的前缀 echat service history group
+		 */
+		getHistoryObjTag:function(prefix,serviceId){
+			var historyObjTag = [];
+			//确保serviceId是一个数组
+			serviceId = (typeof serviceId == 'string') ? [serviceId] : serviceId;
+			for(var i = 0; i < serviceId.length; i++){
+				historyObjTag.push(prefix + serviceId[i]);
+			}
+			return historyObjTag;
 		}
 	}
 	return History;

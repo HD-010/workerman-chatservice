@@ -99,12 +99,17 @@ require([
 			History.loadHistory(userInfo.id,app.model);
 			
 		});
+		
 		//设置选中分组的显示效果
 		var userGrout = $.find('#echat_list .list dt');
 		$(userGrout).click(function(){
 			app.effect.friendsList.selectGroup($(this));
 		});
 		
+		
+		//-------------------页面加载时的操作---------------------
+		app.downServerLeavingTotal();
+		app.model.loadLocalNotice();
 		
 	});
 	

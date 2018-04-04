@@ -58,7 +58,6 @@ class Events
     */
    public static function onMessage($client_id, $message)
    {
-       print_r($message);
         // 获取客户端请求
         $message_data = json_decode($message, true);
         
@@ -86,8 +85,6 @@ class Events
     * @param array $message_data
     */
    public static function messageLogin($client_id,$message_data){
-       print_r($message_data);
-       
        //访客id用于绑定访客客户端id,当服务客户端发送信息给访客时，以访客id为准
        $guestId = $message_data['guestId'];
        
@@ -95,6 +92,7 @@ class Events
        
        //$message = '{"type":"login","uid":"xxxxx"}'
        Gateway::bindUid($client_id, $guestId);
+       echo 'success bindUid' . $guestId . '\r\n';
    }
    
    /**
@@ -218,26 +216,68 @@ class Events
         
         
    }
+   
    /**
-    * 向数据库查询留言
-    * @param string $client_id
-    * @param array $message_data
+    * 获取服务器上留言记录数量
+    * $message_data 的数据格式：
+    * array(
+            [guestId] =>
+            [serviceId] => Array
+                (
+                    [0] => 69826
+                    [1] => 5245456
+                    [2] => 52525456
+                    [3] => 5278856
+                    [4] => 5245456
+                    [5] => 525456
+                    [6] => 52542456
+                    [7] => 5259656
+                )
+        
+            [type] => downLeavingMessage
+            [typeh] => receive
+            [historyId] => ('ecshp_69826,ecshp_5245456,ecshp_52525456,ecshp_5278856,ecsh
+        p_5245456,ecshp_525456,ecshp_52542456,ecshp_5259656')
+            [message] =>
+            [saveToHistory] => 0
+
+		)
     */
-   public static function messageReadToDB($client_id,$message_data){
-       echo "消息已经保存到数据库\r\n";
-       print_r($message_data);
-       $qObj = [
+   public static function messageDownLeavingTotal($client_id,$message_data){
+       //该数据限制登录用户下载
+       if(!$message_data['guestId']) return;
+       
+       $message_data['historyId'] = str_replace(',',"','",$message_data['historyId']);
+       $qObjC = [
            [
-               'e01ren_development_events' => [
-                   "*",
+               "ec_leavingmessage" => [
+                   'count(*) as total',
+                   'historyId'
                ],
            ],
-       
-           'LIMIT' => '0,1'
+           "WHERE" => [
+               'historyId in '.$message_data['historyId'],
+               'isLooked=0',
+           ],
+           "GROUP_BY" => [
+               'historyId',
+           ],
+           "ORDER_BY" => [
+               'sendTime asc',
+           ],
        ];
-       $res = MysqlDB::db()->selectCommond($qObj)->query()->fetchAll();
-       print_r($res);
+       //应该下载的总记录数，如果太大需要分批下载
+       $total = MysqlDB::db()->selectCommond($qObjC)->query()->fetchAll();
        
+       print_r($message_data);
+       
+       $new_message = array(
+           'type'=>'leavingTotal',
+           'id'  =>$_SESSION['id'],
+           'message'=>$total
+       );
+       
+       return Gateway::sendToClient($client_id, json_encode($new_message));
    }
    
    

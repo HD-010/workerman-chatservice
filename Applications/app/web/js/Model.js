@@ -24,6 +24,40 @@ define(['jquery','common'],function($,common){
 		
 		
 		/**
+		 * 获取所有服务方列表对象
+		 */
+		model.getServiceList = function(){
+			return $('#echat_list .list');
+		}
+		
+		/**
+		 * 获取所有服务方对象
+		 */
+		model.getServices = function(){
+			return model.getServiceList().children('dd');
+		}
+		
+		/**
+		 * 获取指定uid服务对象
+		 */
+		model.getService = function(uid){
+			return model.getServiceList().find('[uid='+uid+']');
+		}
+		
+		/**
+		 * 获取所有服务方uid
+		 */
+		model.getServiceUids = function(){
+			var uid = [];
+			var services = model.getServices();
+			for(var i = 0; i < services.length; i++){
+				uid.push(services.eq(i).attr('uid'));
+			}
+			return uid;
+		}
+		
+		
+		/**
 		 * 展示欢迎词
 		 */
 		model.messageWelcom = function(data){
@@ -52,20 +86,64 @@ define(['jquery','common'],function($,common){
 		}
 		
 		/**
-		 * 更新接收到尚未查看的消息条数
+		 * 接收到新消息时，更新页面和localStorage中的值
+		 * localStorage中存储的对象为：'ecspn_' + data.serviceId
 		 * 'ecspn_':echat service  private notice
 		 */
 		model.noticeUpdate = function(data){
-			//pc端
-			var friendsList = $('#echat_list .list');
-			//被标识的好友列表
-			var serviceList = friendsList.children('[uid='+data.serviceId+']').children('.listTag');
-			var num = parseInt(serviceList.html()) + 1;
-			serviceList.html(num);
-			serviceList.show();
+			var notice = model.getService(data.serviceId).children('.listTag');
+			var num = parseInt(notice.html()) + 1;
+			notice.html(num);
+			notice.show();
 			
 			//将未查看信息条数存储在本地，当打于服务窗口时，该数值是向服务器请求数据条数的依据
 			localStorage.setItem('ecspn_' + data.serviceId,num)
+		}
+		
+		/**
+		 * 好友列表页面加载时:
+		 * 1、将下载到留言的条数与本地未查看记录相加app.js  WebSocketService.js、Model.js
+		 * 2、加载本地尚未查看的消息条数	所在文件model.js
+		 * 3、当双击服务方列表时将服务器上的留言下载到本地与历史记录合并
+		 * 
+		 * 当前为第1后半步
+		 */
+		model.updateEcspn = function(data){
+			var ecspn_id,updateNum,historyId;
+			for(var i = 0; i < data.length; i++){
+				//需要更新对象的id
+				historyId = data[i].historyId;
+				ecspn_id = 'ecspn_' + historyId.substr(historyId.indexOf('_')+1);
+				oldNum = localStorage.getItem(ecspn_id)|| 0;
+				updateNum = parseInt(oldNum) + parseInt(data[i].total);
+				//更新对象值
+				//console.log('ecspn_id:'+ecspn_id + '||updateNum:'+updateNum);
+				localStorage.setItem(ecspn_id, updateNum);
+			}
+		}
+		
+		/**
+		 * 好友列表页面加载时:
+		 * 1、将下载到留言的条数与本地未查看记录相加app.js  WebSocketService.js、Model.js
+		 * 2、加载本地尚未查看的消息条数	所在文件model.js
+		 * 3、当双击服务方列表时将服务器上的留言下载到本地与历史记录合并 
+		 * 
+		 * 当前为第2步
+		 */
+		model.loadLocalNotice = function(){
+			var num,notice;
+			//服务方对象
+			var services = model.getServices();
+			for(var i=0; i < services.length; i++){
+				var uid = services.eq(i).attr('uid');
+				var ecspn_id = 'ecspn_' + uid;
+				if(num = localStorage.getItem(ecspn_id)){
+					notice = model.getService(uid).children('.listTag');
+					//设置新值
+					notice.html(num);
+					notice.show();
+				}
+			}
 		}
 		
 		/**
