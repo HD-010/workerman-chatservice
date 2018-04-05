@@ -25,6 +25,17 @@ define(function(){
                   ecshg_ :'messageGroup',	//messageGroup类型表示群聊信息
                   ecshp_ :'messageTo'		//messageTo类型表示私聊信息
 			};
+		},
+		
+		/**
+		 * 定义未查看记录数记录的前缀
+		 * serverType 服务类型:
+		 * 'ecspn_' 是私聊未查看记录数记录的前缀 echat service private notice
+		 * 'ecscn_' 是公众演讲未查看记录数的前缀 echat service private notice
+		 * 'ecsgn_' 是群聊未查看记录数的前缀 echat service private notice
+		 */
+		serverType: function(){
+			return ['ecspn_','ecscn_','ecsgn_'];
 		}
 		
 	}

@@ -46,6 +46,8 @@ define(['common','History'],function(common,History){
 				
 				//下载留言完成后加载好友对应的聊天记录
 				History.loadHistory(data.serviceId,aModel);
+				//聊天记录下载完成后清除消息提示
+				aModel.clearNotice('ecspn_',data.serviceId)
 			}
 			return true;
 		}

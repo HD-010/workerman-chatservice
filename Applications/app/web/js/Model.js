@@ -161,6 +161,23 @@ define(['jquery','common'],function($,common){
 		}
 		
 		/**
+		 * 当双击服务对象加载历史消息及留言后，需要清除服务对象右上角的未查看消息提示
+		 * 调用位置：
+		 * app.js app.model.saveRecoder(sendObj);
+		 * serviceId  string 服务id
+		 * serverType string 服务类型:
+		 * 'ecspn_' 是私聊未查看记录数记录的前缀 echat service private notice
+		 * 'ecscn_' 是公众演讲未查看记录数的前缀 echat service private notice
+		 * 'ecsgn_' 是群聊未查看记录数的前缀 echat service private notice
+		 */
+		model.clearNotice = function(serverType,serviceId){
+			localStorage.setItem(serverType+serviceId,0);
+			var notice = model.getService(serviceId).children('.listTag');
+			notice.html(0);
+			notice.hide();
+		}
+		
+		/**
 		 * 展示发送的消息
 		 */
 		model.messageSend = function(sendObj){

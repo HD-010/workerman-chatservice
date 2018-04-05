@@ -98,8 +98,6 @@ require([
 			//选中好友时，将服务端留言下载到本地，与本地未查看消息合并，然后加载到页面
 			app.downServerLeaving();
 			
-			//选中好友时加载好友对应的聊天记录
-			//History.loadHistory(userInfo.id,app.model);
 			
 		});
 		
@@ -111,8 +109,8 @@ require([
 		
 		
 		//-------------------页面加载时的操作---------------------
+		//下载留言总记录条数到本地，并加载到列表提示位置
 		app.downServerLeavingTotal();
-		//app.model.loadLocalNotice();
 		
 	});
 	
