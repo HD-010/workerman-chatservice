@@ -303,6 +303,7 @@ class Events
            "WHERE" => [
                "historyId='".$message_data['historyId']."'",
                'isLooked=0',
+               "guestId='".$message_data['guestId']."'"
            ],
            
            "ORDER_BY" => [
@@ -322,6 +323,27 @@ class Events
            'id'  =>$_SESSION['id'],
            'message'=>$data
        );
+       
+       //是这权限配置项，标识当前访客有没有保存历史的权限。如果没有，从数据库读取数据后，数据据会被删除。
+       //如果有，则数会被转存到历史消息表
+       $saveToHistory = $message_data['saveToHistory'];
+       if(!$saveToHistory){
+           $qObj = [
+                "MAIN_TABLE" => 'ec_leavingmessage',     //tableName',
+                "FETCH_TABLE" => [      //受影响的表
+                    'ec_leavingmessage',
+                ],
+                "WHERE" => [
+                   "historyId='".$message_data['historyId']."'",
+                   'isLooked=0',
+                   "guestId='".$message_data['guestId']."'"
+                ],
+                "LIMIT" => '',
+            ];
+           MysqlDB::db()->deleteCommond($qObj)->exec();
+       }
+       
+       
        //print_r($new_message);
        return Gateway::sendToClient($client_id, json_encode($new_message));
    }

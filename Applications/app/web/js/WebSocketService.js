@@ -39,16 +39,16 @@ define(['common','History'],function(common,History){
 		 */
 		this.leavingDownHandler = function(data,aModel){
 			var messages = data.message;
+			//如果有留言，则保存到本地历史，然后加载加载历史。如果没有留言，则直接加载历史记录
 			if(messages.length > 0){
 				for(var i = 0; i < messages.length; i++){
 					History.saveRecoder(messages[i]);
 				}
-				
-				//下载留言完成后加载好友对应的聊天记录
-				History.loadHistory(data.serviceId,aModel);
-				//聊天记录下载完成后清除消息提示
-				aModel.clearNotice('ecspn_',data.serviceId)
 			}
+			//下载留言完成后加载好友对应的聊天记录
+			History.loadHistory(data.serviceId,aModel);
+			//聊天记录下载完成后清除消息提示
+			aModel.clearNotice('ecspn_',data.serviceId)
 			return true;
 		}
 		

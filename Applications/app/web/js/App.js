@@ -149,7 +149,9 @@ define(['common','History','Settings'],function(common,History,Settings){
 				typeh: 'receive',
 				historyId : historyObjTag,
 				message: '',
-				saveToHistory:'0'
+				//是这权限配置项，标识当前访客有没有保存历史的权限。如果没有，从数据库读取数据后，数据据会被删除。
+				//如果有，则数会被转存到历史消息表
+				saveToHistory:'0'		
 			};
 			app.webSocketService.sendMessage(sendObj);
 		}

@@ -155,7 +155,9 @@ define(['jquery','common'],function($,common){
 					notice = model.getService(uid).children('.listTag');
 					//设置新值
 					notice.html(num);
-					notice.show();
+					if(num > 0){
+						notice.show();
+					}
 				}
 			}
 		}
