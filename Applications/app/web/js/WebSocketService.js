@@ -21,7 +21,6 @@ define(['common','History'],function(common,History){
 		 * 当前为第1后半步
 		 */
 		this.leavingTotalHandler = function(data,aModel){
-			
 			aModel.updateEcspn(data.message);
 		}
 		
@@ -44,6 +43,9 @@ define(['common','History'],function(common,History){
 				for(var i = 0; i < messages.length; i++){
 					History.saveRecoder(messages[i]);
 				}
+				
+				//下载留言完成后加载好友对应的聊天记录
+				History.loadHistory(data.serviceId,aModel);
 			}
 			return true;
 		}

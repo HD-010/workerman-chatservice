@@ -53,7 +53,7 @@ define(['common','Settings'],function(common,Settings){
 		 * 调用位置：main.js app.model.loadHostRecod(userInfo.id)
 		 */
 		loadHistory:function(serviceId,model){
-			var hostRecodId = 'ecshp_'+serviceId || 'ecshp_69826';
+			var hostRecodId = 'ecshp_'+serviceId;
 			//清空聊天记录列表
 			model.clearMessageList();
 			

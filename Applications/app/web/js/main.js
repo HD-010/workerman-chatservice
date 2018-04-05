@@ -95,11 +95,11 @@ require([
 			//设置选中好友列表的背景色效果
 			app.effect.friendsList.selectFriend($(this));
 			
-			//选中好友时，将服务端留言下载到本地，与本地未查看消息合并
+			//选中好友时，将服务端留言下载到本地，与本地未查看消息合并，然后加载到页面
 			app.downServerLeaving();
 			
 			//选中好友时加载好友对应的聊天记录
-			History.loadHistory(userInfo.id,app.model);
+			//History.loadHistory(userInfo.id,app.model);
 			
 		});
 		
@@ -112,7 +112,7 @@ require([
 		
 		//-------------------页面加载时的操作---------------------
 		app.downServerLeavingTotal();
-		app.model.loadLocalNotice();
+		//app.model.loadLocalNotice();
 		
 	});
 	

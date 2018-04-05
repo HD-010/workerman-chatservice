@@ -129,6 +129,9 @@ define(['jquery','common'],function($,common){
 				//console.log('ecspn_id:'+ecspn_id + '||updateNum:'+updateNum);
 				localStorage.setItem(ecspn_id, updateNum);
 			}
+			
+			//加载本地消息提示
+			model.loadLocalNotice();
 		}
 		
 		/**

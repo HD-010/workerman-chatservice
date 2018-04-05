@@ -39,13 +39,12 @@ define(['common','History','Settings'],function(common,History,Settings){
 			
 			try {
 				var data = JSON.parse(e.data);
-				console.log(data)
 				//判断当前服务方窗口是否打开
-				if(data.serviceId != app.user.serviceId()){
-					if(common.inArray(data.type,Settings.receivMessageType()) != '-1'){
+				if((data.serviceId != app.user.serviceId()) && (common.inArray(data.type,Settings.receivMessageType()) != '-1')){
+					//if(common.inArray(data.type,Settings.receivMessageType()) != '-1'){
 						app.renderMessage(data);
 						app.model.noticeUpdate(data);
-					}
+					//}
 				}else{
 					//根据信息类型，处理后展示到页面
 					app.webSocketService.processMessage(data,app.webSocketService,app.model);
@@ -134,13 +133,15 @@ define(['common','History','Settings'],function(common,History,Settings){
 		app.downServerLeavingTotal = function(){
 			//这是所有服务方的uid
 			var serviceId = app.model.getServiceUids();
+			
 			if(!serviceId){
 				return false;
 			}
+			
 			var guestId = app.user.guestId();
 			//获取私聊历史记录对象标识
 			var historyObjTag = "('"+History.getHistoryObjTag('ecshp_',serviceId).toString()+"')";
-				
+			
 			var sendObj = {
 				guestId : guestId,
 				serviceId : serviceId,
