@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @author yx010
  *  sql语句构造类
@@ -71,13 +70,14 @@ class Query{
     protected $QObj;        //请求对象
     protected $mainTb;      //联合查询的主表
     
+    
     /**
      * 输出查询语句
      * 使用示例：
      * App::db()->insertCommond($o)->showQuery();
      */
     public function showQuery(){
-        print_r($this->sql);
+        print_r($this->sql,1);
     }
     
     //========================select查询语句构造========================
@@ -343,9 +343,9 @@ class Query{
             }
             
             if(is_array($fdArr) && !empty($fdArr)){
-                $fields = $this->fieldImplode($tb, $fdArr);
-                //$fields = substr($delimit . implode($delimit,$fdArr),1);
-                
+                //拼接字段的分隔符
+                $delimit = ', ' . $tb . '.';
+                $fields = substr($delimit . implode($delimit,$fdArr),1);
             }else{
                 $fields = ' '.trim($fdArr);
             }
@@ -407,7 +407,7 @@ class Query{
         ]
      */
     public function groupBy(){
-        $groupBy = ' GROUP BY ';
+        $groupBy = ' GROUP_BY ';
         $Q = $this->QObj["GROUP_BY"];
         if(!is_array($Q) || empty($Q)) return '';
         $groupBy .= implode(', ',$Q);
@@ -428,7 +428,7 @@ class Query{
         $orderBy = ' ';
         $Q = $this->QObj["ORDER_BY"];
         if(!is_array($Q) || empty($Q)) return '';
-        $orderBy .= ' ORDER BY ' . implode(' AND ORDER BY ',$Q);
+        $orderBy .= ' ORDER_BY ' . implode(' AND ORDER_BY ',$Q);
         return $orderBy;
     }
     /**
@@ -556,37 +556,6 @@ class Query{
         }
         
         return substr($str,$delimiterLenth);
-    }
-    
-    
-    /**
-     * 字段数组中字段加表名拼接字串的专用方法
-     * @param unknown $glue 表名
-     * @param unknown $pieces 字段集合
-     * @return string
-     */
-    public function fieldImplode($glue, $pieces){
-        $str = $action = $param = '';
-        for($i = 0; $i < count($pieces); $i++){
-            $ops = false;
-            $pos = strpos($pieces[$i],'(');
-            if($pos !== false){
-                //方法名称部分
-                $action = substr($pieces[$i],0 ,$pos + 1);
-                //参数部分
-                $param = substr($pieces[$i],$pos + 1);
-                //重组方法表，表名，字段名,如果是*，则不加表名
-                if(strpos($param,'*') !== false){
-                    $str .= ', '.$action.$param;
-                }else{
-                    $str .= ', '.$action.$glue.'.'.$param;
-                }
-    
-            }else{
-                $str .= ', '.$glue.'.'.$pieces[$i];
-            }
-        }
-        return substr($str,1);
     }
     
     

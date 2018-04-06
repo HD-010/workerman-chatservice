@@ -59,10 +59,21 @@ require([
 		 * 登录验证
 		 * 当用户登录成功时向websocket发送绑定uid和client_id的信息
 		 */
-		$("input[name=uname]").blur(app.authorize.checkConut);
-		$("input[name=pswd]").blur(app.authorize.checkPswd);
-		$("input[name=Verification]").blur(app.authorize.checkVerification);
-		$("form[name='singIn'] input[type=submit]").click(app.authorize.loginSubmit);
+		var isRegNew = $("input[name=pswd2]").length ? true :false;
+		
+		$("input[name=uname]").change(app.authorize.checkConut);
+		//密码项校验（分用户登录和用户注册密码校验）
+		$("input[name=pswd]").change(function(){
+			//         注册密码校验							登录密码校验
+			isRegNew ? app.authorize.checkPswd1() : app.authorize.checkPswd();
+		});
+		//确认密码项校验
+		$("input[name=pswd2]").change(app.authorize.checkPswd2);
+		$("input[name=Verification]").change(app.authorize.checkVerification);
+		//登录/注册表单submit click事件（分用户登录和用户注册提交）
+		$("form[name='sing'] input[type=submit]").click(function(){
+			isRegNew ? app.authorize.upSubmit(event) : app.authorize.loginSubmit(event);
+		});
 		
 		
 		//设置表情对象淡入炎出效果

@@ -1,10 +1,25 @@
 /**
  * 登录流程：
  * 易service能过接口http://passport.e01.ren/?
- * r=openapi/login&uname=uname&pswd=pswd&Verification=Verification&token=token
+ * r=openapi/login/sing-in&uname=uname&pswd=pswd&Verification=Verification&token=token
  * 来验证用户身份
  * 当验证成功后，将验证返回的信息装载到表单，再提交表单到 易service服务器
+ * 
+ * 注册流程：
+ * 易service能过接口http://passport.e01.ren/?
+ * r=openapi/login/sing-up&uname=uname&pswd=pswd&Verification=Verification&token=token
+ * 来注册用户信息
+ * 
+ * 注册接口信息：
+    "input[name=uname]",                                
+	"input[name=pswd]",                                
+	"input[name=pswd2]",                               
+	"input[name=Verification]", 
+	
+	注册－登录流程：
+	当用户注册成功，页面跳转到登录页面，用户输入帐号、密码进行登录
  */
+
 define(['jquery','easyForm','User'],function($,$e,User){
 	var Sing = function(){
 		var sing = this;
@@ -14,8 +29,7 @@ define(['jquery','easyForm','User'],function($,$e,User){
 		
 		//设置表单提交地址
 		sing.setAction = function(url){
-			console.log(url);
-			$("form[name=singIn]").attr('action',url);
+			$("form[name=sing]").attr('action',url);
 		}
 		
 		//向表单隐藏域设置token
@@ -33,7 +47,7 @@ define(['jquery','easyForm','User'],function($,$e,User){
 		
 		//验证登录帐号的合法性
 		sing.checkConut = function(){
-			$e("form[name=singIn]").valid({
+			$e("form[name=sing]").valid({
 				option : [["input[name=uname]"]],
 				rule : "isMobilOrEmail", 
 				message : "请输入电子邮箱或手机号",
@@ -42,7 +56,7 @@ define(['jquery','easyForm','User'],function($,$e,User){
 		
 		//验证登录密码的合法性
 		sing.checkPswd = function(){
-			$e("form[name=singIn]").valid({
+			$e("form[name=sing]").valid({
 				option : [["input[name=pswd]"]],
 				rule : "isPasswd", 
 				message : "只能输入6-20个字母、数字、下划线",
@@ -50,9 +64,43 @@ define(['jquery','easyForm','User'],function($,$e,User){
 			
 		}
 		
+		
+		//-----------------注册表单异同说明开始---------------
+		// 这是登录表单和注册表单的不同之处理。
+		// 注册表单多 ‘再次输入密码项’ 效验。
+		//----------------------------------------------
+		
+		/**
+		 * 验证用户密码
+		 */
+		sing.checkPswd1 = function(){
+			$e("form[name='sing']").valid({
+				option : [["input[name=pswd]","input[name=pswd2]"],"==","两次输入密码不一致"],
+				rule : "isPasswd", 
+				message : "只能输入6-20个字母、数字、下划线",
+			});
+		},
+		
+		/**
+		 * 验证用户密码确认
+		 */
+		sing.checkPswd2 = function(obj){
+			$e("form[name='sing']").valid({
+				option : [["input[name=pswd]","input[name=pswd2]"],"==","两次输入密码不一致"],
+				rule : "isPasswd", 
+				message : "只能输入6-20个字母、数字、下划线",
+			});
+		},
+		//---------------注册表单异同说明结束-------------------
+		
+		
+		
+		
+		
+		
 		//验证验证码的合法性
 		sing.checkVerification = function(){
-			$e("form[name=singIn]").valid({
+			$e("form[name=sing]").valid({
 				option : [["input[name=Verification]"]],
 				rule : "isDigit",
 				message : "验证码由数字组成",
@@ -64,12 +112,12 @@ define(['jquery','easyForm','User'],function($,$e,User){
 			//阻止submit默认行为
 			event.preventDefault();
 			
-			$e("form[name=singIn]").required([
+			$e("form[name=sing]").required([
             "input[name=uname]",                                
             "input[name=pswd]",                                
             "input[name=Verification]"                               
             ]).submit({
-				url:sing.api+"/sing-in&"+$e().sialize(),
+				url:sing.api+"/sing-in",
 				dataType:"JSON",
 				success:function(data){
 					if(data.state == 'success'){
@@ -88,7 +136,7 @@ define(['jquery','easyForm','User'],function($,$e,User){
 						sing.setAction(location.href);
 						
 						//注册聊天用户信息,在会话开始时注册
-						$("form[name=singIn]").submit();
+						$("form[name=sing]").submit();
 					}else{
 						console.log("登录失败");
 					}
@@ -98,6 +146,44 @@ define(['jquery','easyForm','User'],function($,$e,User){
 				}
 			});
 		}
+		
+		//-----------------注册表单异同说明开始---------------
+		//注册提交
+		sing.upSubmit = function(event){
+			//阻止submit默认行为
+			event.preventDefault();
+			
+			$e("form[name='sing']").required([
+			    "input[name=uname]",                                
+			    "input[name=pswd]",                                
+			    "input[name=pswd2]",                               
+			    "input[name=Verification]",                               
+			]).submit({
+				url:sing.api+"/sing-up",
+				type:'post',
+				dataType:"JSON",
+				success:function(data){
+					console.log(data)
+					if(data.state == 'success'){
+						//显示注册 成功提示信息
+						var message = $e().msg("注册成功，正在跳转登录页...");
+						$("div[name=notice]").append(message);
+						sing.data = data;
+						//三秒后自动完成登录
+						setTimeout(sing.UpToIn,3000);
+					}
+				},
+				error:function(data){
+					console.log(data)
+				}
+			});
+		}
+		
+		sing.UpToIn = function(){
+			location.href = '/chatweb/index/index';
+		}
+		
+		//-----------------注册表单异同说明结束---------------
 	
 	}
 	
