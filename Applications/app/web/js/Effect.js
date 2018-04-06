@@ -5,6 +5,28 @@ define(['jquery'],function($){
 		effect.friendsList = {
 				list : $("#echat_list .list"),
 		};
+		
+		//好友列表底部菜单效果控制
+		effect.friendsMenu = {
+				//设置背景色
+				setcolor : function(o){
+					//设置各个选项的背景色为默认颜色
+					$(o).siblings().children('button').css({'background-color':'#EAEAEA','color': 'currentColor'})
+					//设置被点击选项的背景色
+					$(o).children('button').css({'background-color':'#52A4F1','color':'#FFFFFF'});
+				},
+				
+				//控制列表显示与隐藏
+				controlListView : function(o){
+					//隐藏各个选项对应的内容块
+					if($(o).children('button').attr('typeId') != 'childMenu'){
+						var typeId = $(o).children('button').attr('typeId');
+						$("#echat_list").find('dl').hide()
+						$("#echat_list").find('dl[typeId='+typeId+']').show();
+					}
+				}
+				
+		}
 
 		/**
 		 * 设置选中好友分组的背景色效果

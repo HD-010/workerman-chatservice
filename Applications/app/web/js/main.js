@@ -46,6 +46,8 @@ require([
 		var eChat = $("#eChat");
 		//表情对象
 		var chatFace = $("#chatFace");
+		//好友列表菜单对象
+		var friendsMenu = $("#echat_list .menu");
 		//发送信息对象
 		var messageSend = $("#messageSend");
 		
@@ -77,6 +79,13 @@ require([
 		chatFace.find('li').click(function(){
 			chatFace.children('ul').eq(0).fadeOut('slow');
 		});
+		
+		//设置好友列表菜单对象效果
+		friendsMenu.find('td').click(function(){
+			app.effect.friendsMenu.setcolor(this);
+			app.effect.friendsMenu.controlListView(this);
+		});
+		
 		
 		//发送消息
 		messageSend.click(app.sendMessage);

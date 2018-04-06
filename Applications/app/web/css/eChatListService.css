@@ -16,7 +16,7 @@ build: 2676
 #eChat_list .list{
 	border: 0;
     position: initial;
-    height: 80%;
+    height: 85%;
 }
 
 
@@ -51,4 +51,21 @@ build: 2676
     line-height: 1em;
     padding: 0.01em;
     display: none;
+}
+
+#echat_list .menu{
+    width: 20%;
+    height: 100%;
+    height: 2em;
+    text-align: center;
+    color: currentColor;
+    position: fixed;
+    bottom: 0;
+}
+
+#echat_list .menu td button{
+	display: inline-block;
+    width: 100%;
+	height: 1.8em;
+	background-color:#EAEAEA;
 }
