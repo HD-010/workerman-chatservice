@@ -32,9 +32,10 @@ define(['jquery','easyForm','User'],function($,$e,User){
 			$("form[name=sing]").attr('action',url);
 		}
 		
-		//向表单隐藏域设置token
-		sing.setToken = function(token){
-			$("input[name=token]").val(token);
+		//设置向表单隐藏域的值，如token,userId
+		sing.setHidden = function(key,value){
+		//sing.setToken = function(token){
+			$("input[name="+key+"]").val(value);
 		}
 		
 		//将登录成功后的用户信息保存到本地session
@@ -122,9 +123,12 @@ define(['jquery','easyForm','User'],function($,$e,User){
 				success:function(data){
 					if(data.state == 'success'){
 						//以下为登录成功后的一系列操作
-						//向表单隐藏域设置token
 						var token = data.token || 'DKD15-2542DS';
-						sing.setToken(token);
+						
+						//向表单隐藏域设置token
+						sing.setHidden('token',token);	
+						//向表单隐藏域设置userId
+						sing.setHidden('userId',data.id);
 						
 						//定义用户昵称，当用户名不存在时，使用id作为昵称
 						data.nick = data.uname || data.id;	

@@ -68,7 +68,7 @@ class Demo{
             ],
         ];
         
-        $res = App::DB()->insertCommond($o);
+        $res = App::DB()->insertCommond($o)->exec()-res;
         
     }
 }

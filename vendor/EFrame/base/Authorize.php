@@ -25,6 +25,6 @@ class Authorize{
     public function userInfo($key=null){
         if(!is_array($this->userInfo)) $this->userInfo = [];
         if(!$key) return $this->userInfo;
-        T::arrayValue($key, $this->userInfo);
+        return T::arrayValue($key, $this->userInfo);
     }
 }

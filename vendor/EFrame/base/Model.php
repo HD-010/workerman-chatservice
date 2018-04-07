@@ -17,6 +17,7 @@ class Model{
      */
     public function init($className){
         if(!is_object(App::$model->$className)){
+            require_once($controlPath = App::params('@root').'/'.App::module().'/models/'.$className.'.php');
             //如果该model不存在，则 实例化 并返回
             return App::$model->$className = new $className();
         }

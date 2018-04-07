@@ -8,6 +8,7 @@
 class View{
     private $viewPath;
     private $layoutPath;
+    private $data;
     
     /**
      * @param unknown $fileName
@@ -26,6 +27,7 @@ class View{
      * $this->contents();
      */
     public function contents(){
+        $data = $this->data;
         if(is_file($this->viewPath)){
             require($this->viewPath);
         }
@@ -37,6 +39,8 @@ class View{
      * @param unknown $data 传到视图的数据
      */
     public function render($fileName,$data=null){
+        $this->data = $data;
+        
         //这里申明视图文件路径，将后在布局文件中通过调用$this->contents()方法载入视图文件
         $viewPath = App::params('@root').'/'.App::module().'/views/'.App::control().'/'.$fileName.'.php';
         $this->viewPath = $viewPath;

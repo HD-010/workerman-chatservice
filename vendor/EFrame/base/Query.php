@@ -343,16 +343,16 @@ class Query{
             }
             
             if(is_array($fdArr) && !empty($fdArr)){
-                $fields = $this->fieldImplode($tb, $fdArr);
+                $fields .= $this->fieldImplode($tb, $fdArr) . ',';
                 //$fields = substr($delimit . implode($delimit,$fdArr),1);
                 
             }else{
-                $fields = ' '.trim($fdArr);
+                $fields .= ' '.trim($fdArr) . ',';
             }
         }
         $this->mainTb = $mainTb;
         
-        return $fields;
+        return substr($fields,0,-1);
     }
     
     

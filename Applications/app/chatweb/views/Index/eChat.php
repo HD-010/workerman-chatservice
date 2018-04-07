@@ -3,8 +3,7 @@
 	<div id='chatHead' style='border:0;width:100%;height:8.5%;background-color:#52A4F1;'><h2>易享服务在线</h2></div>
 	
 	<!-- 好友列表 -->
-	<?php $this->renderWidget('eChatList');?>
-
+	<?php  echo $this->renderWidget('eChatList',$data);?>
 
     <div id='eChat_main'>
     	<!-- 这里是发送和接收到的信息列表 -->

@@ -3,7 +3,7 @@ return [
     'DBconfig' => [
         'db'=>[
           'class'=>'yii\db\Connection',					//数据库连接类
-          'dsn'=>'mysql:host=127.0.0.1;dbname=dataanalysis',	    //数据库地址，名称
+          'dsn'=>'mysql:host=127.0.0.1;dbname=echat',	    //数据库地址，名称
           'username'=>'root',								//用户名
           'password'=>'root',								//密码
           'charset'=>'UTF8',								//使用字符集

@@ -9,6 +9,7 @@
     	<div class='right'>
     		<form name='sing' action='' method='post'>
     			<input type="hidden" name="sing" value="singIn" />
+    			<input type="hidden" name="userId" value="" />
     			<input type="hidden" name="token" value="" />
     			<table border='0'>
     				<tr><th colspan='3' >用户<a style='color:red' href='/chatweb/sing/up'>注册</a><a style='color:red' href='/chatweb/sing/in'>/登录</a></th></tr>
