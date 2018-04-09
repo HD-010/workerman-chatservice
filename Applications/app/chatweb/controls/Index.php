@@ -23,11 +23,16 @@ class Index extends Control
         App::model('User')->regUI();
         
         //如果用户是游客，则重定向到登录页面，要求他登录
-        if(App::$user->isGuest()) App::redirect('/chatweb/sing/in');
+        if(App::$user->isGuest()) {
+            App::redirect('/chatweb/sing/in');
+            return;
+        }
         
         //初始化用户信息
         $userInfo = App::model('User')->init();
-        //T::print_pre($userInfo);
+        //向用户信息集合中添加token
+        App::$user->setItem('token', App::$request->post('token'));
+        //T::print_pre(App::$user->getItem());
         
         //获取好友分组信息
         $friendsGroup = App::model('Friends')->getGroup();
@@ -45,5 +50,24 @@ class Index extends Control
         //用户已经登录，则显示 易service 服务界面
         $this->render('eChat',$data);
         
+    }
+    
+    
+    /**
+     * 添加好友分组
+     */
+    public function actionAddGroup(){
+        //对转递数据的身份进行认证:
+        //根据用户id查询token进行对比，如果一致则认证通过
+        /* if(App::$request->post('token') != App::$user->getItem('token')){
+            $this->renderJson('error:4000');
+            return;
+        } */
+        
+        //身份认证通过后，将新增的分类名称写入数据表
+        $res = App::model('FriendsGroup')->addGroup();
+        $data = App::model('ErrorInfo')->type($res);
+        echo json_encode($data);
+        //$this->renderJson($data);
     }
 }

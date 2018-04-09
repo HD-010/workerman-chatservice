@@ -27,4 +27,22 @@ class Authorize{
         if(!$key) return $this->userInfo;
         return T::arrayValue($key, $this->userInfo);
     }
+    
+    /**
+     * 添加用户信息
+     * @param unknown $key
+     * @param unknown $value
+     */
+    public function setItem($key,$value){
+        $this->userInfo[$key] = $value;
+    }
+    
+    /**
+     * 获取登录用户的信息
+     * @param string $key 是登录用户的身份信息，可以使用key1.key2....是形式获取健对应的值
+     * @return un
+     */
+    public function getItem($key=null){
+        return $this->userInfo($key);
+    }
 }

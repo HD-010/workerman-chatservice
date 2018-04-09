@@ -27,6 +27,27 @@ define(['jquery'],function($){
 				}
 				
 		}
+		//好友列表底部菜单子菜单效果控制
+		effect.childMenu = {
+				flush:function(o){
+					$(o).css({"background-color":"#ADD8E6"});
+					$(o).siblings().css({"background-color":"#FFFFFF"});
+				},
+				outMenu:function(o){
+					$(o).parent().toggle();
+				},
+				showMenu:function(){
+					$("#childMenu").toggle();
+				},
+				//显示添加分组对话框
+				showAddGroup:function(){
+					$("#addGroup").show();
+				},
+				//取消添加分组对话框
+				cancleAddGroup:function(){
+					$("#addGroup").hide();
+				}
+		}
 
 		/**
 		 * 设置选中好友分组的背景色效果

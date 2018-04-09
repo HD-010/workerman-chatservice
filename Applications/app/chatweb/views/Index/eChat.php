@@ -4,6 +4,7 @@
 	
 	<!-- 好友列表 -->
 	<?php  echo $this->renderWidget('eChatList',$data);?>
+	<?php  echo $this->renderWidget('eChatMenu');?>
 
     <div id='eChat_main'>
     	<!-- 这里是发送和接收到的信息列表 -->

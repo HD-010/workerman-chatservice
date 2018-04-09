@@ -16,6 +16,10 @@ define(function(){
 			
 		},
 		
+		httpServer:function(){
+			return 'http://127.0.0.1:8383';
+		},
+		
 		/**
 		 * 接收到的消息类型data.type与本地历史对象或数据库中历史（留言）对象前缀的对应关系
 		 */

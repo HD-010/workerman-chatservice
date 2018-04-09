@@ -21,7 +21,7 @@
     	<?php endfor;?>
     </dl>
     
-    <dl class="list" typeId='group'>
+    <dl class="list" typeId='group' style="display: none;">
     	<dt class="option">我的广告商</dt>
     	<dd class="discription" uid='69826'><font class='listNick'>小明-柑大师傅</font><font class="listTag"></font></dd>
     	<dd class="discription" uid='5245456'><font class='listNick'>小张－罟大咕嘟</font><font class="listTag"></font></dd>
@@ -30,8 +30,7 @@
     	
     
     </dl>
-    <dl class="list" typeId='common'>
-    	
+    <dl class="list" typeId='common' style="display: none;">
     	<dt class="option">我的供货商</dt>
     	<dd class="discription" uid='5245456'><font class='listNick'>小明-大师傅</font><font class="listTag"></font></dd>
     	<dd class="discription" uid='525456'><font class='listNick'>小张－咕嘟</font><font class="listTag"></font></dd>
@@ -40,14 +39,7 @@
     
     </dl>
     
-    <table class="menu">
-    	<tr>
-        	<td><button typeId='list'>好友</button></td>
-        	<td><button typeId='group'>群聊</button></td>
-        	<td><button typeId='common'>广播</button></td>
-        	<td><button typeId='childMenu'>≡≡</button></td>
-    	</tr>
-    </table>
+    <div style="height:1.8em;display:block;border:0;"></div>
 </div>
 
 

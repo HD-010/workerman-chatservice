@@ -1,0 +1,63 @@
+#echat_menu{
+    width: 20%;
+    /* height: 1.7em; */
+    text-align: center;
+    color: currentColor;
+    position: fixed;
+    bottom: 0;
+}
+
+#echat_menu td button{
+	display: inline-block;
+    width: 100%;
+	height: 1.7em;
+	background-color:#EAEAEA;
+}
+
+#childMenu{
+	width: 15%;
+	min-width:8em;
+	border:1px solid #C0C0C0;
+	position: fixed;
+    bottom: 2.2em;
+	margin-left:5%;
+	display:none;
+}
+#childMenu li{
+    height: 1.8em;
+	border:0;
+    border-top: 1px solid #F0F0F0;
+    line-height: 1.8em;
+    padding-left: 1em;
+}
+
+#addGroup{
+	width: 20%;
+    height: 8em;
+	position: fixed;
+	border:1px solid #D5D5D5;
+    bottom: 2em;
+	background-color:#F9F9F9;
+	display:none;
+}
+#addGroup P{
+	padding-top:0.3em;
+	padding-left:10%;
+}
+#addGroup ul li{
+	border:0;
+    margin-top: 0.8em;
+}
+
+#addGroup ul li input[name=groupName]{
+	width:80%;
+	height:1.6em;
+	display:inline-block;
+	margin-left:10%;
+}
+#addGroup ul li input[name=cancleAddGroup],#addGroup ul li input[name=submitAddGroup]{
+	width:30%;
+	height:1.6em;
+	display:inline-block;
+	margin-left:13%;
+}

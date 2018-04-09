@@ -75,6 +75,9 @@ class Route{
             if($route == '/'){
                 $route = $this->defaultRout;
             }
+            //将下划线+字母转换为大写字母
+            $route = $this->rechargRout($route);
+            
             $this->uri = explode('/', $route);
         }
         return $this;
@@ -112,5 +115,22 @@ class Route{
             }
         }
         return -1;
+    }
+    
+    /**
+     * 将下划线+字母转换为大写字母
+     * @param unknown $route
+     */
+    public function rechargRout($route){
+        $str = $route;
+        do{
+            $first_ = strpos($str,'_');
+            if($first_ === false) return $str;
+    
+            $childStr = substr($str,$first_,2);
+            $str = str_replace($childStr,ucfirst(substr($childStr,1,1)),$str);
+            $underLine = strpos($str,'_');
+        }while ($underLine !== false);
+        return $str;
     }
 }

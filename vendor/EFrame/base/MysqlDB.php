@@ -134,5 +134,9 @@ class MysqlDB extends Query
     public function lastInsertId($name=null){
         return $this->res->lastInsertId($name);
     }
+    
+    public function res(){
+        return $this->res;
+    }
 }
 
