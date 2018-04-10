@@ -8,6 +8,11 @@ class ErrorInfo
                 "infoType" => 'success',
                 "description" => '执行成功'
             ],
+            '1000' =>[
+                "state" => "1000",
+                "infoType" => 'error',
+                "description" => '系统变量不能修改'
+            ],
             '4000' =>[
                 "state" => "4000",
                 "infoType" => 'error',

@@ -208,7 +208,6 @@ class Query{
             $this->leftJoin() .
             $this->where() .
             $this->limit();
-    
             $this->sql = $this->mainTb ? $sql : '';
         
             return $this;
@@ -265,7 +264,7 @@ class Query{
             $this->limit();
     
             $this->sql = $this->mainTb ? $sql : '';
-        echo $sql;
+        //echo $sql;
             return $this;
     }
     
@@ -469,7 +468,7 @@ class Query{
        ]
      */
     public function set(){
-        $set = ' ';
+        $set = ' set ';
         $Q = $this->QObj["SET"];
         if(empty($Q)) return '';
         $set .= implode(',',$Q);

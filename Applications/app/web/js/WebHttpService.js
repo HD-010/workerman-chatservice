@@ -10,11 +10,12 @@ define(['jquery','Settings'],function($,Settings){
 			$.ajax({
 				data:data,
 				type:'post',
-				datatype:'json',
-				url:Settings.httpServer()+api,
+				dataType:'json',
+				url:api,
 				success:callback,
-				error:function(data){
-					console.log(data);
+				error:function(res){
+					console.log("错误：");
+					console.log(res);
 				}
 			})
 		},

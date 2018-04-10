@@ -58,6 +58,23 @@ class Friends{
         return $res;
     }
     
+    /**
+     * 根据表id删除好友
+     */
+    public function dropFriends(){
+        $qObj = [
+            "MAIN_TABLE" => 'ec_friends',     //tableName',
+        
+            "WHERE" => [
+                "id=".App::$request->post('snid'),
+            ],
+            "LIMIT" => ""
+        ];
+        
+        $res = App::DB()->deleteCommond($qObj)->exec()->res();
+        return ($res > 0) ? 200 : 8500;
+    }
+    
     
     
 }

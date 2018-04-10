@@ -1,5 +1,5 @@
 <?php
-require(App::params('@root').'/chatweb/models/User.php');
+//require(App::params('@root').'/chatweb/models/User.php');
 
 class Index extends Control
 {
@@ -52,22 +52,4 @@ class Index extends Control
         
     }
     
-    
-    /**
-     * 添加好友分组
-     */
-    public function actionAddGroup(){
-        //对转递数据的身份进行认证:
-        //根据用户id查询token进行对比，如果一致则认证通过
-        /* if(App::$request->post('token') != App::$user->getItem('token')){
-            $this->renderJson('error:4000');
-            return;
-        } */
-        
-        //身份认证通过后，将新增的分类名称写入数据表
-        $res = App::model('FriendsGroup')->addGroup();
-        $data = App::model('ErrorInfo')->type($res);
-        echo json_encode($data);
-        //$this->renderJson($data);
-    }
 }

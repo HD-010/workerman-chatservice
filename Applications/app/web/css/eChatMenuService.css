@@ -14,6 +14,7 @@
 	background-color:#EAEAEA;
 }
 
+/*子菜单*/
 #childMenu{
 	width: 15%;
 	min-width:8em;
@@ -31,6 +32,7 @@
     padding-left: 1em;
 }
 
+/*添加好友分组*/
 #addGroup{
 	width: 20%;
     height: 8em;
@@ -61,3 +63,65 @@
 	display:inline-block;
 	margin-left:13%;
 }
+
+
+/*修改好友分组名称*/
+#alterGroup{
+	width: 20%;
+    height: 8em;
+	position: fixed;
+	border:1px solid #D5D5D5;
+    bottom: 2em;
+	background-color:#F9F9F9;
+	display:none;
+}
+#alterGroup P{
+	padding-top:0.3em;
+	padding-left:10%;
+}
+#alterGroup ul li{
+	border:0;
+    margin-top: 0.8em;
+}
+
+#alterGroup ul li input[name=groupName]{
+	width:80%;
+	height:1.6em;
+	display:inline-block;
+	margin-left:10%;
+}
+#alterGroup ul li input[name=cancleAlterGroup],#alterGroup ul li input[name=submitAlterGroup]{
+	width:30%;
+	height:1.6em;
+	display:inline-block;
+	margin-left:13%;
+}
+
+
+
+/*右键菜单*/
+#rightMenu{
+	border:1px solid #C0C0C0;
+	position: absolute;
+	background-color:#FFFFFF;
+	display:none;
+}
+#rightMenu li{
+	width:10em;
+    height: 1.8em;
+	border:0;
+    border-top: 1px solid #F0F0F0;
+    line-height: 1.8em;
+    padding-left: 1em;
+}
+#rightMenu .child{
+	width: 11em;
+	height:30em;
+    border: 1px solid #C0C0C0;
+    position: fixed;
+    margin-left: 10em;
+    margin-top: -1.8em;
+	overflow-y: overlay;
+	display:none;
+}
+

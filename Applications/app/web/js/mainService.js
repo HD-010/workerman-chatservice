@@ -52,12 +52,18 @@ require([
 		var eChat = $("#eChat");
 		//表情对象
 		var chatFace = $("#chatFace");
+		//右键菜单对象
+		var rightMenu = $("#rightMenu");
 		//好友列表菜单对象
 		var friendsMenu = $("#echat_menu");
 		//好友列表子菜单对象
 		var childMenu = $("#childMenu");
+		//私聊好友列表对象
+		var privateList = $("#echat_list dl[typeId='list']");
 		//添加分组对象
 		var addGroup = $("#addGroup");
+		//修改好友分组名称的对象
+		var alterGroup = $("#alterGroup");
 		//发送信息对象
 		var messageSend = $("#messageSend");
 		
@@ -85,7 +91,40 @@ require([
 			isRegNew ? app.authorize.upSubmit(event) : app.authorize.loginSubmit(event);
 		});
 		
+		//------------------设置右键菜单对象的效果----------------
+		//在友好分组上呼出右键菜单
+		privateList.find(".option").mousedown(function(){
+			app.effect.rightMenu.show(event);
+			//准备后继操作的数据
+			Menu.process.info(this);
+		});
+		//在友好名单上呼出右键菜单
+		privateList.find(".discription").mousedown(function(){
+			app.effect.rightMenu.show(event);
+			//准备后继操作的数据
+			Menu.process.info(this);
+		});
+		//阻止右键放开时的默认事件
+		rightMenu.mouseup(app.effect.rightMenu.stop);
+		//设置鼠标在右键菜单列表上移动时的效果
+		rightMenu.find("li").mouseover(function(){
+			app.effect.rightMenu.flush(this);
+			app.effect.rightMenu.childShow(this);
+		});
+		rightMenu.children("li").mouseout(function(){
+			app.effect.rightMenu.childHide(this);
+		});
+		rightMenu.mouseleave(function(){
+			app.effect.rightMenu.hidden()
+		});
 		
+		//------------------设置右键菜单对象的业务----------------
+		rightMenu.find("li").click(function(){
+			Menu.process.action(this,app.effect);
+		});
+		
+		
+		//----------------设置表情操作对象效果-----------------
 		//设置表情对象淡入炎出效果
 		chatFace.mouseover(function(){
 			if($(this).children('ul').eq(0).css('display') == 'none'){
@@ -101,7 +140,7 @@ require([
 			chatFace.children('ul').eq(0).fadeOut('slow');
 		});
 		
-		//设置好友列表菜单对象效果
+		//---------------设置好友列表菜单对象效果--------------
 		friendsMenu.find('td').click(function(){
 			app.effect.friendsMenu.setcolor(this);
 			app.effect.friendsMenu.controlListView(this);
@@ -115,6 +154,7 @@ require([
 		friendsMenu.find("button[typeId='childMenu']").click(function(){
 			app.effect.childMenu.showMenu();
 		});
+		
 		//显示添加分组对话框
 		childMenu.find('li[typeId=addGroup]').click(app.effect.childMenu.showAddGroup);
 		//取消添加分组对话框
@@ -123,10 +163,28 @@ require([
 		addGroup.find('input[name="groupName"]').change(Menu.valid.groupName);
 		//添加好友分组
 		addGroup.find('input[name="submitAddGroup"]').click(function(event){
-			Menu.add.friendGroup(event);
+			Menu.group.add(event);
 			app.effect.childMenu.cancleAddGroup(event);
 		});
-		//发送消息
+		
+		//显示修改分组对话框,该方法在点击右键菜单时调用
+		//Effect.childMenu.showAlterGroup();
+		//修改分组名称数据验证
+		alterGroup.find('input[name="groupName"]').change(Menu.valid.alterGroupName);
+		//取消修改分组对话框
+		alterGroup.find('input[name="cancleAlterGroup"]').click(app.effect.childMenu.cancleAlterGroup);
+		//修改组数据验证
+		alterGroup.find('input[name="groupName"]').change(Menu.valid.groupName);
+		//修改好友分组名称
+		alterGroup.find('input[name="submitAlterGroup"]').click(function(event){
+			Menu.group.alter(event);
+			app.effect.childMenu.cancleAlterGroup(event);
+		});
+		
+		
+		
+		
+		//-------------------发送消息---------------------
 		messageSend.click(app.sendMessage);
 		
 		//-------------------好友列表操作---------------------

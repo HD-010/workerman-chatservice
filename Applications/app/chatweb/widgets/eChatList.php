@@ -1,19 +1,21 @@
 <link rel='stylesheet' type="text/css" href='/css/eChatListService.css' />
 <?php //T::print_pre($data['friendsList'])?>
 <div id='echat_list'>
-    <dl class="list" typeId='list'>
+    <dl class="list" typeId="list">
     	<?php 
     	for($i = 0;$i < count($data['friendsGroup']); $i++):
     	$group = $data['friendsGroup'][$i];
     	?>
-    	<dt class="option"><?=T::arrayValue('name', $group);?></dt>
+    	<!-- 这里的snid对应数据表中的id -->
+    	<dt class="option" snid="<?=T::arrayValue('id', $group);?>" groupId="<?=T::arrayValue('id', $group);?>"><?=T::arrayValue('name', $group);?></dt>
     		<?php 
     		for($j = 0; $j < count($data['friendsList']); $j++):
     		$list = $data['friendsList'][$j];
     		?>
         		<?php if($list['group_id'] == $group['id']):?>	
-            	<dd class="discription" uid='<?=T::arrayValue('friend_id', $list)?>'>
-                	<font class='listNick'><?=T::arrayValue('nick', $list,T::arrayValue('friend_id', $list))?></font>
+        		<!-- 这里的snid对应数据表中的id  uid为当前服务id-->
+            	<dd class="discription" snid='<?=T::arrayValue('id', $list)?>' uid="<?=T::arrayValue('friend_id', $list)?>">
+                	<font class="listNick"><?=T::arrayValue('nick', $list,T::arrayValue('friend_id', $list))?></font>
                 	<font class="listTag"></font>
             	</dd>
             	<?php endif;?>

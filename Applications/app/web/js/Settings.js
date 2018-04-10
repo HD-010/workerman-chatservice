@@ -40,7 +40,27 @@ define(function(){
 		 */
 		serverType: function(){
 			return ['ecspn_','ecscn_','ecsgn_'];
+		},
+		
+		/**
+		 * 设置服务对象接口
+		 * serviceName 服务名称
+		 */
+		serviceApi: function(serviceName){
+			apis = {
+				menu:'/chatweb/menu/',
+			}
+			return apis[serviceName];
+		},
+		
+		/**
+		 * 返回接口
+		 */
+		api: function(name){
+			var uri = this.serviceApi(name)
+			return this.httpServer() + uri;
 		}
+		
 		
 	}
 	
