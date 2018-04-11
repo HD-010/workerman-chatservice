@@ -16,9 +16,12 @@ class Friends{
                 ],
             ],
             "WHERE" => [
-                "user_id =" . App::$user->userInfo("userId"),
+                "user_id in (0," . App::$user->userInfo("userId") . ")",
             ],
-            "LIMIT" => "0,50"
+            "ORDER_BY" => [
+                "weight asc",
+            ],
+            "LIMIT" => "0,100"
         ];
         //查询数据表中是否存在当前用户的信息
         
