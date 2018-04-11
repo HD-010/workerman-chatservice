@@ -173,11 +173,10 @@ require([
 		alterGroup.find('input[name="groupName"]').change(Menu.valid.alterGroupName);
 		//取消修改分组对话框
 		alterGroup.find('input[name="cancleAlterGroup"]').click(app.effect.childMenu.cancleAlterGroup);
-		//修改组数据验证
-		alterGroup.find('input[name="groupName"]').change(Menu.valid.groupName);
 		//修改好友分组名称
 		alterGroup.find('input[name="submitAlterGroup"]').click(function(event){
 			Menu.group.alter(event);
+			//提交后退出对话框
 			app.effect.childMenu.cancleAlterGroup(event);
 		});
 		
