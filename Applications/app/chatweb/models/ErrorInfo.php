@@ -30,8 +30,13 @@ class ErrorInfo
             ],
         
         ];
-         
-         return $error[$No];
+        
+         if(is_array($No)){
+             $res = $error[200];
+             $res['data'] = $No;
+             return $res;
+         }
+        return $error[$No];
         
     }
 }

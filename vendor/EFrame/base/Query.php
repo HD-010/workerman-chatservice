@@ -77,7 +77,7 @@ class Query{
      * App::db()->insertCommond($o)->showQuery();
      */
     public function showQuery(){
-        print_r($this->sql);
+        return $this->sql;
     }
     
     //========================select查询语句构造========================

@@ -1,5 +1,5 @@
 <link rel='stylesheet' type="text/css" href='/css/eChatMenuService.css' />
-
+<!-- echat_menu -->
 <table id="echat_menu">
 	<tr>
     	<td><button typeId='list'>好友</button></td>
@@ -13,6 +13,8 @@
 	<li typeId="addGroup">+添加友好分组</li>
 </ul>
 
+
+<!-- 以下为与菜单相关的视图 -->
 <!-- 添加好友分组 -->
 <div id="addGroup">
 	<p name="title">添加分组</p>
@@ -47,6 +49,7 @@
 		</ul>
 	</form>
 </div>
+
 <!-- 右键菜单 -->
 <ul id="rightMenu" >
 	<li typeId="dropFriend">删除好友</li>
@@ -66,3 +69,45 @@
 	<li typeId="alterGroup">修改分组名称</li>
 	<li typeId="addToBack">添加到黑名单</li>
 </ul>
+
+<!-- 展示查找好友的视图 -->
+<div id="findFriends">
+	<div name='content'>
+    	<div name="shutDown">✖</div>
+		<!-- 搜索选项框 -->
+		<ul name="searchBox">
+			<li>
+				<input type='text' name='user_id' value='' placeholder='按用户账号查找'/>
+				<select name='sex' style='color:A9A9A9;'>
+					<option value=''>-性别-</option>
+					<option value='人妖'>人妖</option>
+					<option value='女'>女</option>
+					<option value='男'>男</option>
+				</select>
+				<input type='button' name='search' value='查找' />
+			</li>
+			
+		</ul>
+		<!-- 推荐好友名单 -->
+		<ul name="recomendFriends">
+			
+			<!-- 这里通过jquery添加列表中的每一个好友成员 -->
+			
+		</ul>
+		<ul name="operArea">
+			<li><a name="nextBatch" href="???">换一批</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<!-- 展示好友的资料视图 -->
+<div id='lookProfiles'>
+	<div name='content'>
+		<div name="shutDown">✖</div>
+		<ul>
+			<!-- 展示好友资料 -->
+			好友资料正在上线……
+		</ul>
+	</div>
+</div>

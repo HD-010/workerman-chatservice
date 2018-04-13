@@ -125,3 +125,125 @@
 	display:none;
 }
 
+
+/* 展示查找好的视图 */
+#findFriends,#lookProfiles{
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+	display:none;
+}
+#findFriends div[name=content],#lookProfiles div[name=content]{
+	width:70%;
+	max-width:44em;
+	height:65%;
+	border:1px solid #FFFFFF;
+	margin:0 auto;
+	margin-top:5%;
+	background-color:#FFFFFF;
+}
+
+#findFriends div[name=shutDown],#lookProfiles div[name=shutDown]{
+	border: 1px solid red;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 0.8em;
+    text-align: center;
+    color: #fff;
+    background-color: red;
+    float: right;
+    margin-top: -0.5em;
+    margin-right: -0.5em;
+}
+
+#findFriends [name=searchBox]{
+	border: 1px solid #D5D5D5;
+    width: 96%;
+    margin: auto;
+    margin-top: 2em;
+    display: block;
+	padding:1em 0 1em 0;
+}
+
+#findFriends ul[name=searchBox] li{
+    display: inline-block;
+    height: 2.2em;
+    line-height: 2.2em;
+    margin-left: 1em;
+}
+
+#findFriends ul[name=recomendFriends]{
+	border: 1px solid #D5D5D5;
+	padding-top:1em;
+    width: 96%;
+	height:60%;
+    margin: auto;
+    margin-top: 1em;
+    display: block;
+	overflow-y: scroll;
+}
+
+#findFriends li[name=selectFriend]{
+	border: 1px solid #F6F6F6;
+    display: inline-block;
+	margin:0 0 1.2em 1%;
+	padding:0.5em;
+}
+
+#findFriends li[name=selectFriend] div,#findFriends li[name=selectFriend] ul{
+	display:inline-block;
+	border:1px solid #FFFFFF;
+}
+
+#findFriends li[name=selectFriend] div{
+	width:3.6em;
+	height:3.7em;
+	border:1px solid #F0F0F0;
+    vertical-align: bottom;
+}
+
+#findFriends li[name=selectFriend] div img{
+	width:100%;
+	height:100%;
+}
+
+#findFriends li[name=nick]{
+	display:block;
+	height:1.8em;
+	line-height:1em;
+	border:1px solid #FFFFFF;
+}
+
+#findFriends li[name=lookProfiles],#findFriends li[name=addToFriends]{
+	display:inline-block;
+	height:1.5em;
+	line-height:1.5em;
+}
+
+#findFriends li[name=selectFriend] a{
+	color:red;
+	display:inline-block;
+	width:4em;
+	text-align:center;
+}
+#findFriends li[name=addToFriends]{
+	width:4em;
+	text-align:center;
+	border-radius:0.5em;
+}
+#findFriends li[name=addToFriends] input{
+	border-radius: 0.3em;
+	font-size:80%;
+}
+
+#findFriends ul[name=operArea] a{
+	display: inline-block;
+    float: right;
+    margin-right: 5%;
+    margin-top: 1em;
+    border: 1px solid #F0F0F0;
+    padding: 0.2em;
+	color: currentColor;
+}

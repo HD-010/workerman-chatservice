@@ -18,6 +18,15 @@ define(function(){
 		}
 		
 		/**
+		 * 获取访客（用户）信息
+		 * 说明：获取保存在本地session中的访客（用户）信息
+		 */
+		user.getGuestInfo = function(){
+			var guestInfo = sessionStorage.getItem('ecci_'+this.guestId());
+			return JSON.parse(guestInfo);
+		}
+		
+		/**
 		 * 设置访客（用户）信息
 		 * 说明：访方法在用户登录成功后调用，将用户信息保存在本地session中
 		 */
@@ -25,7 +34,7 @@ define(function(){
 			//设置访客id
 			sessionStorage.setItem('echat_client',userInfo.id);
 			//设置访客信息，访客唯一标识为：'ecci_'+userInfo.id
-			sessionStorage.setItem('ecci_'+userInfo.id,userInfo);
+			sessionStorage.setItem('ecci_'+userInfo.id,JSON.stringify(userInfo));
 		}
 		
 		/**

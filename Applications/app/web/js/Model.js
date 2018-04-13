@@ -1,4 +1,4 @@
-define(['jquery','common'],function($,common){
+define(['jquery','common','Process'],function($,common,process){
 	var Model = function(){
 		var model = this;
 		
@@ -192,6 +192,24 @@ define(['jquery','common'],function($,common){
 		}
 		
 		/**
+		 * 展示好友到查找好友的列表
+		 */
+		model.friendsShow = function(data){
+			var friends = $("#findFriends").find("ul[name=recomendFriends]");
+			friends.html('');
+			
+			for(var i = 0; i < data.length; i++){
+				var url,friend;
+				friend = model.boxFriend();
+				friend.find("li[name=nick]").html(data[i].nick).attr('snid',data[i].id).attr('uid',data[i].user_id);
+				url = process.img.face(data[i]);
+				friend.find("div[name=face] img").attr('src',url);
+				
+				friends.append(friend);
+			}
+		}
+		
+		/**
 		 * 接收消息的布局
 		 */
 		model.boxRecive = function(){
@@ -242,7 +260,26 @@ define(['jquery','common'],function($,common){
 			return $(send);
 		}
 		
-		
+		/**
+		 * 添加友好时，查找好友视图中的好友成员布局
+		 */
+		model.boxFriend = function(){
+			var friend = ""+
+				"<li name='selectFriend'>"+
+					"<div name='face'><img src='/images/boy.png' /></div>"+
+					"<ul name='oper'>"+
+						"<li name='nick'>春光不忘空对空</li>"+
+						"<li name='lookProfiles'>"+
+							"<a href='???' >查看资料</a>"+
+						"</li>"+
+						"<li name='addToFriends'>"+
+							"<input type='button' name='addToFriends' value='+好友' />"+
+						"</li>"+
+					"</ul>"+
+				"</li>";
+			
+			return $(friend);
+		}
 	}
 	return Model;
 });

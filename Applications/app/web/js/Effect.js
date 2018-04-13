@@ -6,6 +6,42 @@ define(['jquery','common'],function($,common){
 				list : $("#echat_list .list"),
 		};
 		
+		//查找好友的视图控制
+		effect.findFriends = {
+				//关闭窗口
+				shutDown : function(){
+					$("#findFriends").hide();
+				},
+				
+				//显示窗口
+				showOut : function(){
+					$("#findFriends").show();
+				},
+				
+				//设置　‘换一批’　按键可用的效果
+				enableNextBatch : function(){
+					$('#findFriends').find('a[name=nextBatch]').attr('disable',false).css('color','currentColor')
+				},
+				
+				//设置　‘换一批’　按键不可用的效果
+				disableNextBatch : function(){
+					$('#findFriends').find('a[name=nextBatch]').attr('disable',true).css('color','#F0F0F0')
+				}
+		};
+		
+		//查看好友资料的视图控制
+		effect.lookProfiles = {
+				//关闭窗口
+				shutDown : function(){
+					$("#lookProfiles").hide();
+				},
+				
+				//显示窗口
+				showOut : function(){
+					$("#lookProfiles").show();
+				}
+		};
+		
 		//好友列表右键菜单效果控制
 		effect.rightMenu = {
 				flush:function(o){

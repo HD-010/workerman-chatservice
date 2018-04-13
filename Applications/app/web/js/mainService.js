@@ -14,6 +14,8 @@ require.config({
     	"History" : "http://127.0.0.1:8383/js/History",
     	"WebHttpService" : "http://127.0.0.1:8383/js/WebHttpService",
     	"MenuService" : "http://127.0.0.1:8383/js/MenuService",
+    	"Process" : "http://127.0.0.1:8383/js/Process",
+    	"Regist" : "http://127.0.0.1:8383/js/Regist",
     }
 });
 
@@ -30,7 +32,8 @@ require([
          "Sing",
          "History",
          "WebHttpService",
-         "MenuService"
+         "MenuService",
+         "Regist"
          ],function(
         		 $,
         		 common,
@@ -43,7 +46,8 @@ require([
         		 Sing,
         		 History,
         		 WebHttpService,
-        		 Menu
+        		 Menu,
+        		 regist
         		 ){
 	var app;
 	
@@ -56,6 +60,10 @@ require([
 		var rightMenu = $("#rightMenu");
 		//好友列表菜单对象
 		var friendsMenu = $("#echat_menu");
+		//展示查找好的视图对象
+		var findFriends = $("#findFriends");
+		//展示好友的资料视图对象
+		var lookProfiles = $("#lookProfiles");
 		//好友列表子菜单对象
 		var childMenu = $("#childMenu");
 		//私聊好友列表对象
@@ -157,6 +165,11 @@ require([
 		
 		//显示添加分组对话框
 		childMenu.find('li[typeId=addGroup]').click(app.effect.childMenu.showAddGroup);
+		//显示查找好友视图
+		childMenu.find('li[typeId=searchFriends]').click(function(){
+			app.effect.findFriends.showOut();
+			Menu.friends.find(app.model,app.effect);
+		});
 		//取消添加分组对话框
 		addGroup.find('input[name="cancleAddGroup"]').click(app.effect.childMenu.cancleAddGroup);
 		//添加分组数据验证
@@ -181,6 +194,32 @@ require([
 		});
 		
 		
+		
+		
+		
+		
+		//-------------------查找好友的视图控制---------------------
+		//关闭查找好友的视图
+		findFriends.find('div[name=shutDown]').click(app.effect.findFriends.shutDown);
+		//性别筛选文字颜色控制
+		findFriends.find('select[name=sex]').change(function(){
+			$(this).css({'color':'A9A9A9'});
+			if($(this).val()){
+				$(this).css({'color':'currentColor'});
+			}
+		});
+		//查找下一批名单
+		findFriends.find('a[name=nextBatch]').click(function(event){
+			event.preventDefault();
+			Menu.friends.find(app.model,app.effect);
+		});
+		//按条件搜索
+		findFriends.find('input[name=search]').click(function(event){
+			event.preventDefault();
+			Menu.friends.findByCondition(app.model,app.effect);
+		});
+		//关闭查看好友资料的视图
+		lookProfiles.find('div[name=shutDown]').click(app.effect.lookProfiles.shutDown);
 		
 		
 		//-------------------发送消息---------------------

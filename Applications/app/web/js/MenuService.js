@@ -1,4 +1,21 @@
-define(['jquery','easyForm','Settings','WebHttpService'],function($,$e,Settings,WebHttpService){
+define(['jquery',
+        'easyForm',
+        'Settings',
+        'WebHttpService',
+        'Regist',
+        'User',
+        'Process'
+        ],
+        function($,
+        		$e,
+        		Settings,
+        		WebHttpService,
+        		regist,
+        		User,
+        		process
+        		){
+	var dataProcess = process;
+	var user = new User();
 	var Effect;
 	var valid = {
 		//验证添加分组的名称
@@ -18,6 +35,116 @@ define(['jquery','easyForm','Settings','WebHttpService'],function($,$e,Settings,
 			});
 		},
 	};
+	
+	/**
+     * (查找)好友相关操作
+     * 
+     */
+	var friends = {
+		/**
+		 * 查找可添加好友的名单
+		 */
+		find:function(model,effect){
+			var pageData = $('#findFriends').find('a[name=nextBatch]');
+			
+			//判断是否禁止查找更多可添加好友的名单
+			if(this.forbidMore(pageData)) return;
+			
+			//分页数据
+			var data = {
+				user_id:user.guestId(),
+				searchCount:dataProcess.search.uid(),
+				searchSex:dataProcess.search.sex(),
+				pageSize: pageData.attr('pageSize'),
+				currentPage: pageData.attr('currentPage'),
+				total: pageData.attr('total'),
+			};
+			
+			var api = Settings.api('menu') + 'look_friends';
+			var callback = function(data){
+				if(data.state == 200){
+					//console.log(data.data)
+					
+					//加载查找友有列表中好友实体
+					model.friendsShow(data.data);
+					
+					//注册查找友有列表中好友实体相关事件
+					regist.findFriendEvents.showProfile(effect);
+					regist.findFriendEvents.addToFriends(friends);
+					
+					//-----------设置列表附加信息-----------
+					//设置"下一批" 按键的相关参数
+					//console.log(dataProcess)
+					dataProcess.paging.setPagingParams(data.addData)
+					//设置　‘换一批’　的显示效果
+					if(dataProcess.paging.haveAnyMore(data.addData)){
+						effect.findFriends.enableNextBatch();
+					}else{
+						effect.findFriends.disableNextBatch();
+					}
+					
+				}
+				if(data.state == 8500){
+					alert('加载失败！');
+				}
+			};
+			
+			WebHttpService.sendMessage(data,api,callback);
+		},
+		
+		/**
+		 * 按条件查找可添加好友的名单
+		 * 打开页面时会自动加载0条件数据
+		 * 当按条件查找时，需要先清空自动加载的状态
+		 */
+		findByCondition:function(model,effect){
+			//清空自动加载的状态
+			dataProcess.paging.resetPagingParams();
+			
+			//查找可添加好友的名单
+			this.find(model,effect);
+		},
+		
+		/**
+		 * 禁止查找更多可添加好友的名单
+		 * 原因出自于已经到最后一面，没有更多数据可显示，
+		 * 这里是操作反馈的效果
+		 */
+		forbidMore : function(o){
+			if(o.attr('disable') === 'true'){
+				//alert("已经是最后一批了...")
+				return true;
+			}
+		},
+		
+		/**
+		 * 添加选中用户为我的好友
+		 */
+		add:function(o){
+			var guestInfo = user.getGuestInfo();
+			var data = {
+				token:guestInfo.token,
+				friend_id:o.attr('uid'),
+				user_id:guestInfo.id,
+			};
+			
+			var api = Settings.api('menu') + 'apply_friends';
+			var callback = function(data){
+				console.log(data);
+				if(data.state == 200){
+					alert(data.data.message);
+					window.location.reload();
+				}
+				if(data.state == 8500){
+					alert('添加失败');
+				}
+			};
+			
+			WebHttpService.sendMessage(data,api,callback);
+		}
+	
+	};
+	
 	
 	/**
      * 好友分组的相关操作
@@ -190,6 +317,7 @@ define(['jquery','easyForm','Settings','WebHttpService'],function($,$e,Settings,
 	
 	var Menu = {
 		valid:valid,
+		friends :friends,
 		group : group,
 		action : action,
 		process : process
