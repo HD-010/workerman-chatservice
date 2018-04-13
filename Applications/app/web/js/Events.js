@@ -1,5 +1,15 @@
 define(function(){
 	var Events = {
+			/**
+			 * 注册页面布局事件
+			 */
+			setLayout:function(app){
+				app.effect.pageOnload();
+			},
+			
+			/**
+			 * 注册信息发送事件
+			 */
 			messageSendEvents:function(app){
 				//发送信息对象
 				var messageSend = $("#messageSend");

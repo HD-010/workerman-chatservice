@@ -2,6 +2,16 @@ define(['jquery','common'],function($,common){
 	var Effect = function(){
 		var effect = this;
 		
+		/**
+		 * 页面加载完成时设置页面效果
+		 */
+		effect.pageOnload = function(){
+			var eChat = $("#eChat");
+			//设置app页面的宽度和高度 为全屏
+			eChat.width(window.innerWidth);
+			eChat.height(window.innerHeight);
+		}
+		
 		effect.friendsList = {
 				list : $("#echat_list .list"),
 		};

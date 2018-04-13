@@ -35,7 +35,10 @@ define(['Events','MenuService'],function(Events,Menu){
 			},
 			
 			onLoad:function(app,Menu){
-				//----------------注册信息对象事件-----------------
+				//----------------注册页面布局事件-----------------
+				Events.setLayout(app)
+				
+				//----------------注册信息发送对象事件-----------------
 				Events.messageSendEvents(app);
 				
 				//----------------注册登录验证事件-----------------
