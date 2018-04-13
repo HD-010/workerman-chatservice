@@ -33,7 +33,8 @@ require([
          "History",
          "WebHttpService",
          "MenuService",
-         "Regist"
+         "Regist",
+         "Events"
          ],function(
         		 $,
         		 common,
@@ -47,33 +48,36 @@ require([
         		 History,
         		 WebHttpService,
         		 Menu,
-        		 regist
+        		 regist,
+        		 Events
         		 ){
 	var app;
 	
 	$(document).ready(function(){
+		regist.onLoad(app,Menu);
+		
 		
 		var eChat = $("#eChat");
 		//表情对象
-		var chatFace = $("#chatFace");
+		//var chatFace = $("#chatFace");
 		//右键菜单对象
-		var rightMenu = $("#rightMenu");
+		//var rightMenu = $("#rightMenu");
 		//好友列表菜单对象
-		var friendsMenu = $("#echat_menu");
+		//var friendsMenu = $("#echat_menu");
 		//展示查找好的视图对象
-		var findFriends = $("#findFriends");
+		//var findFriends = $("#findFriends");
 		//展示好友的资料视图对象
-		var lookProfiles = $("#lookProfiles");
+		//var lookProfiles = $("#lookProfiles");
 		//好友列表子菜单对象
-		var childMenu = $("#childMenu");
+		//var childMenu = $("#childMenu");
 		//私聊好友列表对象
-		var privateList = $("#echat_list dl[typeId='list']");
+		//var privateList = $("#echat_list dl[typeId='list']");
 		//添加分组对象
-		var addGroup = $("#addGroup");
+		//var addGroup = $("#addGroup");
 		//修改好友分组名称的对象
-		var alterGroup = $("#alterGroup");
+		//var alterGroup = $("#alterGroup");
 		//发送信息对象
-		var messageSend = $("#messageSend");
+		//var messageSend = $("#messageSend");
 		
 		//设置app页面的宽度和高度 为全屏
 		eChat.width(window.innerWidth);
@@ -83,7 +87,7 @@ require([
 		 * 登录验证
 		 * 当用户登录成功时向websocket发送绑定uid和client_id的信息
 		 */
-		var isRegNew = $("input[name=pswd2]").length ? true :false;
+		/*var isRegNew = $("input[name=pswd2]").length ? true :false;
 		
 		$("input[name=uname]").change(app.authorize.checkConut);
 		//密码项校验（分用户登录和用户注册密码校验）
@@ -97,10 +101,10 @@ require([
 		//登录/注册表单submit click事件（分用户登录和用户注册提交）
 		$("form[name='sing'] input[type=submit]").click(function(){
 			isRegNew ? app.authorize.upSubmit(event) : app.authorize.loginSubmit(event);
-		});
+		});*/
 		
 		//------------------设置右键菜单对象的效果----------------
-		//在友好分组上呼出右键菜单
+		/*//在友好分组上呼出右键菜单
 		privateList.find(".option").mousedown(function(){
 			app.effect.rightMenu.show(event);
 			//准备后继操作的数据
@@ -129,11 +133,11 @@ require([
 		//------------------设置右键菜单对象的业务----------------
 		rightMenu.find("li").click(function(){
 			Menu.process.action(this,app.effect);
-		});
+		});*/
 		
 		
 		//----------------设置表情操作对象效果-----------------
-		//设置表情对象淡入炎出效果
+		/*//设置表情对象淡入炎出效果
 		chatFace.mouseover(function(){
 			if($(this).children('ul').eq(0).css('display') == 'none'){
 				$(this).children('ul').eq(0).fadeIn('slow');
@@ -146,10 +150,10 @@ require([
 		//选择表情后表情选择面板淡入
 		chatFace.find('li').click(function(){
 			chatFace.children('ul').eq(0).fadeOut('slow');
-		});
+		});*/
 		
 		//---------------设置好友列表菜单对象效果--------------
-		friendsMenu.find('td').click(function(){
+		/*friendsMenu.find('td').click(function(){
 			app.effect.friendsMenu.setcolor(this);
 			app.effect.friendsMenu.controlListView(this);
 		});
@@ -161,15 +165,12 @@ require([
 		})
 		friendsMenu.find("button[typeId='childMenu']").click(function(){
 			app.effect.childMenu.showMenu();
-		});
+		});*/
 		
-		//显示添加分组对话框
+		
+		
+		/*//显示添加分组对话框
 		childMenu.find('li[typeId=addGroup]').click(app.effect.childMenu.showAddGroup);
-		//显示查找好友视图
-		childMenu.find('li[typeId=searchFriends]').click(function(){
-			app.effect.findFriends.showOut();
-			Menu.friends.find(app.model,app.effect);
-		});
 		//取消添加分组对话框
 		addGroup.find('input[name="cancleAddGroup"]').click(app.effect.childMenu.cancleAddGroup);
 		//添加分组数据验证
@@ -191,7 +192,7 @@ require([
 			Menu.group.alter(event);
 			//提交后退出对话框
 			app.effect.childMenu.cancleAlterGroup(event);
-		});
+		});*/
 		
 		
 		
@@ -199,6 +200,12 @@ require([
 		
 		
 		//-------------------查找好友的视图控制---------------------
+		
+		/*//显示查找好友视图
+		childMenu.find('li[typeId=searchFriends]').click(function(){
+			app.effect.findFriends.showOut();
+			Menu.friends.find(app.model,app.effect);
+		});
 		//关闭查找好友的视图
 		findFriends.find('div[name=shutDown]').click(app.effect.findFriends.shutDown);
 		//性别筛选文字颜色控制
@@ -220,13 +227,13 @@ require([
 		});
 		//关闭查看好友资料的视图
 		lookProfiles.find('div[name=shutDown]').click(app.effect.lookProfiles.shutDown);
-		
+		*/
 		
 		//-------------------发送消息---------------------
-		messageSend.click(app.sendMessage);
+		//messageSend.click(app.sendMessage);
 		
 		//-------------------好友列表操作---------------------
-		//设置选中好友的显示效果
+		/*//设置选中好友的显示效果
 		var userList = $.find('#echat_list .list dd');
 		$(userList).dblclick(function(){
 			var userInfo = {
@@ -243,18 +250,16 @@ require([
 			app.downServerLeaving();
 			
 			
-		});
+		});*/
 		
 		//设置选中分组的显示效果
-		var userGrout = $.find('#echat_list .list dt');
+		/*var userGrout = $.find('#echat_list .list dt');
 		$(userGrout).click(function(){
 			app.effect.friendsList.selectGroup($(this));
-		});
+		});*/
 		
 		
-		//-------------------页面加载时的操作---------------------
-		//下载留言总记录条数到本地，并加载到列表提示位置
-		app.downServerLeavingTotal();
+		
 		
 	});
 	
