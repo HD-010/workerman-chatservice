@@ -40,6 +40,39 @@ class User{
     }
     
     /**
+     * token验证
+     * 将接收到的token与passport中对应记录的token进行对比，如果一至则验证通过
+     * return boolen
+     */
+    public function checkToken(){
+        $user_id = App::$request->post('user_id') ? App::$request->post('user_id') : App::$request->post('userId');
+        
+        $qObj = [
+            [
+                "user" => [
+                    "TOKEN",
+                ],
+            ],
+            "WHERE" => [
+                "ID =" . $user_id,
+            ],
+            "LIMIT" => "0,1"
+        ];
+        
+        //查询数据表中是否存在当前用户的信息
+        $res = App::DB('passport')->selectCommond($qObj)->query()->fetchAll();
+        
+        $token = T::arrayValue('0.TOKEN', $res,false);
+        
+        if($token != App::$request->post('token')){
+            echo T::outJson(App::model('ErrorInfo')->type(9000));
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    /**
      * 如果用户首次登录，将用户信息写入user表
      */
     public function createCount(){

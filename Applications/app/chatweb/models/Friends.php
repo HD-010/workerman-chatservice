@@ -159,7 +159,6 @@ class Friends{
         ];
         //查询数据表中是否存在当前用户的信息
         $res = App::DB()->selectCommond($qObj)->showQuery();
-        file_put_contents("d:/log.txt", print_r($res,1));
         $res = App::DB()->selectCommond($qObj)->query()->fetchAll();
         $res = empty($res) ? 8500 : $res;
         

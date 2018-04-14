@@ -56,11 +56,6 @@ require([
 	$(document).ready(function(){
 		//注册onload事件
 		regist.onLoad(app,Menu);
-		
-		var eChat = $("#eChat");
-		//设置app页面的宽度和高度 为全屏
-		eChat.width(window.innerWidth);
-		eChat.height(window.innerHeight);
 	});
 	
 	(function(){

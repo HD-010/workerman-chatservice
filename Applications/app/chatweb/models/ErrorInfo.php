@@ -28,6 +28,11 @@ class ErrorInfo
                 "infoType" => 'error',
                 "description" => '结果异常'
             ],
+            '9000' =>[
+                "state" => "9000",
+                "infoType" => 'error',
+                "description" => '无效token！'
+            ],
         
         ];
         

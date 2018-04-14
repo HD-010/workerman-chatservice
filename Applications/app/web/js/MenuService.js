@@ -46,12 +46,13 @@ define(['jquery',
 		 */
 		find:function(model,effect){
 			var pageData = $('#findFriends').find('a[name=nextBatch]');
-			
+			var guestInfo = user.getGuestInfo();
 			//判断是否禁止查找更多可添加好友的名单
 			if(this.forbidMore(pageData)) return;
 			
 			//分页数据
 			var data = {
+				token:guestInfo.token,
 				user_id:user.guestId(),
 				searchCount:dataProcess.search.uid(),
 				searchSex:dataProcess.search.sex(),
@@ -276,8 +277,10 @@ define(['jquery',
 		 * 将当前对象储存在sessionStorage,供右键菜单选项操作时使用
 		 */
 		info : function(o){
+			var guestInfo = user.getGuestInfo();
 			var currenDemo = {
-				token : '',
+				token:guestInfo.token,
+				user_id:user.guestId(),
 				groupId : $(o).attr('groupId'),
 				groupName: $(o).html(),
 				snid : $(o).attr('snid'),		//snid是记录在数据表中的id			

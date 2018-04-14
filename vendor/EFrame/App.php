@@ -133,6 +133,7 @@ class App{
         if(!is_object(self::$db->$configName)){
             self::$db->$configName = Base::DB($configName);
         }
+        
         return self::$db->$configName;
     }
     

@@ -123,7 +123,6 @@ class base{
     public static function DB($configName){
         //连接数据库的配置
         $dbConfig = App::config('DBconfig.'.$configName);
-        
         $dsn = trim($dbConfig['dsn']);
         
         //数据库类型
