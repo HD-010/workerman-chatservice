@@ -247,3 +247,48 @@
     padding: 0.2em;
 	color: currentColor;
 }
+
+
+/* 展示好友的资料视图 */
+#lookProfiles form[name=editProfiles]{
+    margin-top: 2em;
+    border: 1px solid;
+}
+#lookProfiles div[name=addOption]{
+	border: 0;
+    height: 2em;
+    line-height: 2em;
+	margin-top:0.5em;
+}
+#lookProfiles div[name=addOption] button{
+    color: currentColor;
+    display: inline-block;
+    float: right;
+    margin-right: 2em;
+}
+#lookProfiles div[name=addOption] button[name=save]{
+	display:none;
+}
+
+#lookProfiles ul[name=detail]{
+	margin: auto;
+    width: 80%;
+    border: 1px solid　#FFFFFF;
+}
+#lookProfiles input,#lookProfiles select{
+	background-color: transparent;
+    border: 0;
+    padding-left: 0.5em;
+	appearance:none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+#lookProfiles ul[name=detail] li{
+	width:40%;
+    height: 2em;
+	border: 0;
+    margin: 0.5em;
+    line-height: 2em;
+	display: inline-block;
+	
+}

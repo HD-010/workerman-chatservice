@@ -2,6 +2,7 @@ define(['jquery','common'],function($,common){
 	var Effect = function(){
 		var effect = this;
 		
+		
 		/**
 		 * 页面加载完成时设置页面效果
 		 */
@@ -15,6 +16,8 @@ define(['jquery','common'],function($,common){
 		effect.friendsList = {
 				list : $("#echat_list .list"),
 		};
+		
+		
 		
 		//查找好友的视图控制
 		effect.findFriends = {
@@ -39,6 +42,8 @@ define(['jquery','common'],function($,common){
 				}
 		};
 		
+		
+		
 		//查看好友资料的视图控制
 		effect.lookProfiles = {
 				//关闭窗口
@@ -51,6 +56,66 @@ define(['jquery','common'],function($,common){
 					$("#lookProfiles").show();
 				}
 		};
+		
+		
+		//编辑个人资料的视图控制
+		effect.editProfiles = {
+				//关闭窗口
+				shutDown : function(){
+					$("#lookProfiles").hide();
+				},
+				
+				//显示窗口
+				showOut : function(){
+					$("#lookProfiles").show();
+				},
+				
+				//编辑个人资料的视图的编辑框可用
+				enable : function(event){
+					event.preventDefault();
+					//我的资料视图对象
+					var lookProfiles = $("#lookProfiles");
+					
+					//设置input编辑框可用
+					lookProfiles.find('input').css({
+				    	'border': '1px solid #ACACAC'
+					}).removeAttr('disabled');
+					
+					//设置select编辑框可用
+					lookProfiles.find('select').css({
+						'border': '1px solid #ACACAC'
+					}).removeAttr('disabled');
+					
+					//设置编辑按钮不可用
+					lookProfiles.find('button[name=edit]').hide();
+					
+					//设置保存按钮可用
+					lookProfiles.find('button[name=save]').show();
+				},
+				//编辑个人资料的视图的编辑框可用
+				disable : function(){
+					//我的资料视图对象
+					var lookProfiles = $("#lookProfiles");
+					
+					//设置input编辑框可用
+					lookProfiles.find('input').css({
+						'border': 0
+					}).attr('disabled','disabled');
+					
+					//设置select编辑框可用
+					lookProfiles.find('select').css({
+						'border': 0
+					}).attr('disabled','disabled');
+					
+					//设置编辑按钮不可用
+					lookProfiles.find('button[name=edit]').show();
+					
+					//设置保存按钮可用
+					lookProfiles.find('button[name=save]').hide();
+				},
+		};
+		
+		
 		
 		//好友列表右键菜单效果控制
 		effect.rightMenu = {
@@ -120,6 +185,8 @@ define(['jquery','common'],function($,common){
 				}
 		}
 		
+		
+		
 		//好友列表底部菜单效果控制
 		effect.friendsMenu = {
 				//设置背景色
@@ -141,6 +208,8 @@ define(['jquery','common'],function($,common){
 				}
 				
 		}
+		
+		
 		//好友列表底部菜单子菜单效果控制
 		effect.childMenu = {
 				flush:function(o){
@@ -182,6 +251,16 @@ define(['jquery','common'],function($,common){
 				},
 				
 				
+		}
+		
+		/**
+		 * 当有收发信息时，列表效果控制
+		 */
+		effect.message = {
+				scrollTop : function(){
+					var chatList = $("#chatList")
+					chatList[0].scrollTop = chatList[0].scrollHeight;
+				}
 		}
 
 		/**

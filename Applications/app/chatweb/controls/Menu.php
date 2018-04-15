@@ -49,6 +49,14 @@ class Menu extends Control
         //验证token
         if(!App::model('User')->checkToken()) return;
         
+        //删除分组前需要对分组名称进行判断，不能删除　‘我的好友’和‘黑名单’
+        if(in_array(App::$request->post('snid'),App::model('SystemParams')->groupId())){
+            $data = App::model('ErrorInfo')->type(1000);
+            $this->renderJson($data);
+            return;
+        }
+        
+        
         $res = App::model('FriendsGroup')->dropGroup();
         $data = App::model('ErrorInfo')->type($res);
         
@@ -134,6 +142,32 @@ class Menu extends Control
         $res = App::model('Friends')->applyFriends();
         $data = App::model('ErrorInfo')->type($res);
         
+        
+        $this->renderJson($data);
+    }
+    
+    /**
+     * 更新用户资料
+     */
+    public function actionUpdateProfiles(){
+        //验证token
+        if(!App::model('User')->checkToken()) return;
+        
+        $res = App::model('Profiles')->updateProfiles();
+        $data = App::model('ErrorInfo')->type($res);
+        
+        $this->renderJson($data);
+    }
+    
+    /**
+     * 读取用户资料
+     */
+    public function actionReadProfiles(){
+        //验证token
+        if(!App::model('User')->checkToken()) return;
+        
+        $res =App::model('Profiles')->readProfiles();
+        $data = App::model('ErrorInfo')->type($res);
         
         $this->renderJson($data);
     }

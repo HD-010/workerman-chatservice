@@ -40,6 +40,36 @@ define(function(){
 				});
 			},
 			
+			/**
+			 * 设置用户中心操作对象事件
+			 */
+			userCenter:function(app,Menu){
+				var childMenu = $("#childMenu");
+				//显示添加用户资料展示面板
+				var lookProfiles = $("#lookProfiles");
+				childMenu.find('li[typeId=lookProfiles]').click(function(){
+					//展示我的资料视图对象
+					app.effect.editProfiles.showOut();
+					//从服务器获取用户资料
+					Menu.profiles.read();
+					
+				});
+				
+				//编辑个人资料的视图控制
+				lookProfiles.find('button[name=edit]').click(app.effect.editProfiles.enable);
+				
+				//保存个人资料的视图控制
+				lookProfiles.find('button[name=save]').click(function(event){
+					//阻止默认行为
+					event.preventDefault();
+					//保存编辑后的资料
+					Menu.profiles.save(app.effect.editProfiles.disable);
+				});
+				
+				//验证输入的昵称
+				lookProfiles.find('input[name=nick]').change(Menu.valid.profileNick);
+			},
+			
 			
 			/**
 			 * 设置表情操作对象事件

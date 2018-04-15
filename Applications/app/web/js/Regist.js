@@ -44,6 +44,9 @@ define(['Events','MenuService'],function(Events,Menu){
 				//----------------注册登录验证事件-----------------
 				Events.singEvents(app);
 				
+				//----------------注册户中心操作对象事件-----------------
+				Events.userCenter(app,Menu);
+				
 				//----------------注册表情操作对象事件-----------------
 				Events.chatFaceEvents();
 				

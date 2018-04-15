@@ -1,6 +1,8 @@
 <div id='eChat'>
     <!-- 这里是聊天页面头部 -->
-	<div id='chatHead' style='border:0;width:100%;height:8.5%;background-color:#52A4F1;'><h2>易享服务在线</h2></div>
+	<div id='chatHead' style='border:0;width:100%;height:8.5%;background-color:#52A4F1;'>
+		<h2>易享服务在线</h2>
+	</div>
 	
 	<!-- 好友列表 -->
 	<?php  echo $this->renderWidget('eChatList',$data);?>

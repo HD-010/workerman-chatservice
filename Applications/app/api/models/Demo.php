@@ -1,6 +1,6 @@
 <?php
 
-class Data{
+class Demo{
     public function selectData(){
         $o = [
             [

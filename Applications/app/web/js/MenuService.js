@@ -34,6 +34,15 @@ define(['jquery',
 				message : "不能输入特殊字符",
 			});
 		},
+		//验证输入的昵称
+		profileNick:function(){
+			$e("form[name=editProfiles]").valid({
+				option : [["input[name=nick]"]],
+				rule : "isSpecialChartor", 
+				message : "不能输入特殊字符",
+			});
+		},
+		
 	};
 	
 	/**
@@ -236,9 +245,8 @@ define(['jquery',
 			var callback = function(data){
 				if(data.state == 200){
 					window.location.reload();
-				}
-				if(data.state == 8500){
-					alert('好友分组中还有成员，不能删除！');
+				}else{
+					alert(data.description);
 				}
 			};
 			
@@ -270,6 +278,57 @@ define(['jquery',
 			WebHttpService.sendMessage(data,api,callback);
 		}
 	};
+	
+	/**
+	 * 用户资料
+	 */
+	var profiles = {
+		save:function(callback){
+			//设置用户id
+			$("form[name=editProfiles]").find("input[name=userId]").val(user.guestId());
+			
+			$e("form[name=editProfiles]").reSubmit().submit({					//该对象为jquery  ajax参数对象
+            	url:Settings.api('menu') + "update_profiles",
+         		dataType:"JSON",
+         		type:'post',
+         		success:function(data){
+         			if(data.state == '200'){
+         				alert("保存资料成功");
+         				callback();
+         			}
+         		},
+         		error:function(data){
+         			alert("没有保存成功！");
+         		}
+         	});
+		},
+		
+		/**
+		 * 读取用户资料
+		 */
+		read:function(){
+			//设置用户id
+			var data = {
+				userId : user.guestId(),
+				token : $("#lookProfiles").find("input[name=token]").val()
+			};
+			
+			var api = Settings.api('menu') + 'read_profiles';
+			var callback = function(data){
+				if(data.state == 200){
+					//更新数据到视图
+					var lookProfiles = $("#lookProfiles");
+					lookProfiles.find("input[name=nick]").val(data.data.nick);
+					lookProfiles.find("input[name=birthday]").val(data.data.birthday);
+					lookProfiles.find("select[name=sex]").val(data.data.sex);
+					lookProfiles.find("span[name=user_id]").html(data.data.user_id);
+				}
+			};
+			
+			WebHttpService.sendMessage(data,api,callback);
+		}	
+	};
+	
 	
 	var process = {
 		/**
@@ -323,6 +382,7 @@ define(['jquery',
 		friends :friends,
 		group : group,
 		action : action,
+		profiles : profiles,
 		process : process
 	}
 	return Menu;

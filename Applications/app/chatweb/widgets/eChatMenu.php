@@ -9,8 +9,9 @@
 	</tr>
 </table>
 <ul id="childMenu">
-	<li typeId="searchFriends">+查找友好</li>
-	<li typeId="addGroup">+添加友好分组</li>
+	<li typeId="searchFriends">查找友好</li>
+	<li typeId="addGroup">添加友好分组</li>
+	<li typeId="lookProfiles">我的</li>
 </ul>
 
 
@@ -105,9 +106,31 @@
 <div id='lookProfiles'>
 	<div name='content'>
 		<div name="shutDown">✖</div>
-		<ul>
-			<!-- 展示好友资料 -->
-			好友资料正在上线……
-		</ul>
+		<form name='editProfiles' action='' method=''>
+    		<!-- 附加功能选项 -->
+    		<div name='addOption'>
+    			<button name='edit'>编辑</button>
+    			<button name='save'>保存</button>
+			</div>
+			
+			<input type="hidden" name="token" value="<?=App::$user->getItem("token");?>" />
+			
+			<!-- 这里的用户id,如果是展示个人资料，则是当前用户id，如果是展示好友资料，则是当前好友的id -->
+			<input type="hidden" name="userId" value="" />
+    		<!-- 资料名细列表 -->
+    		<ul name='detail'>
+    			<li>昵称:<input name='nick' disabled="disabled" type='text' value='弘德誉曦' /></li>
+    			<li>用户ID:　<span name='user_id'></span></li>
+    			<li>性别:
+        			<select disabled="disabled" name='sex' />
+        				<option value='人妖'>人妖</option>
+    					<option value='女'>女</option>
+    					<option value='男'>男</option>
+        			</select>
+    			</li>
+    			<li>生日:<input name='birthday' disabled="disabled" type='date'  value='2018/4/15' /></li>
+    		</ul>
+    		
+		</form>
 	</div>
 </div>

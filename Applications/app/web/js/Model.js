@@ -270,7 +270,7 @@ define(['jquery','common','Process'],function($,common,process){
 					"<ul name='oper'>"+
 						"<li name='nick'>春光不忘空对空</li>"+
 						"<li name='lookProfiles'>"+
-							"<a href='???' >查看资料</a>"+
+							"<a href='?' >查看资料</a>"+
 						"</li>"+
 						"<li name='addToFriends'>"+
 							"<input type='button' name='addToFriends' value='+好友' />"+
