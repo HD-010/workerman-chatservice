@@ -266,7 +266,7 @@
     float: right;
     margin-right: 2em;
 }
-#lookProfiles div[name=addOption] button[name=save]{
+#lookProfiles div[name=addOption] button[name=save],#lookProfiles div[name=addOption] button[name=edit]{
 	display:none;
 }
 

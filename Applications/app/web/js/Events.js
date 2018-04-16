@@ -97,7 +97,7 @@ define(function(){
 			/**
 			 * 设置右键菜单对象事件
 			 */
-			rightMenuEvents:function(app,Menu){
+			rightMenuEvents:function(app){
 				var privateList = $("#echat_list dl[typeId='list']");
 				var rightMenu = $("#rightMenu");
 				
@@ -105,13 +105,13 @@ define(function(){
 				privateList.find(".option").mousedown(function(){
 					app.effect.rightMenu.show(event);
 					//准备后继操作的数据
-					Menu.process.info(this);
+					app.menu.process.info(this);
 				});
 				//在友好名单上呼出右键菜单
 				privateList.find(".discription").mousedown(function(){
 					app.effect.rightMenu.show(event);
 					//准备后继操作的数据
-					Menu.process.info(this);
+					app.menu.process.info(this);
 				});
 				//阻止右键放开时的默认事件
 				rightMenu.mouseup(app.effect.rightMenu.stop);
@@ -129,7 +129,7 @@ define(function(){
 				
 				//------------------设置右键菜单对象的业务----------------
 				rightMenu.find("li").click(function(){
-					Menu.process.action(this,app.effect);
+					app.menu.process.action(this,app.effect);
 				});
 			},
 			
@@ -161,7 +161,7 @@ define(function(){
 			/**
 			 * 设置好友列表分组对象事件
 			 */
-			friendsGroupEvents:function(app,Menu){
+			friendsGroupEvents:function(app){
 				//好友列表子菜单对象
 				var childMenu = $("#childMenu");
 				//添加分组对象
@@ -174,22 +174,22 @@ define(function(){
 				//取消添加分组对话框
 				addGroup.find('input[name="cancleAddGroup"]').click(app.effect.childMenu.cancleAddGroup);
 				//添加分组数据验证
-				addGroup.find('input[name="groupName"]').change(Menu.valid.groupName);
+				addGroup.find('input[name="groupName"]').change(app.menu.valid.groupName);
 				//添加好友分组
 				addGroup.find('input[name="submitAddGroup"]').click(function(event){
-					Menu.group.add(event);
+					app.menu.group.add(event);
 					app.effect.childMenu.cancleAddGroup(event);
 				});
 				
 				//显示修改分组对话框,该方法在点击右键菜单时调用
 				//Effect.childMenu.showAlterGroup();
 				//修改分组名称数据验证
-				alterGroup.find('input[name="groupName"]').change(Menu.valid.alterGroupName);
+				alterGroup.find('input[name="groupName"]').change(app.menu.valid.alterGroupName);
 				//取消修改分组对话框
 				alterGroup.find('input[name="cancleAlterGroup"]').click(app.effect.childMenu.cancleAlterGroup);
 				//修改好友分组名称
 				alterGroup.find('input[name="submitAlterGroup"]').click(function(event){
-					Menu.group.alter(event);
+					app.menu.group.alter(event);
 					//提交后退出对话框
 					app.effect.childMenu.cancleAlterGroup(event);
 				});
@@ -232,7 +232,7 @@ define(function(){
 			/**
 			 * 查找好友的视图对象事件
 			 */
-			findFriendsEvents:function(app,Menu){
+			findFriendsEvents:function(app){
 				//展示查找好的视图对象
 				var findFriends = $("#findFriends");
 				//好友列表子菜单对象
@@ -243,7 +243,7 @@ define(function(){
 				//显示查找好友视图
 				childMenu.find('li[typeId=searchFriends]').click(function(){
 					app.effect.findFriends.showOut();
-					Menu.friends.find(app.model,app.effect);
+					app.menu.friends.find(app);
 				});
 				//关闭查找好友的视图
 				findFriends.find('div[name=shutDown]').click(app.effect.findFriends.shutDown);
@@ -257,12 +257,12 @@ define(function(){
 				//查找下一批名单
 				findFriends.find('a[name=nextBatch]').click(function(event){
 					event.preventDefault();
-					Menu.friends.find(app.model,app.effect);
+					app.menu.friends.find(app);
 				});
 				//按条件搜索
 				findFriends.find('input[name=search]').click(function(event){
 					event.preventDefault();
-					Menu.friends.findByCondition(app.model,app.effect);
+					app.menu.friends.findByCondition(app);
 				});
 				//关闭查看好友资料的视图
 				lookProfiles.find('div[name=shutDown]').click(app.effect.lookProfiles.shutDown);

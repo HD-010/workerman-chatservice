@@ -12,11 +12,15 @@ define(['Events','MenuService'],function(Events,Menu){
 				/**
 				 * 查看资料
 				 */
-				showProfile:function(effect){
+//				showProfile:function(effect,Menu){
+				showProfile:function(app){
 					var findFriends = $("#findFriends");
 					findFriends.find("li[name=lookProfiles] a").on("click",function(event){
 						event.preventDefault();
-						effect.lookProfiles.showOut()
+						app.effect.lookProfiles.showOut();
+						//从服务器获取用户资料
+						var snid = $(this).parent().siblings('li[name=nick]').attr('snid');
+						app.menu.profiles.read(snid);
 					});
 				},
 				

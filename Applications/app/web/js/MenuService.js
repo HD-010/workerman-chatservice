@@ -53,7 +53,7 @@ define(['jquery',
 		/**
 		 * 查找可添加好友的名单
 		 */
-		find:function(model,effect){
+		find:function(app){
 			var pageData = $('#findFriends').find('a[name=nextBatch]');
 			var guestInfo = user.getGuestInfo();
 			//判断是否禁止查找更多可添加好友的名单
@@ -76,10 +76,10 @@ define(['jquery',
 					//console.log(data.data)
 					
 					//加载查找友有列表中好友实体
-					model.friendsShow(data.data);
+					app.model.friendsShow(data.data);
 					
 					//注册查找友有列表中好友实体相关事件
-					regist.findFriendEvents.showProfile(effect);
+					regist.findFriendEvents.showProfile(app);
 					regist.findFriendEvents.addToFriends(friends);
 					
 					//-----------设置列表附加信息-----------
@@ -88,9 +88,9 @@ define(['jquery',
 					dataProcess.paging.setPagingParams(data.addData)
 					//设置　‘换一批’　的显示效果
 					if(dataProcess.paging.haveAnyMore(data.addData)){
-						effect.findFriends.enableNextBatch();
+						app.effect.findFriends.enableNextBatch();
 					}else{
-						effect.findFriends.disableNextBatch();
+						app.effect.findFriends.disableNextBatch();
 					}
 					
 				}
@@ -107,12 +107,12 @@ define(['jquery',
 		 * 打开页面时会自动加载0条件数据
 		 * 当按条件查找时，需要先清空自动加载的状态
 		 */
-		findByCondition:function(model,effect){
+		findByCondition:function(app){
 			//清空自动加载的状态
 			dataProcess.paging.resetPagingParams();
 			
 			//查找可添加好友的名单
-			this.find(model,effect);
+			this.find(app);
 		},
 		
 		/**
@@ -306,9 +306,10 @@ define(['jquery',
 		/**
 		 * 读取用户资料
 		 */
-		read:function(){
+		read:function(snid){
 			//设置用户id
 			var data = {
+				snid:snid,
 				userId : user.guestId(),
 				token : $("#lookProfiles").find("input[name=token]").val()
 			};

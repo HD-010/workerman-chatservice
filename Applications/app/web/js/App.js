@@ -4,6 +4,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 		app.webSocket;
 		app.webSocketService;
 		app.model;
+		app.menu;
 		app.user;
 		app.effect;
 		app.authorize;

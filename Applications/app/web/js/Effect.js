@@ -68,6 +68,7 @@ define(['jquery','common'],function($,common){
 				//显示窗口
 				showOut : function(){
 					$("#lookProfiles").show();
+					$("#lookProfiles").find('button[name=edit]').show();
 				},
 				
 				//编辑个人资料的视图的编辑框可用
