@@ -10,6 +10,11 @@ require.config({
     	"Model" : "http://127.0.0.1:8383/js/Model",
     	"User"  : "http://127.0.0.1:8383/js/User",
     	"Sing" : "http://127.0.0.1:8383/js/Sing",
+    	"Regist" : "http://127.0.0.1:8383/js/Regist",
+    	"Events" : "http://127.0.0.1:8383/js/Events",
+    	"Menu" : "http://127.0.0.1:8383/js/Menu",
+    	"Effect" : "http://127.0.0.1:8383/js/Effect",
+    	
     }
 });
 
@@ -22,7 +27,11 @@ require([
          "WebSocketService",
          "Model",
          "User",
-         "Sing"
+         "Sing",
+         "Regist",
+         "Events",
+         "Menu",
+         "Effect"
          ],function(
         		 $,
         		 common,
@@ -31,44 +40,17 @@ require([
         		 WebSocketService,
         		 Model,
         		 User,
-        		 Sing
+        		 Sing,
+        		 regist,
+        		 Events,
+        		 Menu,
+        		 Effect
         		 ){
 	var app;
 	
 	$(document).ready(function(){
-		
-		var eChat = $("#eChat");
-		//表情对象
-		var chatFace = $("#chatFace");
-		//发送信息对象
-		var messageSend = $("#messageSend");
-		
-		//设置app页面的宽度和高度 为全屏
-		eChat.width(window.innerWidth);
-		eChat.height(window.innerHeight);
-		
-		//设置表情对象淡入炎出效果
-		chatFace.mouseover(function(){
-			if($(this).children('ul').eq(0).css('display') == 'none'){
-				$(this).children('ul').eq(0).fadeIn('slow');
-			}
-		});
-		chatFace.mouseout(function(){
-			$(this).children('ul').eq(0).fadeOut('slow');
-		});
-		
-		//选择表情后表情选择面板淡入
-		chatFace.find('li').click(function(){
-			chatFace.children('ul').eq(0).fadeOut('slow');
-		});
-		
-
-		//发送消息
-		messageSend.click(app.sendMessage);
-		
-		//-------------------页面加载时的操作---------------------
-		//下载留言总记录条数到本地，并加载到列表提示位置
-		app.downServerLeavingTotal();
+		//注册onload事件
+		regist.onLoad(app);
 		
 	});
 	
@@ -84,6 +66,7 @@ require([
 		app.webSocketService = new WebSocketService(app.webSocket);//创建一个WebSocketService对象
 		app.model = new Model();	//创建一个视图模块对象
 		app.user = new User();		//创建用户对象
+		app.effect = new Effect();	//创建视图效果对象
 		app.authorize = new Sing();	//创建
 		
 		app.webSocket.onopen = app.onSocketOpen;

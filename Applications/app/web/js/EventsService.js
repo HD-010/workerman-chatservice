@@ -43,7 +43,7 @@ define(function(){
 			/**
 			 * 设置用户中心操作对象事件
 			 */
-			userCenter:function(app,Menu){
+			userCenter:function(app){
 				var childMenu = $("#childMenu");
 				//显示添加用户资料展示面板
 				var lookProfiles = $("#lookProfiles");
@@ -51,7 +51,7 @@ define(function(){
 					//展示我的资料视图对象
 					app.effect.editProfiles.showOut();
 					//从服务器获取用户资料
-					Menu.profiles.read();
+					app.menu.profiles.read();
 					
 				});
 				
@@ -63,11 +63,11 @@ define(function(){
 					//阻止默认行为
 					event.preventDefault();
 					//保存编辑后的资料
-					Menu.profiles.save(app.effect.editProfiles.disable);
+					app.menu.profiles.save(app.effect.editProfiles.disable);
 				});
 				
 				//验证输入的昵称
-				lookProfiles.find('input[name=nick]').change(Menu.valid.profileNick);
+				lookProfiles.find('input[name=nick]').change(app.menu.valid.profileNick);
 			},
 			
 			

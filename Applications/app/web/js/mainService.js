@@ -4,12 +4,12 @@ require.config({
         "jquery" : "http://cdn.e01.ren/common/lib/jquery",
         "common" : "http://cdn.e01.ren/common/f/common",
         "easyForm" : "http://cdn.e01.ren/form/lib/easyForm",
-        "App" : "http://127.0.0.1:8383/js/App",
+        "AppService" : "http://127.0.0.1:8383/js/AppService",
         "Settings" : "http://127.0.0.1:8383/js/Settings",
     	"WebSocketService" : "http://127.0.0.1:8383/js/WebSocketService",
     	"Model" : "http://127.0.0.1:8383/js/Model",
     	"User"  : "http://127.0.0.1:8383/js/User",
-    	"Effect"  : "http://127.0.0.1:8383/js/Effect",
+    	"EffectService"  : "http://127.0.0.1:8383/js/EffectService",
     	"Sing" : "http://127.0.0.1:8383/js/Sing",
     	"History" : "http://127.0.0.1:8383/js/History",
     	"WebHttpService" : "http://127.0.0.1:8383/js/WebHttpService",
@@ -24,12 +24,12 @@ require.config({
 require([
          "jquery",
          "common",
-         "App",
+         "AppService",
          "Settings",
          "WebSocketService",
          "Model",
          "User",
-         "Effect",
+         "EffectService",
          "Sing",
          "History",
          "WebHttpService",
@@ -56,7 +56,7 @@ require([
 	
 	$(document).ready(function(){
 		//注册onload事件
-		regist.onLoad(app,Menu);
+		regist.onLoad(app);
 	});
 	
 	(function(){

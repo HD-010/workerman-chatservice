@@ -12,7 +12,6 @@ define(['common','History','Settings'],function(common,History,Settings){
 		
 		/**
 		 * 当与服务器连接成功时，向服务器注册访客和服务商家的id，用于关联访客和商家的会话
-		 * 然后下载留言记录
 		 */
 		app.onSocketOpen = function(e){
 			console.log("连接成功...");
@@ -23,9 +22,6 @@ define(['common','History','Settings'],function(common,History,Settings){
 			if(!app.webSocketService.serviceIsReg()){
 				app.loginMessage();
 			}
-			
-			//下载留言总记录条数到本地，并加载到列表提示位置
-			app.downServerLeaving();
 		}
 		
 		app.onSocketClose = function(e){

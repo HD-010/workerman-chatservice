@@ -89,6 +89,7 @@ define(['common','History'],function(common,History){
 		
 		
 		this.sendMessage = function(sendObj) {
+			console.log(sendObj)
 			webSocket.send(JSON.stringify(sendObj));
 		}
 		
