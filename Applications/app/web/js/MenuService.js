@@ -2,7 +2,7 @@ define(['jquery',
         'easyForm',
         'Settings',
         'WebHttpService',
-        'Regist',
+        'RegistService',
         'User',
         'Process'
         ],

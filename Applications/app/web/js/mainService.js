@@ -15,7 +15,8 @@ require.config({
     	"WebHttpService" : "http://127.0.0.1:8383/js/WebHttpService",
     	"MenuService" : "http://127.0.0.1:8383/js/MenuService",
     	"Process" : "http://127.0.0.1:8383/js/Process",
-    	"Regist" : "http://127.0.0.1:8383/js/Regist",
+    	"RegistService" : "http://127.0.0.1:8383/js/RegistService",
+    	"EventsService" : "http://127.0.0.1:8383/js/EventsService",
     }
 });
 
@@ -33,8 +34,8 @@ require([
          "History",
          "WebHttpService",
          "MenuService",
-         "Regist",
-         "Events"
+         "RegistService",
+         "EventsService"
          ],function(
         		 $,
         		 common,

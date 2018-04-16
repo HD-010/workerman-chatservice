@@ -1,7 +1,7 @@
 /**
  * 文件记录了加载视图时需要注册的事件
  */
-define(['Events','MenuService'],function(Events,Menu){
+define(['EventsService','MenuService'],function(Events,Menu){
 	
 	var regist = {
 			/**
@@ -12,7 +12,6 @@ define(['Events','MenuService'],function(Events,Menu){
 				/**
 				 * 查看资料
 				 */
-//				showProfile:function(effect,Menu){
 				showProfile:function(app){
 					var findFriends = $("#findFriends");
 					findFriends.find("li[name=lookProfiles] a").on("click",function(event){
