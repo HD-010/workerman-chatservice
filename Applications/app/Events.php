@@ -165,8 +165,60 @@ class Events
            'guestId' => $serviceId,
            'serviceId' => $guestId,
            'message'=>$message_data['message'],
+           'date' => date('m/d H:i:s',time()),
        );
-       return Gateway::sendToUid($serviceId, json_encode($new_message));
+       
+       //如果服务端在线，就将信息发送给服务端。如果不在线，就将信息以留言保存到数据库
+       if(!Gateway::isUidOnline($serviceId)){
+           self::saveAsLeavingmessage($message_data);
+       }else{
+           return Gateway::sendToUid($serviceId, json_encode($new_message));
+           
+       }
+   }
+   
+   /**
+    * 将客户端发来的数据保存到数据库
+    * @param string $client_id
+    * @param array $message_data
+    */
+   public static function saveAsLeavingmessage($message_data){
+       /**
+        * 表创建语句：
+        * CREATE TABLE `ec_leavingmessage` (
+          `id` bigint(13) unsigned NOT NULL AUTO_INCREMENT,
+          `historyId` varchar(16) NOT NULL COMMENT '历史记录对象id',
+          `guestId` varchar(11) NOT NULL COMMENT '访客id',
+          `serviceId` varchar(11) NOT NULL COMMENT '服务方id',
+          `message` varchar(255) NOT NULL COMMENT '消息内容',
+          `sendTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIME
+        STAMP COMMENT '消息发送时间',
+          `typeh` enum('receive','send') NOT NULL COMMENT '消息类型是收到还是发送',
+          `isLooked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '消息是否查看',
+          `saveToHistory` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否需要转存为历史记录',
+          PRIMARY KEY (`id`),
+          KEY `historyId` (`historyId`)
+        ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='留言对象表，主要逻辑：留言被查看后按需要转存历史记录表'
+        * @var unknown
+        */
+       
+       $o = [
+            "TABLE" => 'ec_leavingmessage',
+            "FIELDS"=>['historyId','guestId','serviceId','message','typeh','saveToHistory'],
+            'VALUES'=>[
+                [
+                    'ecshp_'.$message_data['guestId'],     //historyId
+                    $message_data['serviceId'],
+                    $message_data['guestId'],
+                    $message_data['message'],
+                    'receive',
+                    '0',
+                ],
+            ],
+        ];
+        
+        //$res = MysqlDB::db()->insertCommond($o)->showQuery();
+        $res = MysqlDB::db()->insertCommond($o)->exec();
    }
    
    /**
@@ -210,11 +262,8 @@ class Events
             ],
         ];
         
-        //print_r($o);
         //$res = MysqlDB::db()->insertCommond($o)->showQuery();
         $res = MysqlDB::db()->insertCommond($o)->exec();
-        
-        
    }
    
    /**

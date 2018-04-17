@@ -75,7 +75,6 @@ define(['common','History'],function(common,History){
 		 */
 		this.messageToHandler = function(data,aModel) {
 			//接接收到信息显示到页面
-			console.log(data)
 			aModel.messageReceive(data);
 		}
 		
@@ -89,7 +88,6 @@ define(['common','History'],function(common,History){
 		
 		
 		this.sendMessage = function(sendObj) {
-			console.log(sendObj)
 			webSocket.send(JSON.stringify(sendObj));
 		}
 		

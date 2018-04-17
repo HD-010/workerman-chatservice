@@ -42,10 +42,8 @@ define(['common','History','Settings'],function(common,History,Settings){
 				var data = JSON.parse(e.data);
 				//判断当前服务方窗口是否打开
 				if((data.serviceId != app.user.serviceId()) && (common.inArray(data.type,Settings.receivMessageType()) != '-1')){
-					//if(common.inArray(data.type,Settings.receivMessageType()) != '-1'){
-						app.renderMessage(data);
-						app.model.noticeUpdate(data);
-					//}
+					app.renderMessage(data);
+					app.model.noticeUpdate(data);
 				}else{
 					//根据信息类型，处理后展示到页面
 					app.webSocketService.processMessage(data,app.webSocketService,app.model);

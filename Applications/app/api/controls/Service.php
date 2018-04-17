@@ -1,5 +1,4 @@
 <?php
-require_once(App::params('@root').'/api/models/Data.php');
 /**
  * 操作名称以action开头
  */

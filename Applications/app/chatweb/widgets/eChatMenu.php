@@ -120,7 +120,7 @@
     		<!-- 资料名细列表 -->
     		<ul name='detail'>
     			<li>昵称:<input name='nick' disabled="disabled" type='text' value='弘德誉曦' /></li>
-    			<li>用户ID:　<span name='user_id'></span></li>
+    			<li>ID:　<span name='user_id'></span></li>
     			<li>性别:
         			<select disabled="disabled" name='sex' />
         				<option value='人妖'>人妖</option>
