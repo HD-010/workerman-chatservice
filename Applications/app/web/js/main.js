@@ -14,6 +14,7 @@ require.config({
     	"Events" : "http://127.0.0.1:8383/js/Events",
     	"Menu" : "http://127.0.0.1:8383/js/Menu",
     	"Effect" : "http://127.0.0.1:8383/js/Effect",
+    	"Process" : "http://127.0.0.1:8383/js/Process",
     	
     }
 });
@@ -31,7 +32,8 @@ require([
          "Regist",
          "Events",
          "Menu",
-         "Effect"
+         "Effect",
+         "Process"
          ],function(
         		 $,
         		 common,
@@ -44,7 +46,8 @@ require([
         		 regist,
         		 Events,
         		 Menu,
-        		 Effect
+        		 Effect,
+        		 process
         		 ){
 	var app;
 	
@@ -67,7 +70,8 @@ require([
 		app.model = new Model();	//创建一个视图模块对象
 		app.user = new User();		//创建用户对象
 		app.effect = new Effect();	//创建视图效果对象
-		app.authorize = new Sing();	//创建
+		app.authorize = new Sing();	//创建用户受权
+		app.process = process;	//创建数据处理对象
 		
 		app.webSocket.onopen = app.onSocketOpen;
 		app.webSocket.onmessage = app.onSocketMessage;

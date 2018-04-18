@@ -1,6 +1,7 @@
 define(['common','History','Settings'],function(common,History,Settings){
 	var App = function(){
 		var app = this;
+		app.origin = 'client';
 		app.webSocket;
 		app.webSocketService;
 		app.model;
@@ -45,7 +46,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 			try {
 				var data = JSON.parse(e.data);
 				//根据信息类型，处理后展示到页面
-				app.webSocketService.processMessage(data,app.webSocketService,app.model);
+				app.webSocketService.processMessage(data,app);
 				//展示到页面时刷新页面效果
 				app.effect.message.scrollTop()
 			
@@ -82,12 +83,15 @@ define(['common','History','Settings'],function(common,History,Settings){
 			var message = app.model.getInputContents();
 			
 			if(message){
+				var addParams = app.process.talking.url();
+				
 				var sendObj = {
 					guestId : app.user.guestId(),									//访客id
 					serviceId : app.user.serviceId(),									//服务id
 					type: 'messagePrivate',
 					message: message,
 					date : date.getMonth() + 1 + '/' +date.getDate() + ' ' + date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds(),
+					addParams : addParams,
 				};
 				
 				app.webSocketService.sendMessage(sendObj);

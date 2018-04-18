@@ -168,6 +168,11 @@ class Events
            'date' => date('m/d H:i:s',time()),
        );
        
+       //添加附加参数
+       if(isset($message_data['addParams'])){
+           $new_message['addParams'] = $message_data['addParams'];
+       }
+       
        //如果服务端在线，就将信息发送给服务端。如果不在线，就将信息以留言保存到数据库
        if(!Gateway::isUidOnline($serviceId)){
            self::saveAsLeavingmessage($message_data);

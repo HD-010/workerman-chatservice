@@ -210,6 +210,13 @@ define(['jquery','common','Process'],function($,common,process){
 		}
 		
 		/**
+		 * 将正在咨询的商品信息展示到服务服务端窗口右上角
+		 */
+		model.modifyShow = function(data){
+			console.log(data)
+		}
+		
+		/**
 		 * 接收消息的布局
 		 */
 		model.boxRecive = function(){

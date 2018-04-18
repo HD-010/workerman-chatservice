@@ -89,6 +89,33 @@ define(function(){
 			sex:function(){
 				return this.box().find('[name=sex]').val();
 			}
+		},
+		
+		/**
+		 * 正在洽谈的页面（商品）
+		 */
+		talking:{
+			address:'',
+			/**
+			 * 返回正在提供服务页面的url
+			 */
+			url:function(){
+				if(this.address.length == 0){
+					this.address = location.href;
+				}
+				
+				var data = {};
+				
+				if(this.address == location.href){
+					data.modify = false;
+				}else{
+					data.modify = true;
+				}
+				
+				data.address = this.address;
+				
+				return data;
+			}
 		}
 	
 	

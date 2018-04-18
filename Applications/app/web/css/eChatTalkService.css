@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+#eChat_talk{
+    width: inherit;
+	height:inherit;
+	border:0;
+    border-top: 1px solid silver;
+    display: inline-block;
+    position: absolute;
+}
+#eChat_talk dd[name=modifyPic]{
+    width: 35%;
+    border: 0;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 0.1em;
+}
+#eChat_talk dd[name=modifyPic] a{
+	display:inline-block;
+	width:48%;
+}
+#eChat_talk dd[name=modifyPic] img{
+	width:98%;
+}
+
+#eChat_talk dt[name=guide]{
+	margin-top:0.5em;
+}
+#eChat_talk dd[name=duideDescription]{
+	width:35%;
+	border:0;
+}
+#eChat_talk dd[name=duideDescription] li{
+	width:98%;
+	margin:auto;
+	border:0;
+	border-bottom:1px solid #f0f0f0;
+	height:2em;
+	line-height:2em;
+}

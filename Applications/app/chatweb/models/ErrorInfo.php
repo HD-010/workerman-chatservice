@@ -18,17 +18,17 @@ class ErrorInfo
                 "infoType" => 'error',
                 "description" => '客户端提交数据时，token验证失败'
             ],
-            '9000' =>[
-                "state" => "9000",
-                "infoType" => 'error',
-                "description" => '向数据库写入数据失败'
-            ],
             '8500' =>[
                 "state" => "8500",
                 "infoType" => 'error',
                 "description" => '结果异常'
             ],
             '9000' =>[
+                "state" => "9000",
+                "infoType" => 'error',
+                "description" => '向数据库写入数据失败'
+            ],
+            '9500' =>[
                 "state" => "9000",
                 "infoType" => 'error',
                 "description" => '无效token！'

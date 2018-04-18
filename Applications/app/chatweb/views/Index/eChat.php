@@ -62,6 +62,10 @@
     	
     </div>
     
+    <!-- 正在交谈的商品视图 -->
+	<?php  echo $this->renderWidget('eChatTalk',$data);?>
+    
+    
 </div>
 
 
