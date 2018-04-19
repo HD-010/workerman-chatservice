@@ -211,9 +211,30 @@ define(['jquery','common','Process'],function($,common,process){
 		
 		/**
 		 * 将正在咨询的商品信息展示到服务服务端窗口右上角
+		 * 	data = {
+				nick:'绿意',			//昵称
+				modifyName:'健康宝贝',	//商品名称
+				address:'http://www.baidu.com',	//连接地址
+				//两张商品主图
+				pic:[
+				     'http://image.uczzd.cn/17021841302844734328.jpg?id=0&from=export',
+				     'http://image.uczzd.cn/17806710652498595778.jpg?id=0&from=export'
+				     ]
+			};
 		 */
 		model.modifyShow = function(data){
-			console.log(data)
+			console.log(data);
+			var modify = $("#eChat_talk");
+			var modifyTitle = modify.children('dt[name=modify]');
+			modifyTitle.children('b[name=nick]').html(data.nick);
+			modifyTitle.children('i[name=modifyName]').html(data.modifyName);
+			
+			var modifyPic = modify.children('dd[name=modifyPic]');
+			modifyPic.find('a').attr('href',data.address);
+			
+			var img = modifyPic.find('img');
+			img.eq(0).attr('src',data.pic[0]);
+			img.eq(1).attr('src',data.pic[1]);
 		}
 		
 		/**

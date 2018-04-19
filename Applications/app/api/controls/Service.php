@@ -37,12 +37,27 @@ class Service extends Control
         //服务id
         $serviceId = App::$request->get('service');
         
+        $echat_sys_params = [
+            commodifyInfo =>[
+                //图片的宽高比例
+                'min_scale' => App::$request->get('min_scale',0),
+                'max_scale' => App::$request->get('max_scale',0),
+                //定义图片的宽度
+                'min_width' => App::$request->get('min_width',1),
+                'max_width' => App::$request->get('max_width',1),
+            ]
+        ];
+        $echat_sys_params_json = json_encode($echat_sys_params);
+        file_put_contents("d:/log4.txt", $echat_sys_params_json);
+        
         $javascript = 
 <<<JSCODE
         $(document).ready(function(){
+            
             var echat_client = $clientId;
             var echat_service = $serviceId;
-            
+            var echat_sys_params = JSON.stringify($echat_sys_params_json);
+            console.log(echat_sys_params);
             if(!echat_client){
                 console.log('访客id不存在');
                 return null;
@@ -56,6 +71,7 @@ class Service extends Control
             //向服务器发送 客户id(访客) 和 服务id(商家) 用于关联访客和商家的会话
             sessionStorage.setItem('echat_client',echat_client);
             sessionStorage.setItem('echat_service',echat_service);
+            sessionStorage.setItem('echat_sys_params',echat_sys_params);    
             $.ajax({
                 url:"http://127.0.0.1:8383/api/service/index",
                 dataType : 'jsonp',
@@ -66,7 +82,7 @@ class Service extends Control
                     $('body').append(result);
                 },
             });
-                
+               
         });
 JSCODE;
         echo $javascript;

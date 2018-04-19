@@ -5,6 +5,14 @@ define(function(){
 			 */
 			setLayout:function(app){
 				app.effect.pageOnload();
+				
+				//关闭聊天窗口
+				$("#chatfoot").find("a[name=goback]").click(app.effect.pageControl.off);
+				
+				//定义打开聊天窗口的接口
+				window.openEChat = function(){
+					$("#eChatBox").show();
+				}
 			},
 			
 			/**

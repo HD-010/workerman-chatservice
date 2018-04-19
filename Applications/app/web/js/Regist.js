@@ -6,7 +6,7 @@ define(['Events','Menu'],function(Events,Menu){
 	var regist = {
 			onLoad:function(app){
 				//----------------注册页面布局事件-----------------
-				//Events.setLayout(app)
+				Events.setLayout(app)
 				
 				//----------------注册信息发送对象事件-----------------
 				Events.messageSendEvents(app);

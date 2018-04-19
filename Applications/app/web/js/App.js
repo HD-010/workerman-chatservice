@@ -83,7 +83,6 @@ define(['common','History','Settings'],function(common,History,Settings){
 			var message = app.model.getInputContents();
 			
 			if(message){
-				var addParams = app.process.talking.url();
 				
 				var sendObj = {
 					guestId : app.user.guestId(),									//访客id
@@ -91,7 +90,8 @@ define(['common','History','Settings'],function(common,History,Settings){
 					type: 'messagePrivate',
 					message: message,
 					date : date.getMonth() + 1 + '/' +date.getDate() + ' ' + date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds(),
-					addParams : addParams,
+					//正在咨询的商品信息，如果没有查到商品信息，则是广告数据
+					addParams : app.process.talking.commodifyInfo(app),
 				};
 				
 				app.webSocketService.sendMessage(sendObj);

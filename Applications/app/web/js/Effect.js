@@ -13,6 +13,20 @@ define(['jquery','common'],function($,common){
 			eChat.height(window.innerHeight);
 		}
 		
+		/**
+		 * 显示或关闭聊天窗口
+		 */
+		effect.pageControl = {
+			on:function(event){
+				event.preventDefault();
+				$("#eChatBox").show();
+			},
+			off:function(event){
+				event.preventDefault();
+				$("#eChatBox").hide();
+			}
+		}
+		
 		effect.friendsList = {
 				list : $("#echat_list .list"),
 		};

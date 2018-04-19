@@ -95,27 +95,87 @@ define(function(){
 		 * 正在洽谈的页面（商品）
 		 */
 		talking:{
-			address:'',
 			/**
 			 * 返回正在提供服务页面的url
 			 */
-			url:function(){
-				if(this.address.length == 0){
-					this.address = location.href;
-				}
+			commodifyInfo:function(app){
+				//初始化商品数据，后面生获取的实际数据会替换初始数据中的项
+				var data = {
+					nick:'小蜜蜂',			//昵称
+					modifyName:'健康宝贝',	//商品名称
+					address:'http://www.baidu.com',	//连接地址
+					//两张商品主图
+					pic:[
+					     'http://image.uczzd.cn/17021841302844734328.jpg?id=0&from=export',
+					     'http://image.uczzd.cn/17806710652498595778.jpg?id=0&from=export'
+					     ]
+				};
 				
-				var data = {};
-				
-				if(this.address == location.href){
-					data.modify = false;
-				}else{
-					data.modify = true;
-				}
-				
-				data.address = this.address;
+				data.address = this.commodifyUrl();
+				data.pic = this.commodifyPic();
 				
 				return data;
+			},
+			
+			/**
+			 * 返回浏览商品页面的地址
+			 */
+			commodifyUrl:function(){
+				return location.href;
+			},
+			
+			/**
+			 * 返回商品主图，上限两张
+			 */
+			commodifyPic:function(){
+				var width,height,scale;
+				var pic = new Array();
+				
+				//页面所有img
+				var allPic = $(document).find('img');
+				
+				var params = this.commodifyParams().commodifyInfo;
+				
+				//定义图片的宽高比例
+				var min_scale = params.min_scale;
+				var max_scale = params.max_scale;
+				//定义图片的宽度
+				var min_width = params.min_width;
+				var max_width = params.max_width;
+				
+				for(var i = 0,limit=0; i < allPic.length,limit <= 2; i++,limit++){
+					width = allPic.eq(i).width();
+					height = allPic.eq(i).height();
+					scale = width/height;
+					
+					if(((width > min_width) && (width < max_width)) && 
+						((scale > min_scale) && (scale < max_scale))
+						){
+						pic.push(allPic.eq(i).attr('src'));
+					}
+				}
+				
+				return pic;
+			},
+			
+			/*
+			 * 返回链接中设置的值
+			 * 	<script type="text/javascript" src="http://127.0.0.1:8383/api/service/online?client=10002&service=10000&token=58555&min_scale=0.9&max_scale=1.1&min_width=300&max_width=350"></script>
+			 * 格式如下：
+			 * commodifyInfo:{
+					max_scale:"1.1",
+					max_width:"350",
+					min_scale:"0.9",
+					min_width:"300"
+					}
+			 */
+			commodifyParams:function(){
+				var commodifyParams = JSON.parse(sessionStorage.getItem('echat_sys_params'));
+				
+				return commodifyParams;
 			}
+			
+			
 		}
 	
 	

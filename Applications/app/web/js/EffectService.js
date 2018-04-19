@@ -14,10 +14,18 @@ define(['jquery','common'],function($,common){
 		}
 		
 		effect.friendsList = {
-				list : $("#echat_list .list"),
+			list : $("#echat_list .list"),
 		};
 		
-		
+		/**
+		 * 设置正在交谈的商品视图的图片高度
+		 */
+		effect.talk = {
+			imgHeight:function(){
+				var img = $("#eChat_talk").find('img');
+				console.log(img);
+			}	
+		};
 		
 		//查找好友的视图控制
 		effect.findFriends = {
