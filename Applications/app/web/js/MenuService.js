@@ -330,6 +330,35 @@ define(['jquery',
 		}	
 	};
 	
+	/**
+	 * 服务宝典
+	 */
+	var serviceGuide = {
+		action:{
+			//当点击编辑条目的时候，隐藏当前列表并显示编辑窗口
+			edit:function(o,app){
+				//app.effect.serviceGuide.shutDownList();
+				app.effect.serviceGuide.showOut();
+				//当前编辑数据
+			},
+			del:function(o,app){
+				console.log(o)
+				//WebHttpService.sendMessage(data,api,callback);
+			}
+		},
+		
+		oper:function(event,app,o){
+			event.preventDefault();
+			
+			var typeId = $(o).attr('typeId');
+			var fn = serviceGuide.action[typeId];
+			if(fn){
+				fn(o,app)
+			}
+		},
+		
+	};
+	
 	
 	var process = {
 		/**
@@ -384,6 +413,7 @@ define(['jquery',
 		group : group,
 		action : action,
 		profiles : profiles,
+		serviceGuide:serviceGuide,
 		process : process
 	}
 	return Menu;

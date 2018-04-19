@@ -23,7 +23,8 @@ define(['jquery','common'],function($,common){
 		effect.talk = {
 			imgHeight:function(){
 				var img = $("#eChat_talk").find('img');
-				console.log(img);
+				
+				img.eq(1).height(img.eq(0).height());
 			}	
 		};
 		
@@ -101,6 +102,79 @@ define(['jquery','common'],function($,common){
 					//设置保存按钮可用
 					lookProfiles.find('button[name=save]').show();
 				},
+				//编辑个人资料的视图的编辑框可用
+				disable : function(){
+					//我的资料视图对象
+					var lookProfiles = $("#lookProfiles");
+					
+					//设置input编辑框可用
+					lookProfiles.find('input').css({
+						'border': 0
+					}).attr('disabled','disabled');
+					
+					//设置select编辑框可用
+					lookProfiles.find('select').css({
+						'border': 0
+					}).attr('disabled','disabled');
+					
+					//设置编辑按钮不可用
+					lookProfiles.find('button[name=edit]').show();
+					
+					//设置保存按钮可用
+					lookProfiles.find('button[name=save]').hide();
+				},
+		};
+		
+		//服务宝典视图控制
+		effect.serviceGuide = {
+				//关闭窗口
+				shutDown : function(){
+					$("#serviceGuide").hide();
+				},
+				//关闭窗口
+				shutDownList : function(){
+					$("#guideList").hide();
+				},
+				
+				//显示窗口
+				showOut : function(){
+					$("#serviceGuide").show();
+				},
+				//显示窗口
+				showOutList : function(){
+					$("#guideList").show();
+				},
+				//当鼠标游动到关键字所在的行，显示操作项
+				showOperOption : function(){
+					$(this).children("span[name=operOption]").show();
+				},
+				//当鼠标离开关键字所在的行，隐藏操作项
+				hideOperOption : function(){
+					$(this).children("span[name=operOption]").hide();
+				},
+				//编辑个人资料的视图的编辑框可用
+				enable : function(event){
+					event.preventDefault();
+					//我的资料视图对象
+					var lookProfiles = $("#lookProfiles");
+					
+					//设置input编辑框可用
+					lookProfiles.find('input').css({
+						'border': '1px solid #ACACAC'
+					}).removeAttr('disabled');
+					
+					//设置select编辑框可用
+					lookProfiles.find('select').css({
+						'border': '1px solid #ACACAC'
+					}).removeAttr('disabled');
+					
+					//设置编辑按钮不可用
+					lookProfiles.find('button[name=edit]').hide();
+					
+					//设置保存按钮可用
+					lookProfiles.find('button[name=save]').show();
+				},
+				
 				//编辑个人资料的视图的编辑框可用
 				disable : function(){
 					//我的资料视图对象

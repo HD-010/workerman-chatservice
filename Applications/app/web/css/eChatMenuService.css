@@ -127,7 +127,11 @@
 
 
 /* 展示查找好的视图 */
-#findFriends,#lookProfiles{
+#findFriends,
+#lookProfiles,
+#serviceGuide,
+#guideList
+{
     width: 100%;
     height: 100%;
     border: 1px solid;
@@ -136,7 +140,11 @@
 	display:none;
     z-index: 999;
 }
-#findFriends div[name=content],#lookProfiles div[name=content]{
+#findFriends div[name=content],
+#lookProfiles div[name=content],
+#serviceGuide div[name=content],
+#guideList div[name=content]
+{
 	width:70%;
 	max-width:44em;
 	height:65%;
@@ -146,7 +154,11 @@
 	background-color:#FFFFFF;
 }
 
-#findFriends div[name=shutDown],#lookProfiles div[name=shutDown]{
+#findFriends div[name=shutDown],
+#lookProfiles div[name=shutDown],
+#serviceGuide div[name=shutDown],
+#guideList div[name=shutDown]
+{
 	border: 1px solid red;
     width: 1.6em;
     height: 1.6em;
@@ -292,4 +304,90 @@
     line-height: 2em;
 	display: inline-block;
 	
+}
+
+/*服务宝典视图*/
+#serviceGuide form[name=editGuide]{
+    margin-top: 2em;
+    border: 1px solid　#ADADAD;
+}
+#serviceGuide div[name=addOption]{
+	border: 0;
+    height: 2em;
+    line-height: 2em;
+	margin-top:0.5em;
+}
+#serviceGuide div[name=addOption] button{
+    color: currentColor;
+    display: inline-block;
+    float: right;
+    margin-right: 2em;
+}
+#serviceGuide ul[name=detail]{
+	margin: auto;
+    width: 90%;
+    border: 1px solid　#FFFFFF;
+}
+#serviceGuide ul[name=detail] li{
+	width:100%;
+	padding: 0.5em 0 0 0;
+}
+#serviceGuide ul[name=detail] iput{
+	width: 50%;
+}
+#serviceGuide ul[name=detail] textarea{
+	width: 100%;
+	height:12em;
+	margin:auto;
+	resize: none;
+}
+
+/*服务宝典视图*/
+#guideList form[name=searchGuid]{
+    margin-top: 2em;
+    border: 1px solid　#ADADAD;
+}
+
+#guideList ul[name=detail]{
+	margin: auto;
+    width: 90%;
+    border: 1px solid　#FFFFFF;
+}
+#guideList ul[name=detail] li{
+	width:100%;
+	padding: 0.5em 0 0 0;
+}
+#guideList ul[name=detail] iput{
+	width: 50%;
+}
+#guideList dl[name=showList]{
+	border: 1px solid #D5D5D5;
+    width: 90%;
+    margin: auto;
+	margin-top: inherit;
+}
+#guideList dl[name=showList] dt{
+	height: 1.8em;
+    border: 1px solid  #D5D5D5;
+	border-left:0;
+	border-right:0;
+    line-height: 1.8em;
+	background-color:#F0F8FF;
+}
+#guideList dl[name=showList] dd{
+	padding: 0.2em 0 0.5em 0;
+}
+#guideList dt span{
+	display:inline-block;
+}
+#guideList span[name=operOption]{
+	float:right;
+	margin-right:0.2em;
+	display:none; 
+}
+#guideList span[name=operOption] a{
+	color: blueviolet;
+}
+#guideList span[name=operOption] a:hover{
+	color: darkolivegreen;
 }

@@ -44,11 +44,17 @@ define(['EventsService','MenuService'],function(Events,Menu){
 				//----------------注册信息发送对象事件-----------------
 				Events.messageSendEvents(app);
 				
+				//----------------注册服务向导事件-----------------
+				Events.talkGuide(app);
+				
 				//----------------注册登录验证事件-----------------
 				Events.singEvents(app);
 				
 				//----------------注册户中心操作对象事件-----------------
 				Events.userCenter(app);
+				
+				//----------------注册服务宝典操作对象事件-----------------
+				Events.servicGuide(app);
 				
 				//----------------注册表情操作对象事件-----------------
 				Events.chatFaceEvents();

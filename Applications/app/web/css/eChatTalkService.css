@@ -7,32 +7,55 @@
     display: inline-block;
     position: absolute;
 }
+#eChat_talk dt[name=modify]{
+	height: 1.5em;
+    line-height: 1.5em;
+    background-color: #F0F8FF;
+}
 #eChat_talk dd[name=modifyPic]{
     width: 35%;
     border: 0;
     border-bottom: 1px solid #EAEAEA;
-    padding: 0.1em;
+    padding: 0.1%;
 }
 #eChat_talk dd[name=modifyPic] a{
 	display:inline-block;
-	width:48%;
+	width:49%;
 }
 #eChat_talk dd[name=modifyPic] img{
-	width:98%;
+	width:100%;
 }
 
 #eChat_talk dt[name=guide]{
-	margin-top:0.5em;
+	height: 2.1em;
+    line-height: 2.1em;
+    background-color: #ADD8E6;
+
 }
-#eChat_talk dd[name=duideDescription]{
+#eChat_talk dt[name=guide] #guide{
+	display:inline-block;	
+	position:fixed;
+	right:0.2em;
+}
+
+#eChat_talk dt[name=guide] #guide button,#eChat_talk dt[name=guide] #guide input{
+	height:1.5em;
+}
+
+#eChat_talk dt[name=guide] #guide input{
+	height:1.7em;
+}
+
+#eChat_talk dd[name=guideDescription]{
 	width:35%;
 	border:0;
 }
-#eChat_talk dd[name=duideDescription] li{
+#eChat_talk dd[name=guideDescription] li{
 	width:98%;
 	margin:auto;
 	border:0;
 	border-bottom:1px solid #f0f0f0;
-	height:2em;
-	line-height:2em;
+	min-height:1em;
+	line-height: 1.2em;
+	padding:0.4em 0 0.4em 0;
 }

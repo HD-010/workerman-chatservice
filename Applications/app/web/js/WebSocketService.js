@@ -79,9 +79,11 @@ define(['common','History'],function(common,History){
 			//接接收到信息显示到页面
 			app.model.messageReceive(data);
 			
-			//将正在咨询的商品信息展示到服务服务端窗口右上角
 			if(app.origin == 'service'){
+				//将正在咨询的商品信息展示到服务服务端窗口右上角
 				app.model.modifyShow(data.addParams);
+				//展示到页面时刷新页面正在交谈的商品信息效果
+				app.effect.talk.imgHeight();
 			}
 		}
 		

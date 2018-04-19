@@ -8,10 +8,18 @@
 		<a href='?' target="_blank"><img src="http://image.uczzd.cn/9251431947197193249.jpg?id=0&from=export&height=140&width=270" /></a>
 	</dd>
 	
-	<dt name='guide'><b>服务宝典：</b></dt>
-	<dd name='duideDescription'>
-		<ul>
-			<li>心法一</li>
+	<dt name="guide">
+		<b>服务宝典：</b>
+		<form id="guide">
+		<i>
+			<input type="text" name="guideKey" value="" placeholder="输入查询关键字" />
+			<button name="searchGuide">搜索</button>
+		</i>
+		</form>
+	</dt>
+	<dd name='guideDescription'>
+		<ul name="guideList">
+			<li>心法一kdfkedfkew劳动服务公司夺鹅卵石　木大地回春陕西省务公司夺鹅务公司夺鹅务公司夺鹅吉电视片糯　炽</li>
 			<li>心法二</li>
 			<li>心法三</li>
 			<li>心法四</li>

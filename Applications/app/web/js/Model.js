@@ -9,6 +9,13 @@ define(['jquery','common','Process'],function($,common,process){
 			return $('#chatText textarea').val();
 		}
 		/**
+		 * 写内容到文本域
+		 */
+		model.setInputContents = function(data){
+			var val = $('#chatText textarea').val();
+			$('#chatText textarea').val(val + data);
+		}
+		/**
 		 * 清空文本域内容
 		 */
 		model.clearInputContents = function(){

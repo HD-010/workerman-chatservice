@@ -19,6 +19,18 @@ define(function(){
 			},
 			
 			/**
+			 * 服务向导事件
+			 */
+			talkGuide:function(app){
+				var guideList = $("#eChat_talk").find("ul[name=guideList] li");
+				//双击加载服务话术
+				guideList.dblclick(function(){
+					//写内容到文本域
+					app.model.setInputContents($(this).html());
+				});
+			},
+			
+			/**
 			 * 设置登录验证事件
 			 * 当用户登录成功时向websocket发送绑定uid和client_id的信息
 			 */
@@ -68,6 +80,51 @@ define(function(){
 				
 				//验证输入的昵称
 				lookProfiles.find('input[name=nick]').change(app.menu.valid.profileNick);
+			},
+			
+			/**
+			 * 设置用服务宝典对象操作事件
+			 */
+			servicGuide:function(app){
+				var childMenu = $("#childMenu");
+				//服务宝典展示面板
+				var serviceGuide = $("#serviceGuide");
+				var guideList = $("#guideList");
+				childMenu.find('li[typeId=guideList]').click(function(){
+					//展示服务宝典视图对象
+					app.effect.serviceGuide.showOutList();
+					//从服务器获取用户资料
+					//app.menu.serviceGuide.read();
+					
+				});
+				serviceGuide.find('div[name=shutDown]').click(app.effect.serviceGuide.shutDown)
+				//关闭服务宝典
+				guideList.find('div[name=shutDown]').click(app.effect.serviceGuide.shutDownList)
+				
+				//当鼠标游动到关键字所在的行，显示操作项
+				guideList.find("dl[name=showList] dt").on("mouseover",app.effect.serviceGuide.showOperOption)
+				
+				//当鼠标离开关键字所在的行，隐藏操作项
+				guideList.find("dl[name=showList] dt").on("mouseleave",app.effect.serviceGuide.hideOperOption)
+				
+				//当鼠标点击操作项时，触发相应的事件
+				guideList.find("span[name=operOption] a").on("click",function(event){
+					app.menu.serviceGuide.oper(event,app,this);
+				});
+				
+				//编辑个人资料的视图控制
+				//lookProfiles.find('button[name=edit]').click(app.effect.editProfiles.enable);
+				
+				//保存个人资料的视图控制
+				/*lookProfiles.find('button[name=save]').click(function(event){
+					//阻止默认行为
+					event.preventDefault();
+					//保存编辑后的资料
+					app.menu.profiles.save(app.effect.editProfiles.disable);
+				});
+				
+				//验证输入的昵称
+				lookProfiles.find('input[name=nick]').change(app.menu.valid.profileNick);*/
 			},
 			
 			

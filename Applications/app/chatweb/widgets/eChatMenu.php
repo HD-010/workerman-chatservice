@@ -12,6 +12,7 @@
 	<li typeId="searchFriends">查找友好</li>
 	<li typeId="addGroup">添加友好分组</li>
 	<li typeId="lookProfiles">我的</li>
+	<li typeId="guideList">服务宝典</li>
 </ul>
 
 
@@ -129,6 +130,68 @@
         			</select>
     			</li>
     			<li>生日:<input name='birthday' disabled="disabled" type='date'  value='2018/4/15' /></li>
+    		</ul>
+    		
+		</form>
+	</div>
+</div>
+
+
+
+<!-- 服务宝典查询列表 -->
+<div id='guideList'>
+	<div name='content'>
+		<div name="shutDown">✖</div>
+		<form name="searchGuid" action="" method="">
+			<input type="hidden" name="token" value="<?=App::$user->getItem("token");?>" />
+			<ul name='detail'>
+    			<li>
+    				<input name='key' type='text' placeholder='搜索关键词……' value='' />
+    				<button name='search'>搜索</button>
+				</li>
+    		</ul>
+		</form>
+		<dl name="showList">
+			<dt>
+				<span name="key">关键词</span>
+				<span name="operOption">
+					<a typeId="edit" href="?">编辑</a>
+					<a typeId="del" href="?">删除</a>
+				</span>
+			</dt>
+			<dd>具体内容</dd>
+			<dt>
+				<span name="key">关键词dffsd5456</span>
+				<span name="operOption">
+					<a typeId="edit" href="?">编辑</a>
+					<a typeId="del" href="?">删除</a>
+				</span>
+			</dt>
+			<dd>具体内容压顶无可奈何花落去体内容压顶无可奈何花落去体内容压顶无可奈何花落去体内容压顶无可奈何花落去体内容压顶无可奈何花落去　夺夺枯</dd>
+		</dl>
+	</div>
+</div>
+
+<!-- 服务宝典增删改查视图 -->
+<div id='serviceGuide'>
+	<div name='content'>
+		<div name="shutDown">✖</div>
+		<form name='editGuide' action='' method=''>
+			
+    		<!-- 附加功能选项 -->
+    		<div name='addOption'>
+    			<button name='save'>保存</button>
+    		</div>
+			<input type="hidden" name="token" value="<?=App::$user->getItem("token");?>" />
+			
+			<!-- 这里的用户id,如果是展示个人资料，则是当前用户id，如果是展示好友资料，则是当前好友的id -->
+			<input type="hidden" name="userId" value="" />
+    		<!-- 添加服务宝典的内容 -->
+    		<ul name='detail'>
+    			<li>搜索关键词:<input name='key' type='text' value='' /></li>
+    			<li>
+        			<textarea name="constents" placeholder="在这里输入内容……"></textarea>
+    			</li>
     		</ul>
     		
 		</form>

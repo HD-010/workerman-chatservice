@@ -48,8 +48,9 @@ define(['common','History','Settings'],function(common,History,Settings){
 				}else{
 					//根据信息类型，处理后展示到页面
 					app.webSocketService.processMessage(data,app);
-					//展示到页面时刷新页面效果
-					app.effect.message.scrollTop()
+					//展示到页面时刷新页面消息列表效果
+					app.effect.message.scrollTop();
+					
 				}
 				
 			} catch(e) {console.log(e)}
