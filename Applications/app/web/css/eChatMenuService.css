@@ -348,16 +348,23 @@
     border: 1px solid　#ADADAD;
 }
 
-#guideList ul[name=detail]{
+#guideList ul[name=addFunc]{
 	margin: auto;
     width: 90%;
     border: 1px solid　#FFFFFF;
 }
-#guideList ul[name=detail] li{
+#guideList ul[name=addFunc] a{
+	display: inline-block;
+    color: currentColor;
+    float: right;
+    margin-right: 1em;
+    font-weight: 700;
+}
+#guideList ul[name=addFunc] li{
 	width:100%;
 	padding: 0.5em 0 0 0;
 }
-#guideList ul[name=detail] iput{
+#guideList ul[name=addFunc] iput{
 	width: 50%;
 }
 #guideList dl[name=showList]{

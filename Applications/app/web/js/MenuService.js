@@ -42,6 +42,22 @@ define(['jquery',
 				message : "不能输入特殊字符",
 			});
 		},
+		//验证服务宝典key
+		serviceGuideKey:function(){
+			$e("form[name=editGuide]").valid({
+				option : [["input[name=key]"]],
+				rule : "isSpecialChartor", 
+				message : "不能输入特殊字符",
+			});
+		},
+		//验证服务宝典constents
+		serviceGuideContents:function(){
+			$e("form[name=editGuide]").valid({
+				option : [["textarea[name=contents]"]],
+				rule : "isSpecialChartor", 
+				message : "不能输入特殊字符",
+			});
+		},
 		
 	};
 	
@@ -335,15 +351,46 @@ define(['jquery',
 	 */
 	var serviceGuide = {
 		action:{
+			//从服务器获取一条记录
+			read:function(){
+				
+			},
+			
 			//当点击编辑条目的时候，隐藏当前列表并显示编辑窗口
 			edit:function(o,app){
 				//app.effect.serviceGuide.shutDownList();
 				app.effect.serviceGuide.showOut();
 				//当前编辑数据
 			},
+			
+			//删除服务宝典中的一条记录
 			del:function(o,app){
 				console.log(o)
 				//WebHttpService.sendMessage(data,api,callback);
+			},
+			
+			//保存一条记录到服务宝典
+			save:function(o,app){
+				console.log("保存数据");
+				//表单对象
+				$("#serviceGuide").find("input[name=userId]").val(user.guestId());
+					
+				$e("form[name=editGuide]").required([
+                    "input[name=key]",
+                 	"textarea[name=contents]"
+                ]).submit({					//该对象为jquery  ajax参数对象
+	           		url:Settings.api('menu') + "save_service_guide",
+	        		dataType:"JSON",
+	        		type:'post',
+	        		success:function(data){
+	        			if(data.state == 200){
+	        				alert(data.description);
+	        			}
+        			},
+	        		error:function(data){
+	        			alert("保存失败");
+	        		}
+                });
 			}
 		},
 		

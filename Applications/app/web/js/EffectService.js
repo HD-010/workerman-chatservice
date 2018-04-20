@@ -137,7 +137,8 @@ define(['jquery','common'],function($,common){
 				},
 				
 				//显示窗口
-				showOut : function(){
+				showOut : function(event){
+					event.preventDefault();
 					$("#serviceGuide").show();
 				},
 				//显示窗口

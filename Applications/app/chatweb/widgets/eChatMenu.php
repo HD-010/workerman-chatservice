@@ -144,10 +144,11 @@
 		<div name="shutDown">✖</div>
 		<form name="searchGuid" action="" method="">
 			<input type="hidden" name="token" value="<?=App::$user->getItem("token");?>" />
-			<ul name='detail'>
+			<ul name='addFunc'>
     			<li>
     				<input name='key' type='text' placeholder='搜索关键词……' value='' />
     				<button name='search'>搜索</button>
+    				<a name='add' href="?">+添加</a>
 				</li>
     		</ul>
 		</form>
@@ -180,9 +181,12 @@
 			
     		<!-- 附加功能选项 -->
     		<div name='addOption'>
-    			<button name='save'>保存</button>
+    			<button name='save' typeId='save'>保存</button>
     		</div>
 			<input type="hidden" name="token" value="<?=App::$user->getItem("token");?>" />
+			<input type="hidden" name="guideId" value="1" />
+			<input type="hidden" name="mechanId" value="1" />
+			<input type="hidden" name="snid" value="" />
 			
 			<!-- 这里的用户id,如果是展示个人资料，则是当前用户id，如果是展示好友资料，则是当前好友的id -->
 			<input type="hidden" name="userId" value="" />
@@ -190,7 +194,7 @@
     		<ul name='detail'>
     			<li>搜索关键词:<input name='key' type='text' value='' /></li>
     			<li>
-        			<textarea name="constents" placeholder="在这里输入内容……"></textarea>
+        			<textarea name="contents" placeholder="在这里输入内容……"></textarea>
     			</li>
     		</ul>
     		

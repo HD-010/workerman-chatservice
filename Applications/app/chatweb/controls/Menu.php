@@ -171,4 +171,21 @@ class Menu extends Control
         
         $this->renderJson($data);
     }
+    
+    /**
+     * 保存服务宝典编辑后的内容
+     */
+    public function actionSaveServiceGuide(){
+        //验证token
+        if(!App::model('User')->checkToken()) return;
+        
+        if(App::$request->post('snid',false)){
+            $res = App::model('ServiceGuide')->update();
+        }else{
+            $res = App::model('ServiceGuide')->insert();
+        }
+        $data = App::model('ErrorInfo')->type($res);
+        
+        $this->renderJson($data);
+    }
 }

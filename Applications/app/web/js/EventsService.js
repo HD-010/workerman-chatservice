@@ -101,15 +101,37 @@ define(function(){
 				//关闭服务宝典
 				guideList.find('div[name=shutDown]').click(app.effect.serviceGuide.shutDownList)
 				
+				//服务宝典列表附加功能项
+				guideList.find("ul[name=addFunc] [name=add]").click(function(event){
+					//显示编辑表单
+					app.effect.serviceGuide.showOut(event);
+				});
+				
+				
 				//当鼠标游动到关键字所在的行，显示操作项
 				guideList.find("dl[name=showList] dt").on("mouseover",app.effect.serviceGuide.showOperOption)
 				
 				//当鼠标离开关键字所在的行，隐藏操作项
 				guideList.find("dl[name=showList] dt").on("mouseleave",app.effect.serviceGuide.hideOperOption)
 				
-				//当鼠标点击操作项时，触发相应的事件
+				//当鼠标点击操作项时，触发相应的(编辑或删除)事件
 				guideList.find("span[name=operOption] a").on("click",function(event){
 					app.menu.serviceGuide.oper(event,app,this);
+				});
+				
+				//当鼠标点击保存按钮时，触发保存事件
+				serviceGuide.find("div[name=addOption] button").on("click",function(event){
+					app.menu.serviceGuide.oper(event,app,this)
+				});
+				
+				//当服务宝典的key发生变化时，对其值进行验证
+				serviceGuide.find("input[name=key]").on("change",function(event){
+					app.menu.valid.serviceGuideKey();
+				});
+				
+				//当服务宝典的contents发生变化时，对其值进行验证
+				serviceGuide.find("textarea[name=contents]").on("change",function(event){
+					app.menu.valid.serviceGuideContents();
 				});
 				
 				//编辑个人资料的视图控制

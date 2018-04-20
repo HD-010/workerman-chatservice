@@ -3892,3 +3892,21 @@ Stack trace:
 #11 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
 #12 {main}
 2018-04-15 18:36:12 pid:1 Worker process terminated
+2018-04-20 16:26:12 pid:1 Error: Call to undefined function showQuery() in E:\WWW\workerman-chatservice\Applications\app\chatweb\models\ServiceGuide.php:22
+Stack trace:
+#0 E:\WWW\workerman-chatservice\Applications\app\chatweb\controls\Menu.php(182): ServiceGuide->update()
+#1 E:\WWW\workerman-chatservice\vendor\EFrame\App.php(165): Menu->actionSaveServiceGuide()
+#2 E:\WWW\workerman-chatservice\Applications\app\web\index.php(12): App->run()
+#3 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(203): include('E:\\WWW\\workerma...')
+#4 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#5 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Connection\TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#6 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #95)
+#7 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#8 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(2096): Workerman\Events\Select->loop()
+#9 E:\WWW\workerman-chatservice\vendor\workerman\workerman\WebServer.php(81): Workerman\Worker->run()
+#10 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1160): Workerman\WebServer->run()
+#11 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(1102): Workerman\Worker::forkWorkersForWindows()
+#12 E:\WWW\workerman-chatservice\vendor\workerman\workerman\Worker.php(459): Workerman\Worker::forkWorkers()
+#13 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
+#14 {main}
+2018-04-20 16:26:14 pid:1 Worker process terminated
