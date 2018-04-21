@@ -245,6 +245,17 @@ define(['jquery','common','Process'],function($,common,process){
 		}
 		
 		/**
+		 * 将话术内容装入服务宝典中的列表
+		 */
+		model.showGuideList = function(data){
+			var list = model.serviceGuideList();
+			list.attr('snid',data.id);
+			$(list[0]).find("span[name=key]").html(data.search_key)
+			$(list[1]).html(data.contents);
+			return list;
+		}
+		
+		/**
 		 * 接收消息的布局
 		 */
 		model.boxRecive = function(){
@@ -314,6 +325,22 @@ define(['jquery','common','Process'],function($,common,process){
 				"</li>";
 			
 			return $(friend);
+		}
+		
+		/**
+		 * 服务宝典列表
+		 */
+		model.serviceGuideList = function(){
+			var list = "" +
+				"<dt snid=89>" +
+					"<span name='key'>关键词</span>" +
+					"<span name='operOption'>" +
+						"<a typeId='edit' href='?'>编辑</a>&nbsp;" +
+						"<a typeId='del' href='?'>删除</a>" +
+					"</span>" +
+				"</dt>" +
+				"<dd snid=89>具体内容</dd>";
+			return $(list);
 		}
 	}
 	return Model;

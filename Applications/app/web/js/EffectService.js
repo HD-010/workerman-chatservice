@@ -136,9 +136,14 @@ define(['jquery','common'],function($,common){
 					$("#guideList").hide();
 				},
 				
-				//显示窗口
-				showOut : function(event){
-					event.preventDefault();
+				/**
+				 * 显示窗口
+				 * 当前方法被两个不同入口调用，所以做event兼容处理
+				 * 调用页面位置：
+				 * １、服务宝典列表的添加按钮
+				 * ２、服务宝典列表项的编辑按钮
+				 */
+				showOut : function(){
 					$("#serviceGuide").show();
 				},
 				//显示窗口

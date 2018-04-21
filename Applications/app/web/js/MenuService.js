@@ -26,6 +26,7 @@ define(['jquery',
 				message : "不能输入特殊字符",
 			});
 		},
+		
 		//验证修改分组的名称
 		alterGroupName:function(){
 			$e("form[name=alterGroup]").valid({
@@ -34,6 +35,7 @@ define(['jquery',
 				message : "不能输入特殊字符",
 			});
 		},
+		
 		//验证输入的昵称
 		profileNick:function(){
 			$e("form[name=editProfiles]").valid({
@@ -42,6 +44,7 @@ define(['jquery',
 				message : "不能输入特殊字符",
 			});
 		},
+		
 		//验证服务宝典key
 		serviceGuideKey:function(){
 			$e("form[name=editGuide]").valid({
@@ -50,6 +53,7 @@ define(['jquery',
 				message : "不能输入特殊字符",
 			});
 		},
+		
 		//验证服务宝典constents
 		serviceGuideContents:function(){
 			$e("form[name=editGuide]").valid({
@@ -59,6 +63,14 @@ define(['jquery',
 			});
 		},
 		
+		//验证服务宝典列表key
+		guideListKey:function(){
+			$e("form[name=searchGuid]").valid({
+				option : [["input[name=key]"]],
+				rule : "isSpecialChartor", 
+				message : "不能输入特殊字符",
+			});
+		},
 	};
 	
 	/**
@@ -348,30 +360,115 @@ define(['jquery',
 	
 	/**
 	 * 服务宝典
+	 * 这是提供的是一件服务话术的维护窗口，只允许用户维护自己创建的话术
 	 */
 	var serviceGuide = {
 		action:{
-			//从服务器获取一条记录
-			read:function(){
+			//从服务器获取记录
+			read:function(event,app,o){
+				//阻止浏览器默认行为
+				if(event){
+					event.preventDefault();
+				}
 				
+				var guideList = $("#guideList");
+				
+				//设置表在隐藏域userId
+				guideList.find('input[name=userId]').val(user.guestId());
+				
+				$e("form[name=searchGuid]").required([
+                    "input[name=key]",
+                ]).reSubmit().submit({					//该对象为jquery  ajax参数对象
+ 	           		url:Settings.api('menu') + "read_guide",
+ 	        		dataType:"JSON",
+ 	        		type:'post',
+ 	        		success:function(data){
+ 	        			if(data.state == 200){
+ 	        				var len = data.data.length;
+ 	        				//服务宝典列表视图
+ 	        				var guideList = $("#guideList");
+ 	        				//清空列表
+ 	        				guideList.find("dl[name=showList]").html('');
+ 	        				for(var i = 0; i < len; i++){
+ 	        					//将话术内容装入服务宝典中的列表
+ 	        					var list = app.model.showGuideList(data.data[i]);
+ 	        					
+ 	        					//加载列表到视图
+ 	        					guideList.find("dl[name=showList]").append(list);
+ 	        				}
+ 	        				//绑定事件
+ 	        				app.events.servicGuideListSYNC(app);
+ 	        			}
+ 	        			
+ 	        			if(data.state == 8500){
+ 	        				//服务宝典列表视图
+ 	        				var guideList = $("#guideList");
+ 	        				//清空列表
+ 	        				guideList.find("dl[name=showList]").html('没有找到相关数据……');
+ 	        			}
+         			},
+ 	        		error:function(data){
+ 	        			alert("查询失败！");
+ 	        		}
+                 });
 			},
 			
 			//当点击编辑条目的时候，隐藏当前列表并显示编辑窗口
-			edit:function(o,app){
-				//app.effect.serviceGuide.shutDownList();
+			add:function(event,app,o){
+				var serviceGuide = $("#serviceGuide");
+				event.preventDefault();
 				app.effect.serviceGuide.showOut();
+				serviceGuide.find("input[name=snid]").val("");
+				serviceGuide.find("input[name=key]").val("");
+				serviceGuide.find("textarea[name=contents]").val("");
+				
 				//当前编辑数据
 			},
 			
+			//当点击编辑条目的时候，隐藏当前列表并显示编辑窗口
+			edit:function(event,app,o){
+				var guideList,serviceGuide,snid,key,contents;
+
+				event.preventDefault();
+				//获取编辑内容
+				guideList = $("#guideList");
+				snid = $(o).parent().parent().attr('snid');
+				key = guideList.find("dt[snid="+snid+"] [name=key]").html();
+				contents = guideList.find("dd[snid="+snid+"]").html();
+				//显示编辑框
+				app.effect.serviceGuide.showOut();
+				//将数据装入编辑框
+				serviceGuide = $("#serviceGuide");
+				serviceGuide.find("input[name=snid]").val(snid);
+				serviceGuide.find("input[name=key]").val(key);
+				serviceGuide.find("textarea[name=contents]").val(contents);
+			},
+			
 			//删除服务宝典中的一条记录
-			del:function(o,app){
-				console.log(o)
-				//WebHttpService.sendMessage(data,api,callback);
+			del:function(event,app,o){
+				event.preventDefault();
+				var guestInfo = user.getGuestInfo();
+				
+				var data = {
+					token:guestInfo.token,
+					userId:user.guestId(),
+					snid:$(o).parent().parent().attr('snid')
+				}
+				var api = Settings.api('menu') + "del_guide";
+				
+				function callback(data){
+					if(data.state == 200){
+						serviceGuide.action.read(null,app);
+					}
+				}
+				
+				WebHttpService.sendMessage(data,api,callback);
 			},
 			
 			//保存一条记录到服务宝典
-			save:function(o,app){
-				console.log("保存数据");
+			save:function(event,app,o){
+				event.preventDefault();
+				
 				//表单对象
 				$("#serviceGuide").find("input[name=userId]").val(user.guestId());
 					
@@ -385,22 +482,13 @@ define(['jquery',
 	        		success:function(data){
 	        			if(data.state == 200){
 	        				alert(data.description);
+	        				serviceGuide.action.read(null,app);
 	        			}
         			},
 	        		error:function(data){
 	        			alert("保存失败");
 	        		}
                 });
-			}
-		},
-		
-		oper:function(event,app,o){
-			event.preventDefault();
-			
-			var typeId = $(o).attr('typeId');
-			var fn = serviceGuide.action[typeId];
-			if(fn){
-				fn(o,app)
 			}
 		},
 		

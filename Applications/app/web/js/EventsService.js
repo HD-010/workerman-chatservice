@@ -93,35 +93,36 @@ define(function(){
 				childMenu.find('li[typeId=guideList]').click(function(){
 					//展示服务宝典视图对象
 					app.effect.serviceGuide.showOutList();
-					//从服务器获取用户资料
-					//app.menu.serviceGuide.read();
+					//从服务器获取服务宝典记录
+					//app.menu.serviceGuide.action.read();
 					
 				});
 				serviceGuide.find('div[name=shutDown]').click(app.effect.serviceGuide.shutDown)
+				
 				//关闭服务宝典
 				guideList.find('div[name=shutDown]').click(app.effect.serviceGuide.shutDownList)
 				
 				//服务宝典列表附加功能项
-				guideList.find("ul[name=addFunc] [name=add]").click(function(event){
-					//显示编辑表单
-					app.effect.serviceGuide.showOut(event);
+				guideList.find("ul[name=addFunc] [name=search]").click(function(event){
+					//触发搜索事件
+					app.menu.serviceGuide.action.read(event,app,this);
 				});
 				
+				//服务宝典列表搜索项验证
+				guideList.find("ul[name=addFunc] [name=key]").change(function(event){
+					//触发搜索事件
+					app.menu.valid.guideListKey();
+				});
 				
-				//当鼠标游动到关键字所在的行，显示操作项
-				guideList.find("dl[name=showList] dt").on("mouseover",app.effect.serviceGuide.showOperOption)
-				
-				//当鼠标离开关键字所在的行，隐藏操作项
-				guideList.find("dl[name=showList] dt").on("mouseleave",app.effect.serviceGuide.hideOperOption)
-				
-				//当鼠标点击操作项时，触发相应的(编辑或删除)事件
-				guideList.find("span[name=operOption] a").on("click",function(event){
-					app.menu.serviceGuide.oper(event,app,this);
+				//服务宝典列表附加功能项
+				guideList.find("ul[name=addFunc] [name=add]").click(function(event){
+					//显示编辑表单
+					app.menu.serviceGuide.action.add(event,app,this);
 				});
 				
 				//当鼠标点击保存按钮时，触发保存事件
 				serviceGuide.find("div[name=addOption] button").on("click",function(event){
-					app.menu.serviceGuide.oper(event,app,this)
+					app.menu.serviceGuide.action.save(event,app,this)
 				});
 				
 				//当服务宝典的key发生变化时，对其值进行验证
@@ -133,22 +134,27 @@ define(function(){
 				serviceGuide.find("textarea[name=contents]").on("change",function(event){
 					app.menu.valid.serviceGuideContents();
 				});
-				
-				//编辑个人资料的视图控制
-				//lookProfiles.find('button[name=edit]').click(app.effect.editProfiles.enable);
-				
-				//保存个人资料的视图控制
-				/*lookProfiles.find('button[name=save]').click(function(event){
-					//阻止默认行为
-					event.preventDefault();
-					//保存编辑后的资料
-					app.menu.profiles.save(app.effect.editProfiles.disable);
-				});
-				
-				//验证输入的昵称
-				lookProfiles.find('input[name=nick]').change(app.menu.valid.profileNick);*/
 			},
 			
+			/**
+			 * 设置用服务宝典对象操作事件,异步加载视图时调用
+			 */
+			servicGuideListSYNC:function(app){
+				var guideList = $("#guideList");
+				//当鼠标点击操作项时，触发编辑事件
+				guideList.find("a[typeId=edit]").on("click",function(event){
+					app.menu.serviceGuide.action.edit(event,app,this);
+				});
+				//当鼠标点击操作项时，触发删除事件
+				guideList.find("a[typeId=del]").on("click",function(event){
+					app.menu.serviceGuide.action.del(event,app,this);
+				});
+				//当鼠标游动到关键字所在的行，显示操作项
+				guideList.find("dl[name=showList] dt").on("mouseover",app.effect.serviceGuide.showOperOption)
+				
+				//当鼠标离开关键字所在的行，隐藏操作项
+				guideList.find("dl[name=showList] dt").on("mouseleave",app.effect.serviceGuide.hideOperOption)
+			},
 			
 			/**
 			 * 设置表情操作对象事件

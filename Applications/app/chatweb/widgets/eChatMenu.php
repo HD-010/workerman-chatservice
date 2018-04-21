@@ -141,34 +141,23 @@
 <!-- 服务宝典查询列表 -->
 <div id='guideList'>
 	<div name='content'>
-		<div name="shutDown">✖</div>
-		<form name="searchGuid" action="" method="">
-			<input type="hidden" name="token" value="<?=App::$user->getItem("token");?>" />
+		<div name='shutDown'>✖</div>
+		<form name='searchGuid' action='' method=''>
+			<input type='hidden' name='token' value='<?=App::$user->getItem('token');?>' />
+			<input type='hidden' name='mechanId' value='1' />
+			<!-- 这里的用户id,如果是展示个人资料，则是当前用户id，如果是展示好友资料，则是当前好友的id -->
+			<input type='hidden' name='userId' value='' />
+			
 			<ul name='addFunc'>
     			<li>
     				<input name='key' type='text' placeholder='搜索关键词……' value='' />
     				<button name='search'>搜索</button>
-    				<a name='add' href="?">+添加</a>
+    				<a name='add' href='?'>+添加</a>
 				</li>
     		</ul>
 		</form>
-		<dl name="showList">
-			<dt>
-				<span name="key">关键词</span>
-				<span name="operOption">
-					<a typeId="edit" href="?">编辑</a>
-					<a typeId="del" href="?">删除</a>
-				</span>
-			</dt>
-			<dd>具体内容</dd>
-			<dt>
-				<span name="key">关键词dffsd5456</span>
-				<span name="operOption">
-					<a typeId="edit" href="?">编辑</a>
-					<a typeId="del" href="?">删除</a>
-				</span>
-			</dt>
-			<dd>具体内容压顶无可奈何花落去体内容压顶无可奈何花落去体内容压顶无可奈何花落去体内容压顶无可奈何花落去体内容压顶无可奈何花落去　夺夺枯</dd>
+		<dl name='showList'>
+			
 		</dl>
 	</div>
 </div>
@@ -176,25 +165,24 @@
 <!-- 服务宝典增删改查视图 -->
 <div id='serviceGuide'>
 	<div name='content'>
-		<div name="shutDown">✖</div>
+		<div name='shutDown'>✖</div>
 		<form name='editGuide' action='' method=''>
 			
     		<!-- 附加功能选项 -->
     		<div name='addOption'>
     			<button name='save' typeId='save'>保存</button>
     		</div>
-			<input type="hidden" name="token" value="<?=App::$user->getItem("token");?>" />
-			<input type="hidden" name="guideId" value="1" />
-			<input type="hidden" name="mechanId" value="1" />
-			<input type="hidden" name="snid" value="" />
+			<input type='hidden' name='token' value='<?=App::$user->getItem('token');?>' />
+			<input type='hidden' name='mechanId' value='1' />
+			<input type='hidden' name='snid' value='1' />
 			
 			<!-- 这里的用户id,如果是展示个人资料，则是当前用户id，如果是展示好友资料，则是当前好友的id -->
-			<input type="hidden" name="userId" value="" />
+			<input type='hidden' name='userId' value='' />
     		<!-- 添加服务宝典的内容 -->
     		<ul name='detail'>
     			<li>搜索关键词:<input name='key' type='text' value='' /></li>
     			<li>
-        			<textarea name="contents" placeholder="在这里输入内容……"></textarea>
+        			<textarea name='contents' placeholder='在这里输入内容……'></textarea>
     			</li>
     		</ul>
     		

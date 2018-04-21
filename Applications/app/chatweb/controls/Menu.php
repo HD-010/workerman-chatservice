@@ -188,4 +188,30 @@ class Menu extends Control
         
         $this->renderJson($data);
     }
+    
+    /**
+     * 从服务器获取服务宝典记录
+     */
+    public function actionReadGuide(){
+        //验证token
+        if(!App::model('User')->checkToken()) return;
+        
+        $res = App::model('ServiceGuide')->readGuide();
+        $data = App::model('ErrorInfo')->type($res);
+        
+        $this->renderJson($data);
+    }
+    
+    /**
+     * 删除一条服务宝典记录
+     */
+    public function actionDelGuide(){
+        //验证token
+        if(!App::model('User')->checkToken()) return;
+        
+        $res = App::model('ServiceGuide')->delGuide();
+        $data = App::model('ErrorInfo')->type($res);
+        
+        $this->renderJson($data);
+    }
 }

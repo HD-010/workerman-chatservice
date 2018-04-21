@@ -11,6 +11,7 @@ build: 2676
     height: 100%;
 	display:inline-block;
 	position: absolute;
+	-webkit-user-select: none;
 }
 
 #eChat_list .list{

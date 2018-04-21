@@ -74,6 +74,7 @@ require([
 		app.effect = new Effect();	//创建页面效果对象
 		app.authorize = new Sing();	//创建
 		app.menu = Menu;
+		app.events = Events;
 		
 		app.webSocket.onopen = app.onSocketOpen;
 		app.webSocket.onmessage = app.onSocketMessage;
