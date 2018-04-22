@@ -54,6 +54,15 @@ define(['jquery',
 			});
 		},
 		
+		//验证服务宝典key
+		serviceQuickGuideKey:function(){
+			$e("form[name=quiceGuide]").valid({
+				option : [["input[name=key]"]],
+				rule : "isSpecialChartor", 
+				message : "不能输入特殊字符",
+			});
+		},
+		
 		//验证服务宝典constents
 		serviceGuideContents:function(){
 			$e("form[name=editGuide]").valid({
@@ -304,6 +313,17 @@ define(['jquery',
 			};
 			
 			WebHttpService.sendMessage(data,api,callback);
+		},
+		
+		/**
+		 * 添加消息到服务宝典
+		 */
+		addToServiceGuide : function(data,app){
+			//打开添加服务宝典视图(显示编辑表单)
+			app.menu.serviceGuide.action.add(event,app,this);
+			//将内容添加到文本域
+			var serviceGuide = $("#serviceGuide");
+			serviceGuide.find("textarea[name=contents]").val(data.content);
 		}
 	};
 	
@@ -364,8 +384,64 @@ define(['jquery',
 	 */
 	var serviceGuide = {
 		action:{
+			//回调函数
+			callback:{
+				searchGuid : function (app,data){
+					  if(data.state == 200){
+	        				var len = data.data.length;
+	        				//服务宝典列表视图
+	        				var guideList = $("#guideList");
+	        				//清空列表
+	        				guideList.find("dl[name=showList]").html('');
+	        				for(var i = 0; i < len; i++){
+	        					//将话术内容装入服务宝典中的列表
+	        					var list = app.model.showGuideList(data.data[i]);
+	        					
+	        					//加载列表到视图
+	        					guideList.find("dl[name=showList]").append(list);
+	        				}
+	        				//绑定事件
+	        				app.events.servicGuideListSYNC(app);
+	        			}
+	        			
+	        			if(data.state == 8500){
+	        				//服务宝典列表视图
+	        				var guideList = $("#guideList");
+	        				//清空列表
+	        				guideList.find("dl[name=showList]").html('没有找到相关数据……');
+	        			}
+     			},
+     			
+     			//服务宝典话术快速查找
+     			quiceGuide:function(app,data){
+     				if(data.state == 200){
+        				var len = data.data.length;
+        				//服务宝典快速查找列表
+        				var eChatTalk = $("#eChat_talk");
+        				//清空列表
+        				eChatTalk.find("ul[name=guideList]").html('');
+        				for(var i = 0; i < len; i++){
+        					//将话术内容装入服务宝典中的列表
+        					var list = app.model.showQuickGuideList(data.data[i]);
+        					
+        					//加载列表到视图
+        					eChatTalk.find("ul[name=guideList]").append(list);
+        				}
+        				//绑定事件
+        				app.events.talkGuideSYNC(app);
+        			}
+        			
+        			if(data.state == 8500){
+        				//服务宝典快速查找列表
+        				var eChatTalk = $("#eChat_talk");
+        				//清空列表
+        				eChatTalk.find("ul[name=guideList]").html('没有找到相关数据……');
+        			}
+     			}
+			},
+			
 			//从服务器获取记录
-			read:function(event,app,o){
+			guideRead:function(event,app,o){
 				//阻止浏览器默认行为
 				if(event){
 					event.preventDefault();
@@ -383,34 +459,40 @@ define(['jquery',
  	        		dataType:"JSON",
  	        		type:'post',
  	        		success:function(data){
- 	        			if(data.state == 200){
- 	        				var len = data.data.length;
- 	        				//服务宝典列表视图
- 	        				var guideList = $("#guideList");
- 	        				//清空列表
- 	        				guideList.find("dl[name=showList]").html('');
- 	        				for(var i = 0; i < len; i++){
- 	        					//将话术内容装入服务宝典中的列表
- 	        					var list = app.model.showGuideList(data.data[i]);
- 	        					
- 	        					//加载列表到视图
- 	        					guideList.find("dl[name=showList]").append(list);
- 	        				}
- 	        				//绑定事件
- 	        				app.events.servicGuideListSYNC(app);
- 	        			}
- 	        			
- 	        			if(data.state == 8500){
- 	        				//服务宝典列表视图
- 	        				var guideList = $("#guideList");
- 	        				//清空列表
- 	        				guideList.find("dl[name=showList]").html('没有找到相关数据……');
- 	        			}
-         			},
+ 	        			serviceGuide.action.callback.searchGuid(app,data);
+ 	        		},
  	        		error:function(data){
- 	        			alert("查询失败！");
+ 	        			console.log(data)
  	        		}
-                 });
+                });
+			},
+			
+			//从服务器获取记录(对应表名quiceGuide)
+			quickGuideRead:function(event,app,o){
+				console.log("阻止浏览器默认行为");
+				//阻止浏览器默认行为
+				if(event){
+					event.preventDefault();
+				}
+				
+				var eChatTalk = $("#eChat_talk");
+				
+				//设置表在隐藏域userId
+				eChatTalk.find('input[name=userId]').val(user.guestId());
+				
+				$e("form[name=quiceGuide]").required([
+                      "input[name=key]",
+	              ]).reSubmit().submit({					//该对象为jquery  ajax参数对象
+	            	  url:Settings.api('menu') + "quick_read_guide",
+	            	  dataType:"JSON",
+	            	  type:'post',
+	            	  success:function(data){
+	            		  serviceGuide.action.callback.quiceGuide(app,data);
+	            	  },
+	            	  error:function(data){
+	            		  console.log(data)
+	            	  }
+	              });
 			},
 			
 			//当点击编辑条目的时候，隐藏当前列表并显示编辑窗口
@@ -482,7 +564,7 @@ define(['jquery',
 	        		success:function(data){
 	        			if(data.state == 200){
 	        				alert(data.description);
-	        				serviceGuide.action.read(null,app);
+	        				serviceGuide.action.guideRead(null,app);
 	        			}
         			},
 	        		error:function(data){
@@ -500,7 +582,7 @@ define(['jquery',
 		 * 准备后继操作的数据
 		 * 将当前对象储存在sessionStorage,供右键菜单选项操作时使用
 		 */
-		info : function(o){
+		groupInfo : function(o){
 			var guestInfo = user.getGuestInfo();
 			var currenDemo = {
 				token:guestInfo.token,
@@ -508,7 +590,34 @@ define(['jquery',
 				groupId : $(o).attr('groupId'),
 				groupName: $(o).html(),
 				snid : $(o).attr('snid'),		//snid是记录在数据表中的id			
+			}
+			sessionStorage.setItem('currentObj',JSON.stringify(currenDemo));
+		},
+		/**
+		 * 准备后继操作的数据
+		 * 将当前对象储存在sessionStorage,供右键菜单选项操作时使用
+		 */
+		friendListInfo : function(o){
+			var guestInfo = user.getGuestInfo();
+			var currenDemo = {
+				token:guestInfo.token,
+				user_id:user.guestId(),
+				groupId : $(o).attr('groupId'),
+				snid : $(o).attr('snid'),		//snid是记录在数据表中的id			
 				uid : $(o).attr('uid'),
+			}
+			sessionStorage.setItem('currentObj',JSON.stringify(currenDemo));
+		},
+		/**
+		 * 准备后继操作的数据
+		 * 将当前对象储存在sessionStorage,供右键菜单选项操作时使用
+		 */
+		messageInfo : function(o){
+			var guestInfo = user.getGuestInfo();
+			var currenDemo = {
+				token:guestInfo.token,
+				user_id:user.guestId(),
+				content:$(o).find("li[name=content]").html(),
 			}
 			sessionStorage.setItem('currentObj',JSON.stringify(currenDemo));
 		},
@@ -516,9 +625,9 @@ define(['jquery',
 		/**
 		 * 相关操作分流
 		 */
-		action : function(o,effect){
+		action : function(o,app){
 			
-			Effect = effect;
+			Effect = app.effect;
 			var fnName,data;
 			var child = $(o).children('.child');
 			
@@ -537,7 +646,7 @@ define(['jquery',
 			}
 			var fn = action[fnName];
 			if(fn){
-				fn(data);
+				fn(data,app);
 			}
 		}	
 	};

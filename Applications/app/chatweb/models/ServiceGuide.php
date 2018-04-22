@@ -92,6 +92,45 @@ class ServiceGuide
     }
     
     /**
+     * 按关键字查询话术
+     * @return number|number|unknown
+     */
+    public function quickReadGuide(){
+        $where = [];
+        if(!App::$request->post('key')){
+            return 8500;
+        }
+        
+        $key = App::$request->post('key');
+        //分词处理
+        $conditions = $this->searchKeys($key);
+            
+        for($i = count($conditions), $match=false; $i > 0 && !$match; $i--){
+            
+            $qObj = [
+                [
+                    "ec_serviceguide" => [
+                        "*",
+                    ],
+                ],
+                "WHERE" =>[
+                    "search_key like '" . $conditions[$i-1]."'",
+                ],
+                "LIMIT" => '0,10'
+            ];
+            //file_put_contents("d:/log4.txt",print_r($i,1),FILE_APPEND);
+            
+            $res = App::DB()->selectCommond($qObj)->query()->fetchAll();
+            //如果返回的结果集不为空，则不再往执行下一条sql查询
+            if(!empty($res)){
+                $match = true;
+            }
+        }
+        
+        return empty($res) ? 8500 : $res;
+    }
+    
+    /**
      *　搜索分词处理　
      * @param unknown $key　搜索关键词(有空格)
      * @param array

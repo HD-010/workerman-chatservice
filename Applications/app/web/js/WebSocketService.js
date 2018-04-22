@@ -48,6 +48,10 @@ define(['common','History'],function(common,History){
 			//下载留言完成后加载好友对应的聊天记录
 			History.loadHistory(data.serviceId,app.model);
 			if(app.origin == 'service'){
+				//加载消息对象事件
+				app.events.messageRightMenuEvents(app);
+			}
+			if(app.origin == 'service'){
 				//聊天记录下载完成后清除消息提示
 				app.model.clearNotice('ecspn_',data.serviceId)
 			}

@@ -105,6 +105,7 @@
 	position: absolute;
 	background-color:#FFFFFF;
 	display:none;
+	z-index:999;
 }
 #rightMenu li{
 	width:10em;

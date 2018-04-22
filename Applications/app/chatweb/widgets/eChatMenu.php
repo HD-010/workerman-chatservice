@@ -70,6 +70,7 @@
 	<li typeId="dropGroup">删除分组</li>
 	<li typeId="alterGroup">修改分组名称</li>
 	<li typeId="addToBack">添加到黑名单</li>
+	<li typeId="addToServiceGuide">添加到服务宝典</li>
 </ul>
 
 <!-- 展示查找好友的视图 -->

@@ -10,21 +10,22 @@
 	
 	<dt name="guide">
 		<b>服务宝典：</b>
-		<form id="guide">
+		<form name="quiceGuide" id="guide">
 		<i>
-			<input type="text" name="guideKey" value="" placeholder="输入查询关键字" />
+			<input type='hidden' name='token' value='<?=App::$user->getItem('token');?>' />
+			<input type='hidden' name='mechanId' value='1' />
+			
+			<!-- 这里的用户id,如果是展示个人资料，则是当前用户id，如果是展示好友资料，则是当前好友的id -->
+			<input type='hidden' name='userId' value='' />
+			<input type="text" name="key" value="" placeholder="输入查询关键字" />
 			<button name="searchGuide">搜索</button>
 		</i>
 		</form>
 	</dt>
 	<dd name='guideDescription'>
 		<ul name="guideList">
-			<li>心法一kdfkedfkew劳动服务公司夺鹅卵石　木大地回春陕西省务公司夺鹅务公司夺鹅务公司夺鹅吉电视片糯　炽</li>
-			<li>心法二</li>
-			<li>心法三</li>
-			<li>心法四</li>
-			<li>心法五</li>
-			<li>心法六</li>
+			<!-- 这里是列表内容 -->
+			<!-- <li>心法一kdfkedfkew劳动服务公司夺鹅卵石　木大地回春陕西省务公司夺鹅务公司夺鹅务公司夺鹅吉电视片糯　炽</li> -->
 		</ul>
 	</dd>
 	

@@ -203,6 +203,19 @@ class Menu extends Control
     }
     
     /**
+     * 从服务器获取服务宝典记录
+     */
+    public function actionQuickReadGuide(){
+        //验证token
+        if(!App::model('User')->checkToken()) return;
+        
+        $res = App::model('ServiceGuide')->QuickReadGuide();
+        $data = App::model('ErrorInfo')->type($res);
+        
+        $this->renderJson($data);
+    }
+    
+    /**
      * 删除一条服务宝典记录
      */
     public function actionDelGuide(){

@@ -346,10 +346,12 @@ define(['jquery','common'],function($,common){
 		 * 当有收发信息时，列表效果控制
 		 */
 		effect.message = {
-				scrollTop : function(){
-					var chatList = $("#chatList")
+			scrollTop : function(){
+				var chatList = $("#chatList");
+				if(chatList){
 					chatList[0].scrollTop = chatList[0].scrollHeight;
 				}
+			}
 		}
 
 		/**

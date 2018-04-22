@@ -256,6 +256,15 @@ define(['jquery','common','Process'],function($,common,process){
 		}
 		
 		/**
+		 * 将话术内容装入服务宝典的快速查询列表
+		 */
+		model.showQuickGuideList = function(data){
+			var list = model.quickGuideList();
+			list.html(data.contents);
+			return list;
+		}
+		
+		/**
 		 * 接收消息的布局
 		 */
 		model.boxRecive = function(){
@@ -340,6 +349,11 @@ define(['jquery','common','Process'],function($,common,process){
 					"</span>" +
 				"</dt>" +
 				"<dd snid=89>具体内容</dd>";
+			return $(list);
+		}
+		
+		model.quickGuideList = function(){
+			var list = "<li>话术一</li>";
 			return $(list);
 		}
 	}

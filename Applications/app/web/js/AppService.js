@@ -98,6 +98,8 @@ define(['common','History','Settings'],function(common,History,Settings){
 				app.webSocketService.sendMessage(sendObj);
 				//将发送的信息显示到页面
 				app.model.messageSend(sendObj);
+				//加载消息对象事件
+				app.events.messageRightMenuEvents(app);
 				//保存聊天记录到本地的历史记录对象
 				History.saveRecoder(sendObj);
 				//将发文本域中的消息显清空

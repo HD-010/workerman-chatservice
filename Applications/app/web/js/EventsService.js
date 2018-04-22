@@ -22,14 +22,31 @@ define(function(){
 			 * 服务向导事件
 			 */
 			talkGuide:function(app){
-				var guideList = $("#eChat_talk").find("ul[name=guideList] li");
-				//双击加载服务话术
-				guideList.dblclick(function(){
-					//写内容到文本域
-					app.model.setInputContents($(this).html());
+				var eChatTalk = $("#eChat_talk");
+				//搜索关键字验证
+				eChatTalk.find("#guide input[name=key]").change(function(){
+					app.menu.valid.serviceQuickGuideKey()
+				});
+				
+				//服务宝典话术快速查找
+				eChatTalk.find("button[name=searchGuide]").click(function(event){
+					//触发搜索事件
+					app.menu.serviceGuide.action.quickGuideRead(event,app,this);
 				});
 			},
 			
+			/**
+			 * 服务向导事件(异步加载)
+			 */
+			talkGuideSYNC:function(app){
+				var eChatTalk = $("#eChat_talk");
+				//双击加载服务话术
+				eChatTalk.find("ul[name=guideList] li").dblclick(function(){
+					//写内容到文本域
+					app.model.setInputContents($(this).html());
+				});
+				
+			},
 			/**
 			 * 设置登录验证事件
 			 * 当用户登录成功时向websocket发送绑定uid和client_id的信息
@@ -105,7 +122,7 @@ define(function(){
 				//服务宝典列表附加功能项
 				guideList.find("ul[name=addFunc] [name=search]").click(function(event){
 					//触发搜索事件
-					app.menu.serviceGuide.action.read(event,app,this);
+					app.menu.serviceGuide.action.guideRead(event,app,this);
 				});
 				
 				//服务宝典列表搜索项验证
@@ -190,13 +207,13 @@ define(function(){
 				privateList.find(".option").mousedown(function(){
 					app.effect.rightMenu.show(event);
 					//准备后继操作的数据
-					app.menu.process.info(this);
+					app.menu.process.groupInfo(this);
 				});
 				//在友好名单上呼出右键菜单
 				privateList.find(".discription").mousedown(function(){
 					app.effect.rightMenu.show(event);
 					//准备后继操作的数据
-					app.menu.process.info(this);
+					app.menu.process.friendListInfo(this);
 				});
 				//阻止右键放开时的默认事件
 				rightMenu.mouseup(app.effect.rightMenu.stop);
@@ -214,7 +231,20 @@ define(function(){
 				
 				//------------------设置右键菜单对象的业务----------------
 				rightMenu.find("li").click(function(){
-					app.menu.process.action(this,app.effect);
+					app.menu.process.action(this,app);
+				});
+			},
+			
+			/**
+			 * 注册发送信息列表上右键菜单事件
+			 */
+			messageRightMenuEvents:function(app){
+				var chatList = $("#chatList");
+				//在已经发送的消息列表上呼出右键菜单
+				chatList.find("tr[name=send]").mousedown(function(){
+					app.effect.rightMenu.show(event);
+					//准备后继操作的数据
+					app.menu.process.messageInfo(this);
 				});
 			},
 			
