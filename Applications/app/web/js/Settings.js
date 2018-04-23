@@ -22,7 +22,7 @@ define(function(){
 		},
 		
 		passportServer:function(){
-			return 'http://passport.e01.ren/';
+			return 'http://passport.sqc666.com/';
 		},
 		
 		/**
