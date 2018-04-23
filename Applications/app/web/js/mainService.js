@@ -23,7 +23,7 @@ require.config({
                       ],
     	"WebSocketService" : [
     	                      //"http://127.0.0.1:8383/js/WebSocketService",
-    	                      "http://127.0.0.1:8383/js/WebSocketService",
+    	                      "http://47.93.201.12:8383/js/WebSocketService",
     	                      ],
     	"Model" : [
     	           //"http://127.0.0.1:8383/js/Model",
