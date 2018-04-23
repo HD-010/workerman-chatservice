@@ -13,7 +13,7 @@
 		<link rel="image_src" href="" / >
 	</head>
 	<body>
-		<script type="text/javascript" data-main="/js/mainService" src="http://cdn.e01.ren/common/require/require.js"></script>
+		<script type="text/javascript" data-main="/js/mainService" src="http://cdn.sqc666.com/common/require/require.js"></script>
 	
         <?php
             $this->contents();
