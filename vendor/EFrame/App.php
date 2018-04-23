@@ -157,12 +157,16 @@ class App{
     public static function redirect($uri){
         self::$route = Base::redirectRoute($uri);
         self::baseInit();
-        self::$control->{'action'.self::action()}();
+        if(function_exists(self::$control->{'action'.self::action()})){
+            self::$control->{'action'.self::action()}();
+        }
     }
     
     public function run(){
         self::baseInit();
-	    self::$control->{'action'.self::action()}();
+        if(function_exists(self::$control->{'action'.self::action()})){
+    	    self::$control->{'action'.self::action()}();
+        }
     }
     
     
