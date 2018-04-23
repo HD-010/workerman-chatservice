@@ -2,67 +2,67 @@ require.config({
 	
     paths:{
         "jquery" : [
-                    "http://cdn.e01.ren/common/lib/jquery",
+                    //"http://cdn.e01.ren/common/lib/jquery",
                     "http://cdn.sqc666.com/common/lib/jquery"
                     ],
         "common" : [
-                    "http://cdn.e01.ren/common/f/common",
+                    //"http://cdn.e01.ren/common/f/common",
                     "http://cdn.sqc666.com/common/f/common",
                     ],
         "easyForm" : [
-                      "http://cdn.e01.ren/form/lib/easyForm",
+                      //"http://cdn.e01.ren/form/lib/easyForm",
                       "http://cdn.sqc666.com/form/lib/easyForm",
                       ],
         "AppService" : [
-                        "http://127.0.0.1:8383/js/AppService",
+                        //"http://127.0.0.1:8383/js/AppService",
                         "http://47.93.201.12:8383/js/AppService",
                         ],
         "Settings" : [
-                      "http://127.0.0.1:8383/js/Settings",
+                      //"http://127.0.0.1:8383/js/Settings",
                       "http://47.93.201.12:8383/js/Settings",
                       ],
     	"WebSocketService" : [
-    	                      "http://127.0.0.1:8383/js/WebSocketService",
+    	                      //"http://127.0.0.1:8383/js/WebSocketService",
     	                      "http://127.0.0.1:8383/js/WebSocketService",
     	                      ],
     	"Model" : [
-    	           "http://127.0.0.1:8383/js/Model",
+    	           //"http://127.0.0.1:8383/js/Model",
     	           "http://47.93.201.12:8383/js/Model",
     	           ],
     	"User"  : [
-    	           "http://127.0.0.1:8383/js/User",
+    	           //"http://127.0.0.1:8383/js/User",
     	           "http://47.93.201.12:8383/js/User",
     	           ],
     	"EffectService"  : [
-    	                    "http://127.0.0.1:8383/js/EffectService",
+    	                    //"http://127.0.0.1:8383/js/EffectService",
     	                    "http://47.93.201.12:8383/js/EffectService",
     	                    ],
     	"Sing" : [
-    	          "http://127.0.0.1:8383/js/Sing",
+    	          //"http://127.0.0.1:8383/js/Sing",
     	          "http://47.93.201.12:8383/js/Sing",
     	          ],
     	"History" : [
-    	             "http://127.0.0.1:8383/js/History",
+    	             //"http://127.0.0.1:8383/js/History",
     	             "http://47.93.201.12:8383/js/History",
     	             ],
     	"WebHttpService" : [
-    	                    "http://127.0.0.1:8383/js/WebHttpService",
+    	                    //"http://127.0.0.1:8383/js/WebHttpService",
     	                    "http://47.93.201.12:8383/js/WebHttpService",
     	                    ],
     	"MenuService" : [
-    	                 "http://127.0.0.1:8383/js/MenuService",
+    	                 //"http://127.0.0.1:8383/js/MenuService",
     	                 "http://47.93.201.12:8383/js/MenuService",
     	                 ],
     	"Process" : [
-    	             "http://127.0.0.1:8383/js/Process",
+    	             //"http://127.0.0.1:8383/js/Process",
     	             "http://47.93.201.12:8383/js/Process",
     	             ],
     	"RegistService" : [
-    	                   "http://127.0.0.1:8383/js/RegistService",
+    	                   //"http://127.0.0.1:8383/js/RegistService",
     	                   "http://47.93.201.12:8383/js/RegistService",
     	                   ],
     	"EventsService" : [
-    	                   "http://127.0.0.1:8383/js/EventsService",
+    	                   //"http://127.0.0.1:8383/js/EventsService",
     	                   "http://47.93.201.12:8383/js/EventsService",
     	                   ],
     }
