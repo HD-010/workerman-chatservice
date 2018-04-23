@@ -20,12 +20,13 @@
 	当用户注册成功，页面跳转到登录页面，用户输入帐号、密码进行登录
  */
 
-define(['jquery','easyForm','User'],function($,$e,User){
+define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 	var Sing = function(){
 		var sing = this;
 		var user = new User;
 		//这里设置登录地址
 		sing.api = 'http://passport.e01.ren/?r=openapi/login';
+		sing.api = Settings.passportServer+'?r=openapi/login';
 		
 		//设置表单提交地址
 		sing.setAction = function(url){

@@ -21,6 +21,10 @@ define(function(){
 			return 'http://47.93.201.12:8383';
 		},
 		
+		passportServer:function(){
+			return 'http://passport.e01.ren/';
+		},
+		
 		/**
 		 * 接收到的消息类型data.type与本地历史对象或数据库中历史（留言）对象前缀的对应关系
 		 */
