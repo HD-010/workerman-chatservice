@@ -17,7 +17,8 @@ define(function(){
 		},
 		
 		httpServer:function(){
-			return 'http://127.0.0.1:8383';
+//			return 'http://127.0.0.1:8383';
+			return 'http://47.93.201.12:8383';
 		},
 		
 		/**
