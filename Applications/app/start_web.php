@@ -24,7 +24,7 @@ $web = new WebServer("http://0.0.0.0:8383");
 // WebServer数量
 $web->count = 2;
 // 设置站点根目录
-$web->addRoot('chat.sqc666.com', __DIR__.'/../app/web');
+$web->addRoot('chat.sqc666.com', __DIR__.'/../app/web/');
 
 // 如果不是在根目录启动，则运行runAll方法
 if(!defined('GLOBAL_START'))
