@@ -348,7 +348,7 @@ define(['jquery','common'],function($,common){
 		effect.message = {
 			scrollTop : function(){
 				var chatList = $("#chatList");
-				if(chatList){
+				if(chatList.lenght > 0){
 					chatList[0].scrollTop = chatList[0].scrollHeight;
 				}
 			}
