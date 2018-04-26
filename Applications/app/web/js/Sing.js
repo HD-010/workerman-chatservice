@@ -25,8 +25,8 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 		var sing = this;
 		var user = new User;
 		//这里设置登录地址
-		sing.api = 'http://passport.e01.ren/?r=openapi/login';
-		sing.api = Settings.passportServer+'?r=openapi/login';
+		//sing.api = 'http://passport.e01.ren/?r=openapi/login';
+		sing.api = Settings.passportServer()+'?r=openapi/login';
 		
 		//设置表单提交地址
 		sing.setAction = function(url){
