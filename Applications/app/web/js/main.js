@@ -1,20 +1,20 @@
 require.config({
 	
     paths:{
-        "jquery" : "http://cdn.e01.ren/common/lib/jquery",
-        "common" : "http://cdn.e01.ren/common/f/common",
-        "easyForm" : "http://cdn.e01.ren/form/lib/easyForm",
-        "App" : "http://127.0.0.1:8383/js/App",
-        "Settings" : "http://127.0.0.1:8383/js/Settings",
-    	"WebSocketService" : "http://127.0.0.1:8383/js/WebSocketService",
-    	"Model" : "http://127.0.0.1:8383/js/Model",
-    	"User"  : "http://127.0.0.1:8383/js/User",
-    	"Sing" : "http://127.0.0.1:8383/js/Sing",
-    	"Regist" : "http://127.0.0.1:8383/js/Regist",
-    	"Events" : "http://127.0.0.1:8383/js/Events",
-    	"Menu" : "http://127.0.0.1:8383/js/Menu",
-    	"Effect" : "http://127.0.0.1:8383/js/Effect",
-    	"Process" : "http://127.0.0.1:8383/js/Process",
+        "jquery" : "http://cdn.sqc666.com/common/lib/jquery",
+        "common" : "http://cdn.sqc666.com/common/f/common",
+        "easyForm" : "http://cdn.sqc666.com/form/lib/easyForm",
+        "App" : "http://47.93.201.12:8383/js/App",
+        "Settings" : "http://47.93.201.12:8383/js/Settings",
+    	"WebSocketService" : "http://47.93.201.12:8383/js/WebSocketService",
+    	"Model" : "http://47.93.201.12:8383/js/Model",
+    	"User"  : "http://47.93.201.12:8383/js/User",
+    	"Sing" : "http://47.93.201.12:8383/js/Sing",
+    	"Regist" : "http://47.93.201.12:8383/js/Regist",
+    	"Events" : "http://47.93.201.12:8383/js/Events",
+    	"Menu" : "http://47.93.201.12:8383/js/Menu",
+    	"Effect" : "http://47.93.201.12:8383/js/Effect",
+    	"Process" : "http://47.93.201.12:8383/js/Process",
     	
     }
 });
@@ -52,6 +52,9 @@ require([
 	var app;
 	
 	$(document).ready(function(){
+		if( typeof(WebSocket) != "function" ) {
+			$('body').html("<h1>Error</h1><p>Your browser does not support HTML5 Web Sockets. Try Google Chrome instead.</p>");
+		}
 		//注册onload事件
 		regist.onLoad(app);
 		

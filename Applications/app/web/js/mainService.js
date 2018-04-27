@@ -103,6 +103,9 @@ require([
 	var app;
 	
 	$(document).ready(function(){
+		if( typeof(WebSocket) != "function" ) {
+			$('body').html("<h1>Error</h1><p>Your browser does not support HTML5 Web Sockets. Try Google Chrome instead.</p>");
+		}
 		//注册onload事件
 		regist.onLoad(app);
 	});
