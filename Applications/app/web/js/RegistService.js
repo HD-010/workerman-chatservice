@@ -79,7 +79,7 @@ define(['EventsService','MenuService'],function(Events,Menu){
 				
 				//下载留言总记录条数到本地，并加载到列表提示位置
 				app.downServerLeavingTotal();
-			},
+			}
 	}
 	
 	

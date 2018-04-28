@@ -71,7 +71,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				guestId : guestId,
 				serviceId : serviceId,
 				type: 'login',
-				message: '',
+				message: ''
 			};
 			app.webSocketService.sendMessage(sendObj);
 			
@@ -92,7 +92,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 					serviceId : app.user.serviceId(),									//服务id
 					type: 'messagePrivate',
 					message: message,
-					date : date.getMonth() + 1 + '/' +date.getDate() + ' ' + date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds(),
+					date : date.getMonth() + 1 + '/' +date.getDate() + ' ' + date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds()
 				};
 				
 				app.webSocketService.sendMessage(sendObj);

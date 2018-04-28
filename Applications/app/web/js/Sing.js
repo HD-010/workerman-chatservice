@@ -52,7 +52,7 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 			$e("form[name=sing]").valid({
 				option : [["input[name=uname]"]],
 				rule : "isMobilOrEmail", 
-				message : "请输入电子邮箱或手机号",
+				message : "请输入电子邮箱或手机号"
 			});
 		}
 		
@@ -61,7 +61,7 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 			$e("form[name=sing]").valid({
 				option : [["input[name=pswd]"]],
 				rule : "isPasswd", 
-				message : "只能输入6-20个字母、数字、下划线",
+				message : "只能输入6-20个字母、数字、下划线"
 			});
 			
 		}
@@ -79,7 +79,7 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 			$e("form[name='sing']").valid({
 				option : [["input[name=pswd]","input[name=pswd2]"],"==","两次输入密码不一致"],
 				rule : "isPasswd", 
-				message : "只能输入6-20个字母、数字、下划线",
+				message : "只能输入6-20个字母、数字、下划线"
 			});
 		},
 		
@@ -90,7 +90,7 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 			$e("form[name='sing']").valid({
 				option : [["input[name=pswd]","input[name=pswd2]"],"==","两次输入密码不一致"],
 				rule : "isPasswd", 
-				message : "只能输入6-20个字母、数字、下划线",
+				message : "只能输入6-20个字母、数字、下划线"
 			});
 		},
 		//---------------注册表单异同说明结束-------------------
@@ -105,7 +105,7 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 			$e("form[name=sing]").valid({
 				option : [["input[name=Verification]"]],
 				rule : "isDigit",
-				message : "验证码由数字组成",
+				message : "验证码由数字组成"
 			});
 		}
 		
@@ -162,7 +162,7 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 			    "input[name=uname]",                                
 			    "input[name=pswd]",                                
 			    "input[name=pswd2]",                               
-			    "input[name=Verification]",                               
+			    "input[name=Verification]"                               
 			]).submit({
 				url:sing.api+"/sing-up",
 				type:'post',
