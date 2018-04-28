@@ -116,17 +116,17 @@ require([
         		 ){
 	var app = new App();
 	$(document).ready(function(){
-		if( typeof(WebSocket) != "function" ) {
-			$('body').html("<h1>Error</h1><p>Your browser does not support HTML5 Web Sockets. Try Google Chrome instead.</p>");
-		}
+		//if( typeof(WebSocket) != "function" ) {
+		//	$('body').html("<h1>Error</h1><p>Your browser does not support HTML5 Web Sockets. Try Google Chrome instead.</p>");
+		//}
 	});
 	
 	(function(){
 		//如果不支持Storage 则不
-		if(typeof(Storage)==="undefined") {
-			alert("你的浏览器不支持，请下载最新版本")
-			return ;
-		}
+		//if(typeof(Storage)==="undefined") {
+		//	alert("你的浏览器不支持，请下载最新版本")
+		//	return ;
+		//}
 		
 		app.webSocket = new WebSocket(Settings.socketServer()); //创建WebSocket对象
 		app.webSocketService = new WebSocketService(app.webSocket);//创建一个WebSocketService对象

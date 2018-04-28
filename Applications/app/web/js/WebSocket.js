@@ -1,10 +1,10 @@
-require(function(){
+define(function(){
 	/*****************************************
 	  WebSocket兼容方案（AS3）   2013-08-20
 	  作者：次碳酸钴（admin@web-tinker.com）
 	*****************************************/
 	var WebSocket=WebSocket||function(url){
-	    var ttt="WebSocket.swf";
+	    var SRC="WebSocket.swf";
 	    var id=Math.random()*1E9|0,events={},s,i;
 	    //事件关联
 	    s=["open","message","close","error"];
