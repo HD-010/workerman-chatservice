@@ -13,6 +13,10 @@ require.config({
                       //"http://cdn.e01.ren/form/lib/easyForm",
                       "http://cdn.sqc666.com/form/lib/easyForm",
                       ],
+        "WebSocket" : [
+                       //"http://cdn.e01.ren/common/lib/jquery",
+                       "http://47.93.201.12:8383/js/WebSocket"
+                     ],
         "AppService" : [
                         //"http://127.0.0.1:8383/js/AppService",
                         "http://47.93.201.12:8383/js/AppService",
@@ -33,7 +37,7 @@ require.config({
     	           //"http://127.0.0.1:8383/js/User",
     	           "http://47.93.201.12:8383/js/User",
     	           ],
-    	"EffectService"  : [
+    	"EffectService" : [
     	                    //"http://127.0.0.1:8383/js/EffectService",
     	                    "http://47.93.201.12:8383/js/EffectService",
     	                    ],
@@ -64,14 +68,16 @@ require.config({
     	"EventsService" : [
     	                   //"http://127.0.0.1:8383/js/EventsService",
     	                   "http://47.93.201.12:8383/js/EventsService",
-    	                   ],
-    },
+    	                   ]
+    }
 });
+
 
 
 require([
          "jquery",
          "common",
+         "WebSocket",
          "AppService",
          "Settings",
          "WebSocketService",
@@ -87,6 +93,7 @@ require([
          ],function(
         		 $,
         		 common,
+        		 WebSocket,
         		 App,
         		 Settings,
         		 WebSocketService,
