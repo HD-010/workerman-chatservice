@@ -53,7 +53,7 @@ define(function(){
 		 */
 		serviceApi: function(serviceName){
 			apis = {
-				menu:'/chatweb/menu/',
+				menu:'/chatweb/menu/'
 			}
 			return apis[serviceName];
 		},

@@ -23,7 +23,7 @@ define(['jquery',
 			$e("form[name=addGroup]").valid({
 				option : [["input[name=groupName]"]],
 				rule : "isSpecialChartor", 
-				message : "不能输入特殊字符",
+				message : "不能输入特殊字符"
 			});
 		},
 		
@@ -32,7 +32,7 @@ define(['jquery',
 			$e("form[name=alterGroup]").valid({
 				option : [["input[name=groupName]"]],
 				rule : "isSpecialChartor", 
-				message : "不能输入特殊字符",
+				message : "不能输入特殊字符"
 			});
 		},
 		
@@ -41,7 +41,7 @@ define(['jquery',
 			$e("form[name=editProfiles]").valid({
 				option : [["input[name=nick]"]],
 				rule : "isSpecialChartor", 
-				message : "不能输入特殊字符",
+				message : "不能输入特殊字符"
 			});
 		},
 		
@@ -50,7 +50,7 @@ define(['jquery',
 			$e("form[name=editGuide]").valid({
 				option : [["input[name=key]"]],
 				rule : "isSpecialChartor", 
-				message : "不能输入特殊字符",
+				message : "不能输入特殊字符"
 			});
 		},
 		
@@ -59,7 +59,7 @@ define(['jquery',
 			$e("form[name=quiceGuide]").valid({
 				option : [["input[name=key]"]],
 				rule : "isSpecialChartor", 
-				message : "不能输入特殊字符",
+				message : "不能输入特殊字符"
 			});
 		},
 		
@@ -68,7 +68,7 @@ define(['jquery',
 			$e("form[name=editGuide]").valid({
 				option : [["textarea[name=contents]"]],
 				rule : "isSpecialChartor", 
-				message : "不能输入特殊字符",
+				message : "不能输入特殊字符"
 			});
 		},
 		
@@ -77,9 +77,9 @@ define(['jquery',
 			$e("form[name=searchGuid]").valid({
 				option : [["input[name=key]"]],
 				rule : "isSpecialChartor", 
-				message : "不能输入特殊字符",
+				message : "不能输入特殊字符"
 			});
-		},
+		}
 	};
 	
 	/**
@@ -104,7 +104,7 @@ define(['jquery',
 				searchSex:dataProcess.search.sex(),
 				pageSize: pageData.attr('pageSize'),
 				currentPage: pageData.attr('currentPage'),
-				total: pageData.attr('total'),
+				total: pageData.attr('total')
 			};
 			
 			var api = Settings.api('menu') + 'look_friends';
@@ -172,7 +172,7 @@ define(['jquery',
 			var data = {
 				token:guestInfo.token,
 				friend_id:o.attr('uid'),
-				user_id:guestInfo.id,
+				user_id:guestInfo.id
 			};
 			
 			var api = Settings.api('menu') + 'apply_friends';
@@ -202,7 +202,7 @@ define(['jquery',
 		add:function(event){
 			event.preventDefault();
 			$e("form[name=addGroup]").required([
-               "input[name=groupName]",                                
+               "input[name=groupName]"                                
                ]).submit({					//该对象为jquery  ajax参数对象
            		url:Settings.api('menu') + "add_group",
         		dataType:"JSON",
@@ -221,7 +221,7 @@ define(['jquery',
 		alter:function(event){
 			event.preventDefault();
 			$e("form[name=alterGroup]").required([
-               "input[name=groupName]",                                
+               "input[name=groupName]"                                
                ]).submit({					//该对象为jquery  ajax参数对象
            		url:Settings.api('menu') + "alter_group",
         		dataType:"JSON",
@@ -572,7 +572,7 @@ define(['jquery',
 	        		}
                 });
 			}
-		},
+		}
 		
 	};
 	
@@ -589,7 +589,7 @@ define(['jquery',
 				user_id:user.guestId(),
 				groupId : $(o).attr('groupId'),
 				groupName: $(o).html(),
-				snid : $(o).attr('snid'),		//snid是记录在数据表中的id			
+				snid : $(o).attr('snid')		//snid是记录在数据表中的id			
 			}
 			sessionStorage.setItem('currentObj',JSON.stringify(currenDemo));
 		},
@@ -604,7 +604,7 @@ define(['jquery',
 				user_id:user.guestId(),
 				groupId : $(o).attr('groupId'),
 				snid : $(o).attr('snid'),		//snid是记录在数据表中的id			
-				uid : $(o).attr('uid'),
+				uid : $(o).attr('uid')
 			}
 			sessionStorage.setItem('currentObj',JSON.stringify(currenDemo));
 		},
@@ -617,7 +617,7 @@ define(['jquery',
 			var currenDemo = {
 				token:guestInfo.token,
 				user_id:user.guestId(),
-				content:$(o).find("li[name=content]").html(),
+				content:$(o).find("li[name=content]").html()
 			}
 			sessionStorage.setItem('currentObj',JSON.stringify(currenDemo));
 		},

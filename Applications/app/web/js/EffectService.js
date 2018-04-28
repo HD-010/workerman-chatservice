@@ -14,7 +14,7 @@ define(['jquery','common'],function($,common){
 		}
 		
 		effect.friendsList = {
-			list : $("#echat_list .list"),
+			list : $("#echat_list .list")
 		};
 		
 		/**
@@ -122,7 +122,7 @@ define(['jquery','common'],function($,common){
 					
 					//设置保存按钮可用
 					lookProfiles.find('button[name=save]').hide();
-				},
+				}
 		};
 		
 		//服务宝典视图控制
@@ -201,7 +201,7 @@ define(['jquery','common'],function($,common){
 					
 					//设置保存按钮可用
 					lookProfiles.find('button[name=save]').hide();
-				},
+				}
 		};
 		
 		
@@ -337,7 +337,7 @@ define(['jquery','common'],function($,common){
 				//取消添加分组对话框
 				cancleAlterGroup:function(){
 					$("#alterGroup").hide();
-				},
+				}
 				
 				
 		}
