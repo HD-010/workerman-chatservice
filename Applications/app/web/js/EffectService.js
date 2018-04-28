@@ -82,7 +82,12 @@ define(['jquery','common'],function($,common){
 				
 				//编辑个人资料的视图的编辑框可用
 				enable : function(event){
-					event.preventDefault();
+					var e = event | window.event;
+					if(event.preventDefault){
+						e.preventDefault();
+					}else{
+						e.returnValue = false;
+					};
 					//我的资料视图对象
 					var lookProfiles = $("#lookProfiles");
 					
@@ -160,7 +165,12 @@ define(['jquery','common'],function($,common){
 				},
 				//编辑个人资料的视图的编辑框可用
 				enable : function(event){
-					event.preventDefault();
+					var e = event | window.event;
+					if(event.preventDefault){
+						e.preventDefault();
+					}else{
+						e.returnValue = false;
+					};
 					//我的资料视图对象
 					var lookProfiles = $("#lookProfiles");
 					

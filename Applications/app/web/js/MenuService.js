@@ -200,7 +200,12 @@ define(['jquery',
 	var group = {
 		//向服务器发送添加分组信息
 		add:function(event){
-			event.preventDefault();
+			var e = event | window.event;
+			if(event.preventDefault){
+				e.preventDefault();
+			}else{
+				e.returnValue = false;
+			};
 			$e("form[name=addGroup]").required([
                "input[name=groupName]"                                
                ]).submit({					//该对象为jquery  ajax参数对象
@@ -219,7 +224,12 @@ define(['jquery',
 		
 		//向服务器发送修改分组信息
 		alter:function(event){
-			event.preventDefault();
+			var e = event | window.event;
+			if(event.preventDefault){
+				e.preventDefault();
+			}else{
+				e.returnValue = false;
+			};
 			$e("form[name=alterGroup]").required([
                "input[name=groupName]"                                
                ]).submit({					//该对象为jquery  ajax参数对象
@@ -444,7 +454,12 @@ define(['jquery',
 			guideRead:function(event,app,o){
 				//阻止浏览器默认行为
 				if(event){
-					event.preventDefault();
+					var e = event | window.event;
+					if(event.preventDefault){
+						e.preventDefault();
+					}else{
+						e.returnValue = false;
+					};
 				}
 				
 				var guideList = $("#guideList");
@@ -472,7 +487,12 @@ define(['jquery',
 				console.log("阻止浏览器默认行为");
 				//阻止浏览器默认行为
 				if(event){
-					event.preventDefault();
+					var e = event | window.event;
+					if(event.preventDefault){
+						e.preventDefault();
+					}else{
+						e.returnValue = false;
+					};
 				}
 				
 				var eChatTalk = $("#eChat_talk");
@@ -498,7 +518,12 @@ define(['jquery',
 			//当点击编辑条目的时候，隐藏当前列表并显示编辑窗口
 			add:function(event,app,o){
 				var serviceGuide = $("#serviceGuide");
-				event.preventDefault();
+				var e = event | window.event;
+				if(event.preventDefault){
+					e.preventDefault();
+				}else{
+					e.returnValue = false;
+				};
 				app.effect.serviceGuide.showOut();
 				serviceGuide.find("input[name=snid]").val("");
 				serviceGuide.find("input[name=key]").val("");
@@ -511,7 +536,12 @@ define(['jquery',
 			edit:function(event,app,o){
 				var guideList,serviceGuide,snid,key,contents;
 
-				event.preventDefault();
+				var e = event | window.event;
+				if(event.preventDefault){
+					e.preventDefault();
+				}else{
+					e.returnValue = false;
+				};
 				//获取编辑内容
 				guideList = $("#guideList");
 				snid = $(o).parent().parent().attr('snid');
@@ -528,7 +558,12 @@ define(['jquery',
 			
 			//删除服务宝典中的一条记录
 			del:function(event,app,o){
-				event.preventDefault();
+				var e = event | window.event;
+				if(event.preventDefault){
+					e.preventDefault();
+				}else{
+					e.returnValue = false;
+				};
 				var guestInfo = user.getGuestInfo();
 				
 				var data = {
@@ -549,7 +584,12 @@ define(['jquery',
 			
 			//保存一条记录到服务宝典
 			save:function(event,app,o){
-				event.preventDefault();
+				var e = event | window.event;
+				if(event.preventDefault){
+					e.preventDefault();
+				}else{
+					e.returnValue = false;
+				};
 				
 				//表单对象
 				$("#serviceGuide").find("input[name=userId]").val(user.guestId());

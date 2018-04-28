@@ -163,7 +163,12 @@ define(['jquery',
 	var group = {
 		//向服务器发送添加分组信息
 		add:function(event){
-			event.preventDefault();
+			var e = event | window.event;
+			if(event.preventDefault){
+				e.preventDefault();
+			}else{
+				e.returnValue = false;
+			};
 			$e("form[name=addGroup]").required([
                "input[name=groupName]",                                
                ]).submit({					//该对象为jquery  ajax参数对象
@@ -182,7 +187,12 @@ define(['jquery',
 		
 		//向服务器发送修改分组信息
 		alter:function(event){
-			event.preventDefault();
+			var e = event | window.event;
+			if(event.preventDefault){
+				e.preventDefault();
+			}else{
+				e.returnValue = false;
+			};
 			$e("form[name=alterGroup]").required([
                "input[name=groupName]",                                
                ]).submit({					//该对象为jquery  ajax参数对象

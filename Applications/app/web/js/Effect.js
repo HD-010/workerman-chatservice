@@ -18,11 +18,26 @@ define(['jquery','common'],function($,common){
 		 */
 		effect.pageControl = {
 			on:function(event){
-				event.preventDefault();
+				//event.preventDefault();
+				
+				var e = event | window.event;
+				if(event.preventDefault){
+					e.preventDefault();
+				}else{
+					e.returnValue = false;
+				}
+				
 				$("#eChatBox").show();
 			},
 			off:function(event){
-				event.preventDefault();
+
+				var e = event | window.event;
+				if(event.preventDefault){
+					e.preventDefault();
+				}else{
+					e.returnValue = false;
+				}
+				
 				$("#eChatBox").hide();
 			}
 		}

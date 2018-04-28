@@ -49,7 +49,12 @@ define(function(){
 				//保存个人资料的视图控制
 				lookProfiles.find('button[name=save]').click(function(event){
 					//阻止默认行为
-					event.preventDefault();
+					var e = event | window.event;
+					if(event.preventDefault){
+						e.preventDefault();
+					}else{
+						e.returnValue = false;
+					};
 					//保存编辑后的资料
 					app.menu.profiles.save(app.effect.editProfiles.disable);
 				});

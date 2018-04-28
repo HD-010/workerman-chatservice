@@ -15,7 +15,12 @@ define(['EventsService','MenuService'],function(Events,Menu){
 				showProfile:function(app){
 					var findFriends = $("#findFriends");
 					findFriends.find("li[name=lookProfiles] a").on("click",function(event){
-						event.preventDefault();
+						var e = event | window.event;
+						if(event.preventDefault){
+							e.preventDefault();
+						}else{
+							e.returnValue = false;
+						};
 						app.effect.lookProfiles.showOut();
 						//从服务器获取用户资料
 						var snid = $(this).parent().siblings('li[name=nick]').attr('snid');
@@ -29,7 +34,12 @@ define(['EventsService','MenuService'],function(Events,Menu){
 				addToFriends : function(friends){
 					var findFriends = $("#findFriends");
 					findFriends.find("input[name=addToFriends]").on("click",function(event){
-						event.preventDefault();
+						var e = event | window.event;
+						if(event.preventDefault){
+							e.preventDefault();
+						}else{
+							e.returnValue = false;
+						};
 						
 						friends.add($(this).parent().parent().find('li[name=nick]'));
 					});
