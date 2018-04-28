@@ -3910,3 +3910,699 @@ Stack trace:
 #13 E:\WWW\workerman-chatservice\Applications\app\start_web.php(32): Workerman\Worker::runAll()
 #14 {main}
 2018-04-20 16:26:14 pid:1 Worker process terminated
+2018-04-27 11:39:13 pid:6699 Workerman[start.php] stop 
+2018-04-27 11:39:13 pid:6699 Workerman[start.php] not run
+2018-04-27 11:39:21 pid:6700 Workerman[start.php] start in DEBUG mode
+2018-04-27 11:39:59 pid:6710 Error: Call to a member function query() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:58
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->query()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #75)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-27 11:39:59 pid:6710 Worker process terminated
+2018-04-27 11:39:59 pid:6700 worker[WebServer:6710] exit with status 64000
+2018-04-27 11:40:41 pid:6700 Workerman[start.php] stopping ...
+2018-04-27 11:40:41 pid:6700 Workerman[start.php] has been stopped
+2018-04-27 11:40:44 pid:6758 Workerman[start.php] start in DEBUG mode
+2018-04-27 11:43:38 pid:6761 Error: Call to a member function query() on null in /var/www/html/workerman-chatservice/Applications/app/MySQL/MysqlDB.php:73
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/Events.php(370): MysqlDB->query()
+#1 /var/www/html/workerman-chatservice/Applications/app/Events.php(69): Events::messageDownLeaving('7f0000010a8f000...', Array)
+#2 [internal function]: Events::onMessage('7f0000010a8f000...', '{"guestId":"100...')
+#3 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8f000...', '{"guestId":"100...')
+#4 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #53)
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(190): Workerman\Worker->run()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): GatewayWorker\BusinessWorker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#14 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#15 {main}
+2018-04-27 11:43:38 pid:6761 Worker process terminated
+2018-04-27 11:43:38 pid:6758 worker[TodpoleBusinessWorker:6761] exit with status 64000
+2018-04-27 11:43:39 pid:6794 Error: Call to a member function query() on null in /var/www/html/workerman-chatservice/Applications/app/MySQL/MysqlDB.php:73
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/Events.php(370): MysqlDB->query()
+#1 /var/www/html/workerman-chatservice/Applications/app/Events.php(69): Events::messageDownLeaving('7f0000010a8f000...', Array)
+#2 [internal function]: Events::onMessage('7f0000010a8f000...', '{"guestId":"100...')
+#3 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8f000...', '{"guestId":"100...')
+#4 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #54)
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(190): Workerman\Worker->run()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): GatewayWorker\BusinessWorker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#16 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#17 {main}
+2018-04-27 11:43:39 pid:6794 Worker process terminated
+2018-04-27 11:43:39 pid:6758 worker[TodpoleBusinessWorker:6794] exit with status 64000
+2018-04-27 11:54:34 pid:6795 Error: Call to a member function query() on null in /var/www/html/workerman-chatservice/Applications/app/MySQL/MysqlDB.php:73
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/Events.php(370): MysqlDB->query()
+#1 /var/www/html/workerman-chatservice/Applications/app/Events.php(69): Events::messageDownLeaving('7f0000010a8f000...', Array)
+#2 [internal function]: Events::onMessage('7f0000010a8f000...', '{"guestId":"100...')
+#3 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8f000...', '{"guestId":"100...')
+#4 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #55)
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(190): Workerman\Worker->run()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): GatewayWorker\BusinessWorker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#16 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#17 {main}
+2018-04-27 11:54:34 pid:6795 Worker process terminated
+2018-04-27 11:54:34 pid:6758 worker[TodpoleBusinessWorker:6795] exit with status 64000
+2018-04-27 11:55:07 pid:6889 Error: Call to a member function query() on null in /var/www/html/workerman-chatservice/Applications/app/MySQL/MysqlDB.php:73
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/Events.php(370): MysqlDB->query()
+#1 /var/www/html/workerman-chatservice/Applications/app/Events.php(69): Events::messageDownLeaving('7f0000010a8f000...', Array)
+#2 [internal function]: Events::onMessage('7f0000010a8f000...', '{"guestId":"100...')
+#3 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8f000...', '{"guestId":"100...')
+#4 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #56)
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(190): Workerman\Worker->run()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): GatewayWorker\BusinessWorker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#16 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#17 {main}
+2018-04-27 11:55:07 pid:6889 Worker process terminated
+2018-04-27 11:55:07 pid:6758 worker[TodpoleBusinessWorker:6889] exit with status 64000
+2018-04-27 11:55:08 pid:6898 Error: Call to a member function query() on null in /var/www/html/workerman-chatservice/Applications/app/MySQL/MysqlDB.php:73
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/Events.php(370): MysqlDB->query()
+#1 /var/www/html/workerman-chatservice/Applications/app/Events.php(69): Events::messageDownLeaving('7f0000010a8f000...', Array)
+#2 [internal function]: Events::onMessage('7f0000010a8f000...', '{"guestId":"100...')
+#3 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f0000010a8f000...', '{"guestId":"100...')
+#4 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #57)
+#7 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#9 /var/www/html/workerman-chatservice/vendor/workerman/gateway-worker/src/BusinessWorker.php(190): Workerman\Worker->run()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): GatewayWorker\BusinessWorker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(GatewayWorker\BusinessWorker))
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#16 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#17 {main}
+2018-04-27 11:55:08 pid:6898 Worker process terminated
+2018-04-27 11:55:08 pid:6758 worker[TodpoleBusinessWorker:6898] exit with status 64000
+2018-04-27 12:09:29 pid:7090 Workerman[start.php] stop 
+2018-04-27 12:09:29 pid:7090 Workerman[start.php] is stoping ...
+2018-04-27 12:09:29 pid:6758 Workerman[start.php] stopping ...
+2018-04-27 12:09:29 pid:6758 Workerman[start.php] has been stopped
+2018-04-27 12:09:29 pid:7090 Workerman[start.php] stop success
+2018-04-27 12:09:47 pid:7091 Workerman[start.php] start in DEBUG mode
+2018-04-27 12:11:18 pid:7091 Workerman[start.php] stopping ...
+2018-04-27 12:11:18 pid:7091 Workerman[start.php] has been stopped
+2018-04-27 12:13:52 pid:7179 Workerman[start.php] stop 
+2018-04-27 12:13:52 pid:7179 Workerman[start.php] not run
+2018-04-27 12:14:00 pid:7188 Workerman[start.php] start in DEBUG mode
+2018-04-27 12:15:37 pid:7188 Workerman[start.php] stopping ...
+2018-04-27 12:15:37 pid:7188 Workerman[start.php] has been stopped
+2018-04-27 12:17:18 pid:7227 Workerman[start.php] start in DEBUG mode
+2018-04-27 12:17:52 pid:7237 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #44)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-27 12:17:52 pid:7237 Worker process terminated
+2018-04-27 12:17:52 pid:7227 worker[WebServer:7237] exit with status 64000
+2018-04-27 12:17:52 pid:7238 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #44)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-27 12:17:52 pid:7238 Worker process terminated
+2018-04-27 12:17:52 pid:7227 worker[WebServer:7238] exit with status 64000
+2018-04-27 12:17:52 pid:7239 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #42)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:17:52 pid:7239 Worker process terminated
+2018-04-27 12:17:52 pid:7227 worker[WebServer:7239] exit with status 64000
+2018-04-27 12:21:12 pid:7241 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #48)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:21:12 pid:7241 Worker process terminated
+2018-04-27 12:21:12 pid:7227 worker[WebServer:7241] exit with status 64000
+2018-04-27 12:21:12 pid:7240 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #43)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:21:12 pid:7240 Worker process terminated
+2018-04-27 12:21:12 pid:7227 worker[WebServer:7240] exit with status 64000
+2018-04-27 12:21:12 pid:7279 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #45)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:21:12 pid:7279 Worker process terminated
+2018-04-27 12:21:12 pid:7227 worker[WebServer:7279] exit with status 64000
+2018-04-27 12:21:34 pid:7280 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #70)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:21:34 pid:7280 Worker process terminated
+2018-04-27 12:21:34 pid:7227 worker[WebServer:7280] exit with status 64000
+2018-04-27 12:21:34 pid:7281 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #47)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:21:34 pid:7281 Worker process terminated
+2018-04-27 12:21:34 pid:7227 worker[WebServer:7281] exit with status 64000
+2018-04-27 12:22:40 pid:7282 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #51)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:22:40 pid:7282 Worker process terminated
+2018-04-27 12:22:40 pid:7227 worker[WebServer:7282] exit with status 64000
+2018-04-27 12:22:40 pid:7283 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #74)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:22:40 pid:7283 Worker process terminated
+2018-04-27 12:22:40 pid:7227 worker[WebServer:7283] exit with status 64000
+2018-04-27 12:22:41 pid:7292 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #50)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:22:41 pid:7292 Worker process terminated
+2018-04-27 12:22:41 pid:7227 worker[WebServer:7292] exit with status 64000
+2018-04-27 12:23:08 pid:7293 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #75)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:23:08 pid:7293 Worker process terminated
+2018-04-27 12:23:08 pid:7227 worker[WebServer:7293] exit with status 64000
+2018-04-27 12:23:08 pid:7294 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #52)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:23:08 pid:7294 Worker process terminated
+2018-04-27 12:23:08 pid:7227 worker[WebServer:7294] exit with status 64000
+2018-04-27 12:23:52 pid:7304 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #57)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:23:52 pid:7304 Worker process terminated
+2018-04-27 12:23:52 pid:7227 worker[WebServer:7304] exit with status 64000
+2018-04-27 12:23:52 pid:7303 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #56)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:23:52 pid:7303 Worker process terminated
+2018-04-27 12:23:52 pid:7227 worker[WebServer:7303] exit with status 64000
+2018-04-27 12:23:52 pid:7305 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #55)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 12:23:52 pid:7305 Worker process terminated
+2018-04-27 12:23:52 pid:7227 worker[WebServer:7305] exit with status 64000
+2018-04-27 13:00:23 pid:7688 Workerman[start.php] start in DEBUG mode
+2018-04-27 13:00:58 pid:7698 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #45)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-27 13:00:58 pid:7698 Worker process terminated
+2018-04-27 13:00:58 pid:7688 worker[WebServer:7698] exit with status 64000
+2018-04-27 13:00:58 pid:7699 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #45)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-27 13:00:58 pid:7699 Worker process terminated
+2018-04-27 13:00:58 pid:7688 worker[WebServer:7699] exit with status 64000
+2018-04-27 13:00:58 pid:7708 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #43)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-27 13:00:58 pid:7708 Worker process terminated
+2018-04-27 13:00:58 pid:7688 worker[WebServer:7708] exit with status 64000
+2018-04-28 07:16:37 pid:17552 Workerman[start.php] start in DEBUG mode
+2018-04-28 08:46:22 pid:18423 Workerman[start.php] stop 
+2018-04-28 08:46:22 pid:18423 Workerman[start.php] not run
+2018-04-28 08:46:28 pid:18424 Workerman[start.php] start in DEBUG mode
+2018-04-28 08:47:02 pid:18434 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #46)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-28 08:47:02 pid:18434 Worker process terminated
+2018-04-28 08:47:02 pid:18424 worker[WebServer:18434] exit with status 64000
+2018-04-28 08:47:02 pid:18435 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #42)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-28 08:47:02 pid:18435 Worker process terminated
+2018-04-28 08:47:02 pid:18424 worker[WebServer:18435] exit with status 64000
+2018-04-28 08:47:02 pid:18436 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #43)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1426): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1375): Workerman\Worker::monitorWorkersForLinux()
+#16 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(461): Workerman\Worker::monitorWorkers()
+#17 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#18 {main}
+2018-04-28 08:47:02 pid:18436 Worker process terminated
+2018-04-28 08:47:02 pid:18424 worker[WebServer:18436] exit with status 64000
+2018-04-28 08:48:30 pid:18424 Workerman[start.php] stopping ...
+2018-04-28 08:48:30 pid:18424 Workerman[start.php] has been stopped
+2018-04-28 08:48:33 pid:18455 Workerman[start.php] start in DEBUG mode
+2018-04-28 08:51:19 pid:18465 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #45)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-28 08:51:19 pid:18465 Worker process terminated
+2018-04-28 08:51:19 pid:18455 worker[WebServer:18465] exit with status 64000
+2018-04-28 08:51:54 pid:18455 Workerman[start.php] stopping ...
+2018-04-28 08:51:54 pid:18455 Workerman[start.php] has been stopped
+2018-04-28 08:51:56 pid:18497 Workerman[start.php] start in DEBUG mode
+2018-04-28 08:53:37 pid:18508 Error: Call to a member function fetchAll() on null in /var/www/html/workerman-chatservice/vendor/EFrame/base/MysqlDB.php:82
+Stack trace:
+#0 /var/www/html/workerman-chatservice/Applications/app/chatweb/models/User.php(63): MysqlDB->fetchAll()
+#1 /var/www/html/workerman-chatservice/Applications/app/chatweb/controls/Index.php(32): User->checkToken()
+#2 /var/www/html/workerman-chatservice/vendor/EFrame/App.php(168): Index->actionIndex()
+#3 /var/www/html/workerman-chatservice/Applications/app/web/index.php(12): App->run()
+#4 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(203): include('/var/www/html/w...')
+#5 [internal function]: Workerman\WebServer->onMessage(Object(Workerman\Connection\TcpConnection), Array)
+#6 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Connection/TcpConnection.php(657): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #67)
+#8 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Events/Select.php(286): call_user_func_array(Array, Array)
+#9 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(2096): Workerman\Events\Select->loop()
+#10 /var/www/html/workerman-chatservice/vendor/workerman/workerman/WebServer.php(81): Workerman\Worker->run()
+#11 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1294): Workerman\WebServer->run()
+#12 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1127): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\WebServer))
+#13 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(1100): Workerman\Worker::forkWorkersForLinux()
+#14 /var/www/html/workerman-chatservice/vendor/workerman/workerman/Worker.php(459): Workerman\Worker::forkWorkers()
+#15 /var/www/html/workerman-chatservice/start.php(37): Workerman\Worker::runAll()
+#16 {main}
+2018-04-28 08:53:37 pid:18508 Worker process terminated
+2018-04-28 08:53:37 pid:18497 worker[WebServer:18508] exit with status 64000

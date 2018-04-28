@@ -12,16 +12,27 @@
 }
 
 .loginIn{
-    border: 1px solid;
+    border: 0;
     position: initial;
-    width: 100%;
+    width: 90%;
     height: 90%;
+	margin-left:5%;
 }
-.loginLeft,.loginRight{
+.loginLeft{
+	border:0;
     display: inline-block;
     border: 0;
     width: 49%;
     height: inherit;
+	position:absolute;
+}
+.loginRight{
+	border:0;
+    display: inline-block;
+    border: 0;
+    width: 49%;
+    height: inherit;
+	float:right;
 }
 .loginLeft .left,.loginRight .right{
     border: 0;

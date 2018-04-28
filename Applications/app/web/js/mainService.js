@@ -64,8 +64,8 @@ require.config({
     	"EventsService" : [
     	                   //"http://127.0.0.1:8383/js/EventsService",
     	                   "http://47.93.201.12:8383/js/EventsService",
-    	                   ],
-    },
+    	                   ]
+    }
 });
 
 
