@@ -4,31 +4,31 @@
 define(['common'],function(){
 	(function(){
 		if(typeof(Storage) === 'undefined'){
-			window.localStorage = {
-				setItem:function(key,value){
-					common.setCookie(key,value,360)
-				        return true;	
+			var Storage = {
+				sessionStorage:{
+					setItem:function(key,value){
+			            common.setCookie(key,value,1/24)
+			            return true;
+			        },
+			        getItem:function(key){
+			            return common.getCookies(key)
+			        }
+
 				},
-				getItem:function(key){
-					return common.getCookies(key)
+				localStorage:{
+					setItem:function(key,value){
+						common.setCookie(key,value,360)
+					        return true;	
+					},
+					getItem:function(key){
+						return common.getCookies(key)
+					}
 				}
 			};
 			
-			window.sessionStorage = {
-				setItem:function(key,value){
-		            common.setCookie(key,value,1/24)
-		            return true;
-		        },
-		        getItem:function(key){
-		            return common.getCookies(key)
-		        }
-
-			};
-			
-			window.Storage = {
-				sessionStorage:window.sessionStorage,
-				localStorage:window.localStorage
-			};
+			window['Storage'] = Storage;
+			window['localStorage'] = localStorage;
+			window['sessionStorage'] = sessionStorage;
 		}
 	})()
 });
