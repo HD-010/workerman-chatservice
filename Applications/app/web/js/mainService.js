@@ -24,6 +24,9 @@ require.config({
                        //"http://cdn.e01.ren/common/lib/jquery",
                        "http://47.93.201.12:8383/js/WebSocket"
                      ],
+        "Storage" : [
+                      	"http://47.93.201.12:8383/js/Storage"
+                     ],
         "AppService" : [
                         //"http://127.0.0.1:8383/js/AppService",
                         "http://47.93.201.12:8383/js/AppService"
@@ -84,7 +87,7 @@ require.config({
 require([
          "jquery",
          "common",
-	 "WebSocket",
+         "WebSocket",
          "AppService",
          "Settings",
          "WebSocketService",
@@ -96,11 +99,13 @@ require([
          "WebHttpService",
          "MenuService",
          "RegistService",
-         "EventsService"
+         "EventsService",
+         "Storage"
          ],function(
         		 $,
         		 common,
-			 WebSocket,
+        		 WebSocket,
+        		 localStorage,
         		 App,
         		 Settings,
         		 WebSocketService,
@@ -119,14 +124,15 @@ require([
 		//if( typeof(WebSocket) != "function" ) {
 		//	$('body').html("<h1>Error</h1><p>Your browser does not support HTML5 Web Sockets. Try Google Chrome instead.</p>");
 		//}
+		
+		//如果不支持Storage 则不
+		if(typeof(Storage)==="undefined") {
+			alert("你的浏览器不支持，请下载最新版本")
+			return ;
+		}
 	});
 	
 	(function(){
-		//如果不支持Storage 则不
-		//if(typeof(Storage)==="undefined") {
-		//	alert("你的浏览器不支持，请下载最新版本")
-		//	return ;
-		//}
 		
 		app.webSocket = new WebSocket(Settings.socketServer()); //创建WebSocket对象
 		console.log(app.webSocket);
