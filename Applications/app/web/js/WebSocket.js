@@ -4,7 +4,7 @@ define(function(){
 	  作者：次碳酸钴（admin@web-tinker.com）
 	*****************************************/
 	var WebSocket=WebSocket||function(url){
-	    var SRC="WebSocket.swf";
+	    var SRC="/js/WebSocket.swf";
 	    var id=Math.random()*1E9|0,events={},s,i;
 	    //事件关联
 	    s=["open","message","close","error"];
@@ -51,6 +51,7 @@ define(function(){
 	        ?document.body.insertAdjacentHTML("beforeend",data)
 	        :document.write(data);
 	};
+
 	
 	return WebSocket;
 });

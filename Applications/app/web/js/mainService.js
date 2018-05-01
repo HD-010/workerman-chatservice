@@ -84,7 +84,7 @@ require.config({
 require([
          "jquery",
          "common",
-         "WebSocket",
+	 "WebSocket",
          "AppService",
          "Settings",
          "WebSocketService",
@@ -100,7 +100,7 @@ require([
          ],function(
         		 $,
         		 common,
-        		 WebSocket,
+			 WebSocket,
         		 App,
         		 Settings,
         		 WebSocketService,
@@ -129,6 +129,7 @@ require([
 		//}
 		
 		app.webSocket = new WebSocket(Settings.socketServer()); //创建WebSocket对象
+		console.log(app.webSocket);
 		app.webSocketService = new WebSocketService(app.webSocket);//创建一个WebSocketService对象
 		app.model = new Model();	//创建一个视图模块对象
 		app.user = new User();		//创建用户对象

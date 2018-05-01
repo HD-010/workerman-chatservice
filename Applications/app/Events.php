@@ -60,7 +60,7 @@ class Events
    {
         // 获取客户端请求
         $message_data = json_decode($message, true);
-        
+        print_r($message_data); 
         if(!$message_data)
         {
             return ;

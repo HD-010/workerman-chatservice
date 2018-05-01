@@ -42,6 +42,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 			
 			try {
 				var data = JSON.parse(e.data);
+				console.log("ok");
 				//判断当前服务方窗口是否打开
 				if((data.serviceId != app.user.serviceId()) && (common.inArray(data.type,Settings.receivMessageType()) != '-1')){
 					app.renderMessage(data);
