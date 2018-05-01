@@ -1,28 +1,39 @@
 /**
  * 为兼容低版浏览器，使用localStorage存储
  */
-define(function(){
-	var Storage = function(){
-		s = this;
-		s.localStorage = {
-			setItem:function(){
-				console.log("设置项目成功");
+define(['common'],function(){
+	var ST = function(){}
+		localStorage = {
+			setItem:function(key,value){
+				common.setCookie(key,value,360)
+			        return true;	
 			},
-			getItem:function(){
-				console.log("获取项目内容");
+			getItem:function(key){
+				return common.getCookies(key)
 			}
 		};
 		
-		s.sessionStorage = {};
-	}
+		st.sessionStorage = {
+			setItem:function(key,value){
+                                common.setCookie(key,value,1/24)
+                                return true;
+                        },
+                        getItem:function(key){
+                                return common.getCookies(key)
+                        }
+
+		};
+		
+		
+	};
 
 	
 	(function(){
 		if(typeof(Storage) === 'undefined'){
-			storage = new Storage();
-			window.Storage = storage;
-			window.localStorage = storage.localStorage;
-			window.sessionStorage = storage.sessionStorage;
+			var st = new ST();
+			window.Storage = 'st';
+			//window.localStorage = st.localStorage;
+			//window.sessionStorage = st.sessionStorage;
 		}
 	})()
 });

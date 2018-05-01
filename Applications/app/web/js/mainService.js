@@ -105,7 +105,6 @@ require([
         		 $,
         		 common,
         		 WebSocket,
-        		 localStorage,
         		 App,
         		 Settings,
         		 WebSocketService,
