@@ -74,7 +74,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				type: 'login',
 				message: ''
 			};
-			app.webSocketService.sendMessage(sendObj);
+			app.webSocketService.sendMessage(sendObj,app);
 			
 			//注册服务
 			app.webSocketService.serviceReg();
@@ -96,7 +96,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 					date : date.getMonth() + 1 + '/' +date.getDate() + ' ' + date.getHours() + ':' +date.getMinutes() + ':' + date.getSeconds()
 				};
 				
-				app.webSocketService.sendMessage(sendObj);
+				app.webSocketService.sendMessage(sendObj,app);
 				//将发送的信息显示到页面
 				app.model.messageSend(sendObj);
 				//加载消息对象事件
@@ -127,7 +127,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				render_data.typeh = 'receive';
 				//根据用户权限，添加留言查看后是被删除还是被转存到历史记录表中
 				render_data.saveToHistory = 0;
-				app.webSocketService.sendMessage(render_data);
+				app.webSocketService.sendMessage(render_data,app);
 			}
 		}
 		
@@ -139,7 +139,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 		 * 
 		 * 当前为第1前半步
 		 */
-		app.downServerLeavingTotal = function(){
+		app.downServerLeavingTotal = function(app){
 			//这是所有服务方的uid
 			var serviceId = app.model.getServiceUids();
 			
@@ -162,7 +162,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				//如果有，则数会被转存到历史消息表
 				saveToHistory:'0'		
 			};
-			app.webSocketService.sendMessage(sendObj);
+			app.webSocketService.sendMessage(sendObj,app);
 		}
 		
 		/**
@@ -193,7 +193,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				saveToHistory:'0'
 			};
 			
-			app.webSocketService.sendMessage(sendObj);
+			app.webSocketService.sendMessage(sendObj,app);
 		}
 
 		

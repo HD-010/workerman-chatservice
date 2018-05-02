@@ -7,18 +7,18 @@ define(['jquery','common'],function($,common){
 
 			var sessionStorage = {
 				setItem:function(key,value){
-		           		common.setCookie(key,value,1/24)
-		            		return true;
-		        	},
-		        	getItem:function(key){
-		            		return common.getCookies(key)
-		        	}
+	           		common.setCookie(key,value,1/24)
+            		return true;
+	        	},
+	        	getItem:function(key){
+            		return common.getCookies(key)
+	        	}
 
 			};
 			var localStorage = {
 				setItem:function(key,value){
 					common.setCookie(key,value,360)
-				        return true;	
+			        return true;	
 				},
 				getItem:function(key){
 					return common.getCookies(key)

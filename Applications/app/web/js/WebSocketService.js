@@ -100,8 +100,8 @@ define(['common','History'],function(common,History){
 		}
 		
 		
-		this.sendMessage = function(sendObj) {
-			webSocket.send(JSON.stringify(sendObj));
+		this.sendMessage = function(sendObj,app) {
+			app.webSocket.send(JSON.stringify(sendObj));
 		}
 		
 		this.processMessage = function(data,app) {
