@@ -15,7 +15,7 @@ define(['EventsService','MenuService'],function(Events,Menu){
 				showProfile:function(app){
 					var findFriends = $("#findFriends");
 					findFriends.find("li[name=lookProfiles] a").on("click",function(event){
-						var e = event | window.event;
+						var e = event || window.event;
 						if(event.preventDefault){
 							e.preventDefault();
 						}else{
@@ -34,7 +34,7 @@ define(['EventsService','MenuService'],function(Events,Menu){
 				addToFriends : function(friends){
 					var findFriends = $("#findFriends");
 					findFriends.find("input[name=addToFriends]").on("click",function(event){
-						var e = event | window.event;
+						var e = event || window.event;
 						if(event.preventDefault){
 							e.preventDefault();
 						}else{

@@ -200,7 +200,7 @@ define(['jquery',
 	var group = {
 		//向服务器发送添加分组信息
 		add:function(event){
-			var e = event | window.event;
+			var e = event || window.event;
 			if(event.preventDefault){
 				e.preventDefault();
 			}else{
@@ -224,7 +224,7 @@ define(['jquery',
 		
 		//向服务器发送修改分组信息
 		alter:function(event){
-			var e = event | window.event;
+			var e = event || window.event;
 			if(event.preventDefault){
 				e.preventDefault();
 			}else{
@@ -454,7 +454,7 @@ define(['jquery',
 			guideRead:function(event,app,o){
 				//阻止浏览器默认行为
 				if(event){
-					var e = event | window.event;
+					var e = event || window.event;
 					if(event.preventDefault){
 						e.preventDefault();
 					}else{
@@ -487,7 +487,7 @@ define(['jquery',
 				console.log("阻止浏览器默认行为");
 				//阻止浏览器默认行为
 				if(event){
-					var e = event | window.event;
+					var e = event || window.event;
 					if(event.preventDefault){
 						e.preventDefault();
 					}else{
@@ -518,7 +518,7 @@ define(['jquery',
 			//当点击编辑条目的时候，隐藏当前列表并显示编辑窗口
 			add:function(event,app,o){
 				var serviceGuide = $("#serviceGuide");
-				var e = event | window.event;
+				var e = event || window.event;
 				if(event.preventDefault){
 					e.preventDefault();
 				}else{
@@ -536,7 +536,7 @@ define(['jquery',
 			edit:function(event,app,o){
 				var guideList,serviceGuide,snid,key,contents;
 
-				var e = event | window.event;
+				var e = event || window.event;
 				if(event.preventDefault){
 					e.preventDefault();
 				}else{
@@ -558,7 +558,7 @@ define(['jquery',
 			
 			//删除服务宝典中的一条记录
 			del:function(event,app,o){
-				var e = event | window.event;
+				var e = event || window.event;
 				if(event.preventDefault){
 					e.preventDefault();
 				}else{
@@ -584,7 +584,7 @@ define(['jquery',
 			
 			//保存一条记录到服务宝典
 			save:function(event,app,o){
-				var e = event | window.event;
+				var e = event || window.event;
 				if(event.preventDefault){
 					e.preventDefault();
 				}else{

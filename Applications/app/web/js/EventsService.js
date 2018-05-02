@@ -90,7 +90,7 @@ define(function(){
 				//保存个人资料的视图控制
 				lookProfiles.find('button[name=save]').click(function(event){
 					//阻止默认行为
-					var e = event | window.event;
+					var e = event || window.event;
 					if(event.preventDefault){
 						e.preventDefault();
 					}else{
@@ -376,7 +376,7 @@ define(function(){
 				});
 				//查找下一批名单
 				findFriends.find('a[name=nextBatch]').click(function(event){
-					var e = event | window.event;
+					var e = event || window.event;
 					if(event.preventDefault){
 						e.preventDefault();
 					}else{
@@ -386,7 +386,7 @@ define(function(){
 				});
 				//按条件搜索
 				findFriends.find('input[name=search]').click(function(event){
-					var e = event | window.event;
+					var e = event || window.event;
 					if(event.preventDefault){
 						e.preventDefault();
 					}else{

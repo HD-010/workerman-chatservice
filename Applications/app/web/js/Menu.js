@@ -163,7 +163,7 @@ define(['jquery',
 	var group = {
 		//向服务器发送添加分组信息
 		add:function(event){
-			var e = event | window.event;
+			var e = event || window.event;
 			if(event.preventDefault){
 				e.preventDefault();
 			}else{
@@ -187,7 +187,7 @@ define(['jquery',
 		
 		//向服务器发送修改分组信息
 		alter:function(event){
-			var e = event | window.event;
+			var e = event || window.event;
 			if(event.preventDefault){
 				e.preventDefault();
 			}else{

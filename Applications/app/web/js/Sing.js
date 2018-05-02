@@ -112,7 +112,7 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 		//登录提交
 		sing.loginSubmit = function(event){
 			//阻止submit默认行为
-			var e = event | window.event;
+			var e = event || window.event;
 			if(event.preventDefault){
 				e.preventDefault();
 			}else{
@@ -161,7 +161,7 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 		//注册提交
 		sing.upSubmit = function(event){
 			//阻止submit默认行为
-			var e = event | window.event;
+			var e = event || window.event;
 			if(event.preventDefault){
 				e.preventDefault();
 			}else{

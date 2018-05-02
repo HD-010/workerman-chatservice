@@ -82,7 +82,7 @@ define(['jquery','common'],function($,common){
 				
 				//编辑个人资料的视图的编辑框可用
 				enable : function(event){
-					var e = event | window.event;
+					var e = event || window.event;
 					if(event.preventDefault){
 						e.preventDefault();
 					}else{
@@ -165,7 +165,7 @@ define(['jquery','common'],function($,common){
 				},
 				//编辑个人资料的视图的编辑框可用
 				enable : function(event){
-					var e = event | window.event;
+					var e = event || window.event;
 					if(event.preventDefault){
 						e.preventDefault();
 					}else{

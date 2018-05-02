@@ -20,7 +20,7 @@ define(['jquery','common'],function($,common){
 			on:function(event){
 				//event.preventDefault();
 				
-				var e = event | window.event;
+				var e = event || window.event;
 				if(event.preventDefault){
 					e.preventDefault();
 				}else{
@@ -31,7 +31,7 @@ define(['jquery','common'],function($,common){
 			},
 			off:function(event){
 
-				var e = event | window.event;
+				var e = event || window.event;
 				if(event.preventDefault){
 					e.preventDefault();
 				}else{
