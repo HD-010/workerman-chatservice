@@ -1,6 +1,6 @@
 require.config({
-	//baseUrl:"http://127.0.0.1:8383/js/",
 	baseUrl:"http://47.93.201.12:8383/js/",
+	//baseUrl:"http://127.0.0.1:8383/js/",
 	
     shim:{
 	"jquery":{
@@ -87,6 +87,7 @@ require([
 		app.authorize = new Sing();	//创建
 		app.menu = Menu;
 		app.events = Events;
+		app.regist = regist;
 		
 		app.webSocket.onopen = app.onSocketOpen;
 		app.webSocket.onmessage = app.onSocketMessage;
@@ -103,9 +104,6 @@ require([
 			alert("你的浏览器不支持，请下载最新版本")
 			return ;
 		}
-		
-		//注册onload事件
-		regist.onLoad(app);
 	});
 	
 });

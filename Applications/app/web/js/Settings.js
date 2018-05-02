@@ -11,13 +11,14 @@ define(function(){
 			else
 			{
 				// 运行在其它域名上
+				console.log('ws://'+document.domain+':8282');
 				return 'ws://'+document.domain+':8282';
 			}
 			
 		},
 		
 		httpServer:function(){
-//			return 'http://127.0.0.1:8383';
+			//return 'http://127.0.0.1:8383';
 			return 'http://47.93.201.12:8383';
 		},
 		

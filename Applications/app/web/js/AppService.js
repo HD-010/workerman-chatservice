@@ -10,6 +10,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 		app.effect;
 		app.authorize;
 		app.evets;
+		app.regist;
 		
 		
 		/**
@@ -17,6 +18,9 @@ define(['common','History','Settings'],function(common,History,Settings){
 		 */
 		app.onSocketOpen = function(e){
 			console.log("连接成功...");
+			
+			//注册事件
+			app.regist.onLoad(app);
 			
 			//注册聊天用户信息,在会话开始时注册
 			app.loginMessage();
