@@ -33,7 +33,7 @@ require.config({
     	"MenuService" : "MenuService",
     	"Process" : "Process",
     	"RegistService" : "RegistService",
-    	"EventsService" : "EventsService",
+    	"EventsService" : "EventsService"
     }
 });
 
