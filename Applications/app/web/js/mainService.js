@@ -88,6 +88,7 @@ require([
          "jquery",
          "common",
          "WebSocket",
+	 "Storage",	
          "AppService",
          "Settings",
          "WebSocketService",
@@ -99,12 +100,12 @@ require([
          "WebHttpService",
          "MenuService",
          "RegistService",
-         "EventsService",
-         "Storage"
+         "EventsService"
          ],function(
         		 $,
         		 common,
         		 WebSocket,
+			 Storage,
         		 App,
         		 Settings,
         		 WebSocketService,
