@@ -31,6 +31,6 @@ define(['jquery','common'],function($,common){
 		}
 
 	})()
-
-	return Storage = Storage || function(){}
+	var Storage = Storage || function(){}
+	return Storage;
 });
