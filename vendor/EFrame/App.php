@@ -130,11 +130,15 @@ class App{
      * 默认为 ： 'db'
      */
     public static function DB($configName='db'){
-        if(!is_object(self::$db->$configName)){
-            self::$db->$configName = Base::DB($configName);
+	if(!is_array(self::$db)){
+	    self::$db = [];
+	}		
+
+        if(!array_key_exists($configName,self::$db)){
+            self::$db[$configName] = Base::DB($configName);
         }
         
-        return self::$db->$configName;
+        return self::$db[$configName];
     }
     
     /**

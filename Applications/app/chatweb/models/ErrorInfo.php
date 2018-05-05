@@ -29,7 +29,7 @@ class ErrorInfo
                 "description" => '向数据库写入数据失败'
             ],
             '9500' =>[
-                "state" => "9000",
+                "state" => "9500",
                 "infoType" => 'error',
                 "description" => '无效token！'
             ],

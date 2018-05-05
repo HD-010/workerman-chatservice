@@ -79,7 +79,8 @@ class MysqlDB extends Query
      * 返回一个结果集中所有行的数组
      */
     public function fetchAll(){
-        return $this->res->fetchAll();
+        if(!$this->res) return [];
+	return $this->res->fetchAll();
     }
     
     /**

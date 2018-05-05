@@ -125,8 +125,9 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
             "input[name=Verification]"                               
             ]).submit({
 				url:sing.api+"/sing-in",
-				dataType:"JSON",
+				dataType:"json",
 				success:function(data){
+					alert(data);
 					if(data.state == 'success'){
 						//以下为登录成功后的一系列操作
 						var token = data.token || 'DKD15-2542DS';
@@ -152,7 +153,8 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 					}
 				},
 				error:function(data){
-					console.log(data)
+					alert("登录失败:返回错误");
+					console.log(JSON.stringify(data))
 				}
 			});
 		}

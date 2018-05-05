@@ -6,7 +6,7 @@ define(function(){
 	if(typeof(WebSocket) == "function"){
 		return WebSocket;
 	}else{
-		return function(url){
+		return  function(url){
 			var SRC="/js/WebSocket.swf";
 			var id=Math.random()*1E9|0,events={},s,i;
 			//事件关联

@@ -10,8 +10,10 @@ require.config({
 
     paths:{
         "jquery" : [
-                    "http://cdn.sqc666.com/common/lib/jquery.min"
+                    "http://cdn.sqc666.com/common/lib/jquery.min",
+		    //"http://cdn.sqc666.com/common/lib/jquery-1.8.3.min"
                    ],
+	"JSON":"JSON",
         "common" : [
                     "http://cdn.sqc666.com/common/f/common"
                     ],
@@ -41,6 +43,7 @@ require.config({
 
 require([
          "jquery",
+	 "JSON",
          "common",
          "WebSocket",
          "Storage",	
@@ -58,7 +61,8 @@ require([
          "EventsService"
          ],function(
         		 $,
-        		 common,
+        		 JSON,
+			 common,
         		 WebSocket,
         		 Storage,
         		 App,

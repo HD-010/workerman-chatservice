@@ -22,7 +22,7 @@ class Index extends Control
         //用户受权验证,注册用户受权信息
         App::model('User')->regUI();
         
-        //如果用户是游客，则重定向到登录页面，要求他登录
+	//如果用户是游客，则重定向到登录页面，要求他登录
         if(App::$user->isGuest()) {
             App::redirect('/chatweb/sing/in');
             return;

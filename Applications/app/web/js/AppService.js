@@ -43,10 +43,8 @@ define(['common','History','Settings'],function(common,History,Settings){
 		 * 
 		 */
 		app.onSocketMessage = function(e){
-			
 			try {
 				var data = JSON.parse(e.data);
-				console.log("ok");
 				//判断当前服务方窗口是否打开
 				if((data.serviceId != app.user.serviceId()) && (common.inArray(data.type,Settings.receivMessageType()) != '-1')){
 					app.renderMessage(data);
@@ -59,8 +57,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 					
 				}
 				
-			} catch(e) {console.log(e)}
-		}
+			} catch(e) {console.log(e)} }
 		
 		/**
 		 * 用户第一次打开在线服务界面时进行访客和服务id注册

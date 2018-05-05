@@ -115,7 +115,7 @@ class base{
         }
         return new Authorize();
     }
-    
+ 
     /**
      * 返回数据库连接对象
      * @param $configName string 数据库连接配置名称，如“db|db2"等，由config中db配置 的键名决定
