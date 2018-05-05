@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8383/css/main.css" />
+<link rel="stylesheet" type="text/css" href="http://47.93.201.12:8383/css/main.css" />
 
 <div id='eChatBox' style='width:100%;height:100%;position:fixed;top:0;background-color:white;display:none;'>
     <div id='eChat' >

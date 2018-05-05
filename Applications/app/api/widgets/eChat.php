@@ -6,7 +6,7 @@
 	<div id='chatList' style='border:0;width:100%;height:56%;overflow: auto;'>
 		<table border='0' style='width:100%;border-collapse:separate; border-spacing:0 1em;font-size:1.5em;'>
 			<tr name='recive' style='margin-top:1em;'>
-				<td width='2em'><img src='http://127.0.0.1:8383/images/left.png' /></td>
+				<td width='2em'><img src='http://47.93.201.12:8383/images/left.png' /></td>
 				<td style='text-align:left;'>
 					<ul>
 						<li style='border:1px solid #D5D5D5;border-radius: 0.5em;line-height:1.8em;padding: 0.4em 0 0.4em 0.4em;display:inline-block;'>收到的信息收到的信息收到的信息收到的信息收到的信息收到的信息收到的信息收到的信息</li>
@@ -22,7 +22,7 @@
 						<li style='color:#C8B9C6;'>3/15 13:49</li>
 					</ul>
 				</td>
-				<td width='2em'><img src='http://127.0.0.1:8383/images/right.png' /></td>
+				<td width='2em'><img src='http://47.93.201.12:8383/images/right.png' /></td>
 			</tr>
 		</table>
 	</div>
