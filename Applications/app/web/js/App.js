@@ -95,7 +95,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 					addParams : app.process.talking.commodifyInfo(app),
 				};
 				
-				app.webSocketService.sendMessage(sendObj);
+				app.webSocketService.sendMessage(sendObj,app);
 				//将发送的信息显示到页面
 				app.model.messageSend(sendObj);
 				//保存聊天记录到本地的历史记录对象
@@ -124,7 +124,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				render_data.typeh = 'receive';
 				//根据用户权限，添加留言查看后是被删除还是被转存到历史记录表中
 				render_data.saveToHistory = 0;
-				app.webSocketService.sendMessage(render_data);
+				app.webSocketService.sendMessage(render_data,app);
 			}
 		}
 		
@@ -159,7 +159,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				//如果有，则数会被转存到历史消息表
 				saveToHistory:'0'		
 			};
-			app.webSocketService.sendMessage(sendObj);
+			app.webSocketService.sendMessage(sendObj,app);
 		}
 		
 		/**
@@ -190,7 +190,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				saveToHistory:'0'
 			};
 			
-			app.webSocketService.sendMessage(sendObj);
+			app.webSocketService.sendMessage(sendObj,app);
 		}
 
 		
