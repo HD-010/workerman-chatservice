@@ -269,7 +269,7 @@ define(['jquery','common','Process'],function($,common,process){
 		 */
 		model.boxRecive = function(){
 			var recive = "<tr name='recive' style='margin-top:1em;'>"+
-				"<td width='2em'><img style='1em;height:0.8em;' src='http://127.0.0.1:8383/images/left.png' /></td>"+
+				"<td width='2em'><img style='1em;height:0.8em;' src='http://47.93.201.12:8383/images/left.png' /></td>"+
 				"<td style='text-align:left;'>"+
 					"<ul>"+
 						"<li name='content' style='border:1px solid #D5D5D5;border-radius: 0.5em;line-height:1.8em;padding: 0.4em;display:inline-block;'>收到的信息</li>"+
@@ -309,7 +309,7 @@ define(['jquery','common','Process'],function($,common,process){
 						"<li name='date' style='color:#C8B9C6;'>3/15 13:49</li>"+
 					"</ul>"+
 				"</td>"+
-				"<td width='2em'><img style='width:1em;height:0.8em;' src='http://127.0.0.1:8383/images/right.png' /></td>"+
+				"<td width='2em'><img style='width:1em;height:0.8em;' src='http://47.93.201.12:8383/images/right.png' /></td>"+
 			"</tr>";
 			
 			return $(send);

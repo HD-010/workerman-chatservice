@@ -1,16 +1,10 @@
 require.config({
-	baseUrl:"http://47.93.201.12:8383/js/",
-	//baseUrl:"http://127.0.0.1:8383/js/",
-	
-    shim:{
-	"jquery":{
-		'exports':'$'	
-		}	
-	},	
+    baseUrl:"http://47.93.201.12:8383/js/",
+    //baseUrl:"http://127.0.0.1:8383/js/",
 
     paths:{
         "jquery" : [
-                    "http://cdn.sqc666.com/common/lib/jquery.min",
+                    "http://cdn.sqc666.com/common/lib/jquery",
 		    //"http://cdn.sqc666.com/common/lib/jquery-1.8.3.min"
                    ],
 	"JSON":"JSON",
