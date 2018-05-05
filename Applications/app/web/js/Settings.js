@@ -1,15 +1,16 @@
 define(function(){
 	// 此文件下载者不用更改，兼容其他域名使用
 	var Settings = {
-		socketServer: function(){
+		socketServer: function(service){
+			var service = 'service' || '';
 			// 如果是workerman.net phpgame.cn域名 则采用多个接入端随机负载均衡
 			var domain_arr = ['workerman.net', 'www.workerman.net'];
 			if(0 <= $.inArray(document.domain, domain_arr))
 			{
 				return 'ws://'+domain_arr[Math.floor(Math.random() * domain_arr.length + 1)-1]+':8282';
-			}
-			else
-			{
+			}else if(service){
+				return 'ws://47.93.201.12:8282';
+			}else{
 				// 运行在其它域名上
 				console.log('ws://'+document.domain+':8282');
 				return 'ws://'+document.domain+':8282';
