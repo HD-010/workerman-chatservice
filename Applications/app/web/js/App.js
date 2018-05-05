@@ -70,7 +70,7 @@ define(['common','History','Settings'],function(common,History,Settings){
 				type: 'login',
 				message: '',
 			};
-			app.webSocketService.sendMessage(sendObj);
+			app.webSocketService.sendMessage(sendObj,app);
 			
 			//注册服务
 			app.webSocketService.serviceReg();
