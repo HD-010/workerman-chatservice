@@ -38,7 +38,7 @@
     border: 0;
     margin-top: 25%;
     height: 50%;
-	overflow: hidden;
+	overflow: initial;
 }
 .loginRight .right{
 	border-left:1px solid gainsboro;
