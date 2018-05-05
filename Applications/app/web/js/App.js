@@ -9,6 +9,8 @@ define(['common','History','Settings'],function(common,History,Settings){
 		app.user;
 		app.effect;
 		app.authorize;
+		app.events;
+		app.regist;
 		
 		
 		/**
