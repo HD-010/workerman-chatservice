@@ -73,6 +73,8 @@ require([
 		app.effect = new Effect();	//创建视图效果对象
 		app.authorize = new Sing();	//创建用户受权
 		app.process = process;	    //创建数据处理对象
+		app.events = Events;
+		app.regist = regist;
 		
 		app.webSocket.onopen = app.onSocketOpen;
 		app.webSocket.onmessage = app.onSocketMessage;
