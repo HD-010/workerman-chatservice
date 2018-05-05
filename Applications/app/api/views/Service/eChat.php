@@ -59,5 +59,5 @@
     </div>
 </div>
 
-<script type="text/javascript" data-main="http://127.0.0.1:8383/js/main" src="http://cdn.e01.ren/common/require/require.js"></script>
+<script type="text/javascript" data-main="http://47.93.201.12:8383/js/main" src="http://cdn.sqc666.com/common/require/require.js"></script>
 

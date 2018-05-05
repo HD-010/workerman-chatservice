@@ -38,7 +38,7 @@ class Service extends Control
         $serviceId = App::$request->get('service');
         
         $echat_sys_params = [
-            commodifyInfo =>[
+            'commodifyInfo' =>[
                 //图片的宽高比例
                 'min_scale' => App::$request->get('min_scale',0),
                 'max_scale' => App::$request->get('max_scale',0),
