@@ -18,12 +18,11 @@ define(['common','History','Settings'],function(common,History,Settings){
 		app.onSocketOpen = function(e){
 			console.log("连接成功...");
 			
+			//注册事件
+			app.regist.onLoad(app);
+			
 			//注册聊天用户信息,在会话开始时注册
 			app.loginMessage();
-			
-			if(!app.webSocketService.serviceIsReg()){
-				app.loginMessage();
-			}
 			
 			//下载留言总记录条数到本地，并加载到列表提示位置
 			app.downServerLeaving();

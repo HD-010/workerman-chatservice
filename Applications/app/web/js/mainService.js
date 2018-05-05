@@ -3,18 +3,10 @@ require.config({
     //baseUrl:"http://127.0.0.1:8383/js/",
 
     paths:{
-        "jquery" : [
-                    "http://cdn.sqc666.com/common/lib/jquery",
-		    //"http://cdn.sqc666.com/common/lib/jquery-1.8.3.min"
-                   ],
-	"JSON":"JSON",
-        "common" : [
-                    "http://cdn.sqc666.com/common/f/common"
-                    ],
-        "easyForm" : [
-                      "http://cdn.sqc666.com/form/lib/easyForm"
-                      ],
-                      
+        "jquery" :  "http://cdn.sqc666.com/common/lib/jquery",
+        "JSON":"JSON",
+        "common" : "http://cdn.sqc666.com/common/f/common",
+        "easyForm" : "http://cdn.sqc666.com/form/lib/easyForm",
         "WebSocket" : "WebSocket",
         "Storage" : "Storage",
         "AppService" : "AppService",
@@ -37,7 +29,7 @@ require.config({
 
 require([
          "jquery",
-	 "JSON",
+         "JSON",
          "common",
          "WebSocket",
          "Storage",	
@@ -56,7 +48,7 @@ require([
          ],function(
         		 $,
         		 JSON,
-			 common,
+        		 common,
         		 WebSocket,
         		 Storage,
         		 App,

@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Workerman小蝌蚪互动聊天室 HTML5+Websocket+PHP多进程socket实时推送技术</title>
+		<title></title>
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />
 		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0  minimum-scale=1.0  user-scalable=0;" />		
     <meta name="apple-mobile-web-app-capable" content="YES">

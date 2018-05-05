@@ -25,9 +25,6 @@ define(['common','History','Settings'],function(common,History,Settings){
 			//注册聊天用户信息,在会话开始时注册
 			app.loginMessage();
 			
-			if(!app.webSocketService.serviceIsReg()){
-				app.loginMessage();
-			}
 		}
 		
 		app.onSocketClose = function(e){

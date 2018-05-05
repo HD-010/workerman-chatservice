@@ -48,7 +48,6 @@ class Service extends Control
             ]
         ];
         $echat_sys_params_json = json_encode($echat_sys_params);
-        file_put_contents("d:/log4.txt", $echat_sys_params_json);
         
         $javascript = 
 <<<JSCODE
@@ -73,7 +72,7 @@ class Service extends Control
             sessionStorage.setItem('echat_service',echat_service);
             sessionStorage.setItem('echat_sys_params',echat_sys_params);    
             $.ajax({
-                url:"http://127.0.0.1:8383/api/service/index",
+                url:"http://47.93.201.12:8383/api/service/index",
                 dataType : 'jsonp',
                 jsonp : 'jsonpcallback',
                 type : 'GET',
