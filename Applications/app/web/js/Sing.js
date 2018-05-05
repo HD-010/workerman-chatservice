@@ -127,7 +127,6 @@ define(['jquery','easyForm','Settings','User'],function($,$e,Settings,User){
 				url:sing.api+"/sing-in",
 				dataType:"json",
 				success:function(data){
-					alert(data);
 					if(data.state == 'success'){
 						//以下为登录成功后的一系列操作
 						var token = data.token || 'DKD15-2542DS';
