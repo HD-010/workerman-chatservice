@@ -66,7 +66,7 @@ require([
 	(function(){
 		
 		app = new App();
-		app.webSocket = new WebSocket(Settings.socketServer()); //创建WebSocket对象
+		app.webSocket = new WebSocket(Settings.socketServer('service')); //创建WebSocket对象
 		app.webSocketService = new WebSocketService(app.webSocket);//创建一个WebSocketService对象
 		app.model = new Model();	//创建一个视图模块对象
 		app.user = new User();		//创建用户对象
