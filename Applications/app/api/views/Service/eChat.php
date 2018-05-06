@@ -15,7 +15,7 @@
     	<!-- 这里是聊天页面菜单 -->
     	<div id='chatMenu' style='border:0;border-top:1px solid #D5D5D5;width:100%;height:6%;background-color:#F9F9F9;'>
     		<ul style='width:80%;'>
-    			<li id='chatFace' style='display: inline-block;width: 2.2em;height: 2.2em;border: 0;border-radius:1.1em;vertical-align: middle;margin: 0.3em 0.4em 0 1.5em;background-image: url(http://47.93.201.12:8383/images/tools.png);background-size: 459px 40.5px;background-repeat: no-repeat;background-position: -0.39em -0.55em;'>
+    			<li id='chatFace' style='display: inline-block;width: 2.2em;height: 2.2em;border: 0;border-radius:1.1em;vertical-align: middle;margin: 0.3em 0.4em 0 1.5em;background-image: url(http://47.93.201.12:8383/images/tools.png);background-size:38em 3.4em;background-repeat: no-repeat;background-position: -0.39em -0.55em;'>
     				<ul style='display:none;border: 1px solid red;position: absolute;width: 100%;margin-top: 2.8em;margin-left: -1.5em;height: 22%;background-color:white;'>
     					<li style='display:inline-block;margin-left:1em;'><label style='display:inline-block;width:3em;height:3em;border:1px solid silver;' for='chatFace/:c'>/:c</label></li>
     					<li style='display:inline-block;margin-left:1em;'><label style='display:inline-block;width:3em;height:3em;border:1px solid silver;' for='chatFace/:d'>/:d</label></li>
@@ -30,12 +30,12 @@
     				<input id='chatFace/:g' style='visibility:hidden' type='radio' name='chatFace' value='/:g' />
     			</li>
     			
-    			<li style='display: inline-block;width: 2.5em;height: 2.2em;border: 0;vertical-align: middle;margin: 0.3em 0.4em 0 0.75em;background-image: url(http://47.93.201.12:8383/images/tools.png);background-size: 459px 40.5px;background-repeat: no-repeat;background-position: -16.5em -0.55em;'>
+    			<li style='display: inline-block;width: 2.5em;height: 2.2em;border: 0;vertical-align: middle;margin: 0.3em 0.4em 0 0.75em;background-image: url(http://47.93.201.12:8383/images/tools.png);background-size: 38em 3.4em;background-repeat: no-repeat;background-position: -16.5em -0.55em;'>
     				<label for='chatImg'>
     					<input style='width:1em;visibility:hidden' id='chatImg' type='file' name='chatImg' value='' />
     				</label>
     			</li>
-    			<li style='display: inline-block;width: 2.5em;height: 2.2em; border: 0;vertical-align: middle;margin: 0.3em 0.4em 0 0.75em;background-image: url(http://47.93.201.12:8383/images/tools.png);background-size: 459px 40.5px;background-repeat: no-repeat;background-position: -12.6em -0.55em;'>
+    			<li style='display: inline-block;width: 2.5em;height: 2.2em; border: 0;vertical-align: middle;margin: 0.3em 0.4em 0 0.75em;background-image: url(http://47.93.201.12:8383/images/tools.png);background-size:38em 3.4em;background-repeat: no-repeat;background-position: -12.6em -0.55em;'>
     				<label for='chatFile'>
     					<input style='width:1em;visibility:hidden' id='chatFile' type='file' name='chatFile' value='' />
     				</label>
