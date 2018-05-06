@@ -11,7 +11,6 @@ define(function(){
 				
 				//定义打开聊天窗口的接口
 				window.openEChat = function(){
-					alert("ij");
 					$("#eChatBox").show();
 				}
 				
