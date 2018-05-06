@@ -30,7 +30,10 @@ class Service extends Control
     public function actionOnline(){
         //访问权限控制，token是接入商身份标识。如果验证失败，则取消连接，返回空。
         $token = App::$request->get('token');
-        if($token != 58555) return;
+        
+        //验证token
+        //if($token != 58555) return;
+        if(!App::model('User')->checkToken()) return;
         
         //客户id
         $clientId = App::$request->get('client');

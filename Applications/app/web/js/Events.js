@@ -11,7 +11,13 @@ define(function(){
 				
 				//定义打开聊天窗口的接口
 				window.openEChat = function(){
+					alert("ij");
 					$("#eChatBox").show();
+				}
+				
+				//定义访客id设置接口，该接口到用户登录成功时调用
+				window.setGuestId = function(echat_client){
+					sessionStorage.setItem('echat_client',echat_client);
 				}
 			},
 			
